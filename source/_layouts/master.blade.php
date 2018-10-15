@@ -14,6 +14,22 @@ if( !isset( $activeType ) ) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+
+    {{--favicons--}}
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/favicon-144.png">
+    {{--<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/favicon-152.png">--}}{{-- 사이즈 없음--}}
+    {{--<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/favicon-180.png">--}}{{-- 사이즈 없음--}}
+
+    {{--<link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/favicons/favicon-192.png">--}}{{-- 사이즈 없음--}}
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16.png">
 </head>
 <body>
 
