@@ -1,0 +1,16 @@
+{
+  "name": "grotesq.com",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "repository": "https://github.com/GrotesQ/grotesq.com.git",
+  "author": "Naram Kim a.k.a. Unknown <unknown@grotesq.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html -d ./docs",
+    "build": "rm -rf docs && parcel build index.html -d ./docs"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.4",
+    "sass": "^1.14.2"
+  }
+}
