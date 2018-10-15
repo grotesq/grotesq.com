@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+// fonts
+html, body, button, input, textarea {
+  font-family: 'Gothic A1', sans-serif;
+  //font-family: 'Nanum Gothic', sans-serif;
+}
+
+.font-poiret {
+  font-family: 'Poiret One', cursive;
+}
+
+body {
+  font-size: 12px;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  margin: 1.5rem 0;
+}
+
+.bg-dark {
+  background-color: #000000 !important;
+}
+
+.gq-nav {
+  height: 60px;
+}
+
+.gq-nav__logo-image {
+  height: 30px;
+}
+
+$main-color: #000000; // 메인 컬러 정의
+$point-color: #ffffff; // 포인트 컬러 정의
+
+.h3-wrap {
+  margin-bottom: 30px;
+
+  span {
+    background: $point-color;
+    color: $main-color;
+    padding: 5px 10px;
+
+    &.black-span-title {
+      background: $main-color;
+      color: $point-color;
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@import "visual-banner";
+@import "about";

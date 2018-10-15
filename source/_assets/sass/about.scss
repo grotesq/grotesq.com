@@ -1,0 +1,13 @@
+.gq-about {
+  padding: 5rem 0;
+
+  #about-text {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 767px) {
+    img {
+      width: 100%;
+    }
+  }
+}

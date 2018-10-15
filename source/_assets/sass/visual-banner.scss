@@ -1,0 +1,432 @@
+.gq-visual-banner {
+  background: $main-color;
+  padding: 5rem 0;
+  color: $point-color;
+
+  h2 {
+    font-weight: normal;
+
+    span {
+      background: $point-color;
+      padding: 5px 10px;
+      color: $main-color;
+    }
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  #visual-banner-wrap {
+    height: 408px;
+    position: relative;
+
+    .visual-content {
+      position: absolute;
+      left: 50%;
+    }
+
+    #visual-bar-0 {
+      bottom: -10px;
+      z-index: 9999;
+      margin-left: -548px;
+    }
+
+    #visual-bar-1 {
+      margin-left: -525px;
+      bottom: 95px;
+    }
+
+    #visual-bar-2 {
+      top: 80px;
+      margin-left: -465px;
+    }
+
+    #visual-bar-3 {
+      top: 13px;
+      margin-left: -282px;
+    }
+
+    #visual-bar-4 {
+      top: 125px;
+      margin-left: 30px;
+    }
+
+    #visual-bar-5 {
+      top: 25px;
+      margin-left: 85px;
+    }
+
+    #visual-bar-6 {
+      bottom: 90px;
+      margin-left: 390px;
+    }
+
+    #visual-gear {
+      top: 130px;
+      margin-left: 170px;
+    }
+
+    #visual-bubble {
+      top: 20px;
+      margin-left: 217px;
+    }
+
+    #visual-cloud {
+      margin-left: -110px;
+    }
+
+    #visual-center {
+      bottom: 0;
+      z-index: 99;
+      margin-left: -199px;
+    }
+
+    #visual-desktop {
+      bottom: 0;
+      margin-left: -420px;
+    }
+
+    #visual-left {
+      bottom: 0;
+      z-index: 99;
+      margin-left: -475px;
+    }
+
+    #visual-code {
+      bottom: 140px;
+      margin-left: -500px;
+    }
+
+    #visual-right {
+      bottom: 0;
+      z-index: 999;
+      margin-left: 100px;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    #visual-banner-wrap {
+      #visual-bar-0 {
+        margin-left: -475px;
+
+        img {
+          width: 940px;
+        }
+      }
+
+      #visual-bar-1 {
+        left: 0;
+        margin-left: 0;
+      }
+
+      #visual-bar-4 {
+        top: 170px;
+      }
+
+      #visual-gear {
+        top: 180px;
+
+        img {
+          width: 80px;
+        }
+      }
+
+      #visual-bubble {
+        top: 100px;
+
+        img {
+          width: 90px;
+        }
+      }
+
+      #visual-cloud {
+        top: 35px;
+      }
+
+      #visual-center {
+        margin-left: -150px;
+
+        img {
+          width: 300px;
+        }
+      }
+
+      #visual-desktop {
+        margin-left: -350px;
+
+        img {
+          width: 268px;
+        }
+      }
+
+      #visual-left {
+        margin-left: -375px;
+
+        img {
+          width: 200px;
+        }
+      }
+
+      #visual-code {
+        margin-left: 0;
+        left: 60px;
+
+        img {
+          width: 100px;
+        }
+      }
+
+      #visual-right {
+        img {
+          width: 270px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    #visual-banner-wrap {
+      #visual-bar-0 {
+        margin-left: -365px;
+
+        img {
+          width: 720px;
+        }
+      }
+
+      #visual-bar-1 {
+        bottom: 70px;
+        left: 0;
+        margin-left: 0;
+
+        img {
+          width: 30px;
+        }
+      }
+
+      #visual-bar-2 {
+        top: 170px;
+        left: 40px;
+        margin-left: 0;
+
+        img {
+          width: 60px;
+        }
+      }
+
+      #visual-bar-3 {
+        top: 90px;
+
+        img {
+          width: 130px;
+        }
+      }
+
+      #visual-bar-4 {
+        top: 170px;
+
+        img {
+          width: 70px;
+        }
+      }
+
+      #visual-bar-5 {
+        top: 80px;
+        margin-left: 185px;
+
+        img {
+          width: 80px;
+        }
+      }
+
+      #visual-bar-6 {
+        bottom: 50px;
+        margin-left: 290px;
+
+        img {
+          width: 50px;
+        }
+      }
+
+      #visual-gear {
+        top: 226px;
+        margin-left: 136px;
+
+        img {
+          width: 50px;
+        }
+      }
+
+      #visual-bubble {
+        top: 170px;
+        margin-left: 150px;
+
+        img {
+          width: 60px;
+        }
+      }
+
+      #visual-cloud {
+        top: 35px;
+      }
+
+      #visual-center {
+        margin-left: -135px;
+
+        img {
+          width: 270px;
+        }
+      }
+
+      #visual-desktop {
+        margin-left: -270px;
+
+        img {
+          width: 238px;
+        }
+      }
+
+      #visual-left {
+        margin-left: -300px;
+
+        img {
+          width: 170px;
+        }
+      }
+
+      #visual-code {
+        bottom: 100px;
+        margin-left: 0;
+        left: 0;
+
+        img {
+          width: 70px;
+        }
+      }
+
+      #visual-right {
+        margin-left: 60px;
+
+        img {
+          width: 240px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    #visual-quick-link {
+      a {
+        width: 40%;
+      }
+    }
+
+    #visual-banner-wrap {
+      height: 220px;
+
+      #visual-bar-0 {
+        margin-left: -165px;
+
+        img {
+          width: 320px;
+        }
+      }
+
+      #visual-bar-1 {
+        display: none;
+      }
+
+      #visual-bar-2 {
+        display: none;
+      }
+
+      #visual-bar-3 {
+        display: none;
+      }
+
+      #visual-bar-4 {
+        display: none;
+      }
+
+      #visual-bar-5 {
+        display: none;
+      }
+
+      #visual-bar-6 {
+        display: none;
+      }
+
+      #visual-gear {
+        top: 100px;
+        margin-left: 80px;
+
+        img {
+          width: 30px;
+        }
+      }
+
+      #visual-bubble {
+        top: 70px;
+        margin-left: 100px;
+
+        img {
+          width: 30px;
+        }
+      }
+
+      #visual-cloud {
+        top: 0px;
+        margin-left: -70px;
+
+        img {
+          width: 140px;
+        }
+      }
+
+      #visual-center {
+        margin-left: -85px;
+
+        img {
+          width: 170px;
+        }
+      }
+
+      #visual-desktop {
+        margin-left: -170px;
+
+        img {
+          width: 138px;
+        }
+      }
+
+      #visual-left {
+        margin-left: -170px;
+
+        img {
+          width: 80px;
+        }
+      }
+
+      #visual-code {
+        display: none;
+      }
+
+      #visual-right {
+        margin-left: 30px;
+
+        img {
+          width: 140px;
+        }
+      }
+    }
+  }
+}
