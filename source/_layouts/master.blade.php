@@ -23,9 +23,6 @@ if( !isset( $activeType ) ) {
     </a>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item @if( $activeType === 'about' ) active @endif">
-                <a class="nav-link" href="/about">About</a>
-            </li>
             <li class="nav-item @if( $activeType === 'works' ) active @endif">
                 <a class="nav-link" href="/works">Works</a>
             </li>
