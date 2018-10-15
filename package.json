@@ -1,7 +1,9 @@
 {
     "private": true,
     "scripts": {
-        "build": "./vendor/bin/jigsaw build && rm -rf docs && mv ./build_local ./docs",
+        "build": "./vendor/bin/jigsaw build && yarn deploy && yarn cname",
+        "cname": "rm -rf ./docs/CNAME && cp ./CNAME ./docs/",
+        "deploy": "rm -rf ./docs && mv ./build_local ./docs",
         "local": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --env=local --config=node_modules/laravel-mix/setup/webpack.config.js",
         "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --progress --hide-modules --env=staging --config=node_modules/laravel-mix/setup/webpack.config.js",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --env=production --config=node_modules/laravel-mix/setup/webpack.config.js",
