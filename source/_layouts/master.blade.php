@@ -14,6 +14,7 @@ if( !isset( $activeType ) ) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+    <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
 
     {{--favicons--}}
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/favicon-57.png">
