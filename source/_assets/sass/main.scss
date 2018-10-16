@@ -1,3 +1,7 @@
+$main-color: #000000; // 메인 컬러 정의
+$point-color: #ffffff; // 포인트 컬러 정의
+
+
 * {
   box-sizing: border-box;
 }
@@ -24,6 +28,16 @@ h1 {
   margin: 1.5rem 0;
 }
 
+@media (max-width: 767.98px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
 .bg-dark {
   background-color: #000000 !important;
 }
@@ -35,9 +49,6 @@ h1 {
 .gq-nav__logo-image {
   height: 30px;
 }
-
-$main-color: #000000; // 메인 컬러 정의
-$point-color: #ffffff; // 포인트 컬러 정의
 
 .h3-wrap {
   margin-bottom: 30px;
@@ -56,6 +67,54 @@ $point-color: #ffffff; // 포인트 컬러 정의
   p {
     font-size: 14px;
   }
+}
+
+.gq-section {
+  padding: 3rem 0;
+  h1 {
+    margin-bottom: 4rem;
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 300;
+    font-family: 'Poiret One', cursive;
+    color: $point-color;
+
+    span {
+      display: inline-block;
+      padding: 0 .5rem;
+      background: $main-color;
+
+      &::before {
+        content: '// '
+      }
+      &::after {
+        content: ' //'
+      }
+    }
+  }
+
+  .card {
+    border-radius: 0;
+  }
+}
+.gq-section--dark {
+  background: $main-color;
+  color: $point-color;
+
+  h1, h2, h3, h4 {
+    color: $main-color;
+
+    span {
+      background: $point-color;
+    }
+  }
+}
+
+.gq-image-landscape {
+  max-width: 100%;
 }
 
 @import "visual-banner";
