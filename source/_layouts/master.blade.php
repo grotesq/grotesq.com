@@ -25,6 +25,8 @@ if( !isset( $ogUrl ) ) {
 }
 if( !isset( $ogImage ) ) {
     $ogImage = 'https://grotesq.com/assets/images/social.png';
+    $ogImageWidth = 1200;
+    $ogImageHeight = 1200;
 }
 if( !isset( $ogDescription ) ) {
     $ogDescription = '그로테스큐 스튜디오는 컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.';
@@ -42,6 +44,12 @@ if( !isset( $ogDescription ) ) {
     <meta property="og:type" content="{{ $ogType }}" />
     <meta property="og:url" content="{{ $ogUrl  }}" />
     <meta property="og:image" content="{{ $ogImage  }}" />
+    @if( $ogImageWidth )
+        <meta property="og:image:width" content="{{ $ogImageWidth  }}" />
+    @endif
+    @if( $ogImageHeight )
+        <meta property="og:image:height" content="{{ $ogImageHeight  }}" />
+    @endif
     <meta property="og:description" content="{{ $ogDescription  }}" />
 
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Poiret+One" rel="stylesheet">

@@ -7,6 +7,9 @@
     $ogType = 'website';
     $ogUrl = 'https://grotesq.com/works/welaaa-web/';
     $ogImage = 'https://grotesq.com/assets/images/works/welaaa-web/welaaa-1.png';
+
+    $ogImageWidth = 2116;
+    $ogImageHeight = 1608;
     $ogDescription = '(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 웹 서비스를 구축했습니다. React, next.js, Sass, SSR, AWS, Elastic Beanstalk';
 @endphp
 

@@ -99,6 +99,10 @@ h1 {
   .card {
     border-radius: 0;
   }
+
+  a {
+    color: $main-color;
+  }
 }
 .gq-section--dark {
   background: $main-color;
@@ -111,10 +115,18 @@ h1 {
       background: $point-color;
     }
   }
+
+  a {
+    color: $point-color;
+  }
 }
 
 .gq-image-landscape {
   max-width: 100%;
+}
+
+.gq-image-portrait {
+  max-height: 60vh;
 }
 
 @import "visual-banner";
