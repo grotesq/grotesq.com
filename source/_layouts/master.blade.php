@@ -34,7 +34,7 @@ if( !isset( $activeType ) ) {
 </head>
 <body>
 
-<nav class="gq-nav navbar navbar-expand navbar-dark bg-dark">
+<nav class="gq-nav navbar fixed-top navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
         <img src="/assets/images/logo-small.png" class="gq-nav__logo-image" alt="그로테스큐 스튜디오">
     </a>
