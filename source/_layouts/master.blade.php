@@ -2,6 +2,33 @@
 if( !isset( $activeType ) ) {
     $activeType = '';
 }
+if( !isset( $title ) ) {
+    $title = '그로테스큐 스튜디오 || Studio GrotesQ';
+}
+else {
+    $title .= ' - 그로테스큐 스튜디오 || Studio GrotesQ';
+}
+if( !isset($metaDescription) ) {
+    $metaDescription = '컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.';
+}
+if( !isset( $ogTitle ) ) {
+    $ogTitle = '그로테스큐 스튜디오 || Studio GrotesQ';
+}
+else {
+    $ogTitle .= ' - 그로테스큐 스튜디오 || Studio GrotesQ';
+}
+if( !isset( $ogType ) ) {
+    $ogType = 'website';
+}
+if( !isset( $ogUrl ) ) {
+    $ogUrl = 'https://grotesq.com';
+}
+if( !isset( $ogImage ) ) {
+    $ogImage = 'https://grotesq.com/assets/images/social.png';
+}
+if( !isset( $ogDescription ) ) {
+    $ogDescription = '그로테스큐 스튜디오는 컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.';
+}
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +36,14 @@ if( !isset( $activeType ) ) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>그로테스큐 스튜디오 || Studio GrotesQ</title>
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $metaDescription }}">
+    <meta property="og:title" content="{{ $ogTitle }}" />
+    <meta property="og:type" content="{{ $ogType }}" />
+    <meta property="og:url" content="{{ $ogUrl  }}" />
+    <meta property="og:image" content="{{ $ogImage  }}" />
+    <meta property="og:description" content="{{ $ogDescription  }}" />
+
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Poiret+One" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
