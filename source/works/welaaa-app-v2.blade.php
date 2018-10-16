@@ -5,8 +5,8 @@
     $metaDescription = '(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 앱을 리뉴얼했습니다. React Native, Firebase, Native 연동';
     $ogTitle = 'Welaaa App 2.0';
     $ogType = 'website';
-    $ogUrl = 'https://grotesq.com/works/welaaa-app-v2/';
-    $ogImage = 'https://grotesq.com/assets/images/works/welaaa-app-v2/welaaa-app.png';
+    $ogUrl = 'https://www.grotesq.com/works/welaaa-app-v2/';
+    $ogImage = 'https://www.grotesq.com/assets/images/works/welaaa-app-v2/welaaa-app.png';
 
     $ogImageWidth = 1656;
     $ogImageHeight = 1096;

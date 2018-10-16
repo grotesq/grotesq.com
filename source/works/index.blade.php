@@ -5,7 +5,7 @@
     $metaDescription = '그로테스큐 스튜디오에서 진행한 프로젝트 목록';
     $ogTitle = 'Our Works';
     $ogType = 'website';
-    $ogUrl = 'https://grotesq.com/works/';
+    $ogUrl = 'https://www.grotesq.com/works/';
     $ogDescription = '그로테스큐 스튜디오에서 진행한 프로젝트 목록';
 @endphp
 
