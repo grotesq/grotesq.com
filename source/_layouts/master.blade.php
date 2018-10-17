@@ -21,10 +21,10 @@ if( !isset( $ogType ) ) {
     $ogType = 'website';
 }
 if( !isset( $ogUrl ) ) {
-    $ogUrl = 'https://grotesq.com';
+    $ogUrl = 'https://www.grotesq.com';
 }
 if( !isset( $ogImage ) ) {
-    $ogImage = 'https://grotesq.com/assets/images/social.png';
+    $ogImage = 'https://www.grotesq.com/assets/images/social.png';
     $ogImageWidth = 1200;
     $ogImageHeight = 1200;
 }
