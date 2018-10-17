@@ -1,7 +1,6 @@
 $main-color: #000000; // 메인 컬러 정의
 $point-color: #ffffff; // 포인트 컬러 정의
 
-
 * {
   box-sizing: border-box;
 }
@@ -104,6 +103,7 @@ h1 {
     color: $main-color;
   }
 }
+
 .gq-section--dark {
   background: $main-color;
   color: $point-color;
@@ -129,5 +129,54 @@ h1 {
   max-height: 60vh;
 }
 
+ul.list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button.button-unstyled {
+  border: 0;
+  background-color: transparent;
+}
+
+.w-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gq-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.gq-flex-between {
+  @extend .gq-flex;
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.gq-justify-content {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 @import "visual-banner";
 @import "about";
+@import "works";

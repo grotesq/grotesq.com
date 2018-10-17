@@ -16,9 +16,26 @@
         <h1><span>Our Works</span></h1>
 
         <div class="container">
-            <ul>
-                <li><a href="/works/welaaa-app-v2/">스마트 러닝 서비스 윌라 2.0 리뉴얼</a></li>
-                <li><a href="/works/welaaa-web/">스마트 러닝 윌라 웹 서비스</a></li>
+            <ul class="list-unstyled row gq-works">
+                <li class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="gq-works__list-item">
+                        <a href="/works/welaaa-app-v2/">
+                            <div class="gq-works__thumbnail"></div>
+                            <div class="gq-works__contents">
+                                <div class="gq-works__title">스마트 러닝 서비스 윌라 2.0 리뉴얼</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="gq-works__list-item">
+                        <a href="/works/welaaa-web/">
+                            <div class="gq-works__contents">
+                                <div class="gq-works__title">스마트 러닝 윌라 웹 서비스</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
