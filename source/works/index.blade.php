@@ -37,6 +37,16 @@
                         </a>
                     </div>
                 </li>
+                <li class="col-sm-6 col-md-4">
+                    <div class="gq-works__list-item">
+                        <a href="/works/light-wall-in-folly/">
+                            <div class="gq-works__thumbnail" style="background-image: url('https://img.youtube.com/vi/Rh1QAW_7z2I/maxresdefault.jpg')"></div>
+                            <div class="gq-works__contents">
+                                <div class="gq-works__title">Light Wall in Folly</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>

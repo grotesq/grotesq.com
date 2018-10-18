@@ -45,10 +45,10 @@ if( !isset( $ogDescription ) ) {
     <meta property="og:url" content="{{ $ogUrl  }}" />
     <meta property="og:image" content="{{ $ogImage  }}" />
     @if( $ogImageWidth )
-        <meta property="og:image:width" content="{{ $ogImageWidth  }}" />
+    <meta property="og:image:width" content="{{ $ogImageWidth  }}" />
     @endif
     @if( $ogImageHeight )
-        <meta property="og:image:height" content="{{ $ogImageHeight  }}" />
+    <meta property="og:image:height" content="{{ $ogImageHeight  }}" />
     @endif
     <meta property="og:description" content="{{ $ogDescription  }}" />
 
