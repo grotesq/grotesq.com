@@ -70,7 +70,7 @@
                 <li class="col-sm-6 col-md-4">
                     <div class="gq-works__list-item">
                         <a href="/works/hooroorook/">
-                            <div class="gq-works__thumbnail" style="background-image: url('/assets/images/works/thumbnail/hooroorook.jpg')"></div>
+                            <div class="gq-works__thumbnail" style="background-image: url('/assets/images/works/thumbnail/hooroorook.png')"></div>
                             <div class="gq-works__contents">
                                 <div class="gq-works__title">아이유의 후루룩 칼국수</div>
                             </div>

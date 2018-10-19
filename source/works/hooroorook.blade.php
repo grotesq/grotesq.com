@@ -6,7 +6,7 @@
     $ogTitle = '아이유의 후루룩 칼국수';
     $ogType = 'website';
     $ogUrl = 'https://www.grotesq.com/works/hooroorook/';
-    $ogImage = 'https://www.grotesq.com/assets/images/works/thumbnail/hooroorook.jpg';
+    $ogImage = 'https://www.grotesq.com/assets/images/works/thumbnail/hooroorook.png';
 
     $ogImageWidth = 1000;
     $ogImageHeight = 500;
