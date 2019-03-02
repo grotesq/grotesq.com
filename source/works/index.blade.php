@@ -49,6 +49,16 @@
                 </li>
                 <li class="col-sm-6 col-md-4">
                     <div class="gq-works__list-item">
+                        <a href="/works/yangeob/">
+                            <div class="gq-works__thumbnail" style="background-image: url('/assets/images/works/thumbnail/yangeob.jpg')"></div>
+                            <div class="gq-works__contents">
+                                <div class="gq-works__title">양업고등학교</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="col-sm-6 col-md-4">
+                    <div class="gq-works__list-item">
                         <a href="/works/series-eight/">
                             <div class="gq-works__thumbnail" style="background-image: url('/assets/images/works/thumbnail/series-eight.png')"></div>
                             <div class="gq-works__contents">
