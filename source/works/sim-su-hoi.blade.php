@@ -34,7 +34,7 @@
     <div class="gq-section">
         <div class="container">
             <p class="text-center">
-                <img src="../../assets/images/works/sim-su-hoi/sim-su-hoi-poster.jpg" alt="" class="gq-image-landscape">
+                <img src="https://www.grotesq.com/assets/images/works/sim-su-hoi/sim-su-hoi-poster.jpg" alt="" class="gq-image-landscape">
             </p>
         </div>
     </div>
