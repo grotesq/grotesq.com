@@ -12,7 +12,7 @@ html, body, button, input, textarea {
 }
 
 .font-poiret {
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One', 'Noto Sans KR', sans-serif;
 }
 
 body {
@@ -78,7 +78,7 @@ h1 {
   }
   h1, h2, h3, h4 {
     font-weight: 300;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poiret One', 'Noto Sans KR', sans-serif;
     color: $point-color;
 
     span {
