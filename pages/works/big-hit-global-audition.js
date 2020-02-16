@@ -1,18 +1,19 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../components/Layout';
+import { NextSeo } from 'next-seo';
 
-const title = "Big Hit Global Audition - 그로테스큐 스튜디오 || Studio GrotesQ";
+const title = 'Big Hit Global Audition - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  "빅히트 엔터테인먼트의 글로벌 오디션 사이트. QR코드를 이용한 접수 자동화 시스템을 구축했습니다.";
-const ogTitle = "Big Hit Global Audition - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/big-hit-global-audition/";
+  '빅히트 엔터테인먼트의 글로벌 오디션 사이트. QR코드를 이용한 접수 자동화 시스템을 구축했습니다.';
+const ogTitle =
+  'Big Hit Global Audition - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/big-hit-global-audition/';
 const ogImage =
-  "https://www.grotesq.com/assets/images/works/big-hit-global-audition/bighit-user-1.png";
+  'https://www.grotesq.com/assets/images/works/big-hit-global-audition/bighit-user-1.png';
 const ogImageWidth = 1600;
 const ogImageHeight = 1067;
 const ogDescription =
-  "빅히트 엔터테인먼트의 글로벌 오디션 사이트. QR코드를 이용한 접수 자동화 시스템을 구축했습니다.";
+  '빅히트 엔터테인먼트의 글로벌 오디션 사이트. QR코드를 이용한 접수 자동화 시스템을 구축했습니다.';
 
 export default () => (
   <Layout>
@@ -28,10 +29,10 @@ export default () => (
             url: ogImage,
             width: ogImageWidth,
             height: ogImageHeight,
-            alt: ogTitle
-          }
+            alt: ogTitle,
+          },
         ],
-        site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+        site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
       }}
     />
     <div className="gq-section gq-section--dark">

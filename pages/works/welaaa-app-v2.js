@@ -1,18 +1,18 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../components/Layout';
+import { NextSeo } from 'next-seo';
 
-const title = "Welaaa App 2.0 - 그로테스큐 스튜디오 || Studio GrotesQ";
+const title = 'Welaaa App 2.0 - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  "(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 앱을 리뉴얼했습니다. React Native, Firebase, Native 연동";
-const ogTitle = "Welaaa App 2.0 - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/welaaa-app-v2/";
+  '(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 앱을 리뉴얼했습니다. React Native, Firebase, Native 연동';
+const ogTitle = 'Welaaa App 2.0 - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/welaaa-app-v2/';
 const ogImage =
-  "https://www.grotesq.com/assets/images/works/welaaa-app-v2/welaaa-app.png";
+  'https://www.grotesq.com/assets/images/works/welaaa-app-v2/welaaa-app.png';
 const ogImageWidth = 1656;
 const ogImageHeight = 1096;
 const ogDescription =
-  "(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 앱을 리뉴얼했습니다. React Native, Firebase, Native 연동";
+  '(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 앱을 리뉴얼했습니다. React Native, Firebase, Native 연동';
 
 export default () => (
   <Layout>
@@ -28,10 +28,10 @@ export default () => (
             url: ogImage,
             width: ogImageWidth,
             height: ogImageHeight,
-            alt: ogTitle
-          }
+            alt: ogTitle,
+          },
         ],
-        site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+        site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
       }}
     />
     <div className="gq-section gq-section--dark">

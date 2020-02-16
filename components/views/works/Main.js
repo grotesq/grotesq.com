@@ -1,16 +1,16 @@
-import React from "react";
-import Layout from "../../Layout";
-import Link from "next/link";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../Layout';
+import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 
-const title = "Our Works - 그로테스큐 스튜디오 || Studio GrotesQ";
-const metaDescription = "그로테스큐 스튜디오에서 진행한 프로젝트 목록";
-const ogTitle = "Our Works - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/";
-const ogImage = "https://www.grotesq.com/assets/images/social.png";
+const title = 'Our Works - 그로테스큐 스튜디오 || Studio GrotesQ';
+const metaDescription = '그로테스큐 스튜디오에서 진행한 프로젝트 목록';
+const ogTitle = 'Our Works - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/';
+const ogImage = 'https://www.grotesq.com/assets/images/social.png';
 const ogImageWidth = 1200;
 const ogImageHeight = 1200;
-const ogDescription = "그로테스큐 스튜디오에서 진행한 프로젝트 목록";
+const ogDescription = '그로테스큐 스튜디오에서 진행한 프로젝트 목록';
 
 export default () => {
   return (
@@ -27,15 +27,15 @@ export default () => {
               url: ogImage,
               width: ogImageWidth,
               height: ogImageHeight,
-              alt: ogTitle
-            }
+              alt: ogTitle,
+            },
           ],
-          site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+          site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
         }}
       />
       <div
         className="gq-section gq-section--dark"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: '100vh' }}
       >
         <h1>
           <span>Our Works</span>

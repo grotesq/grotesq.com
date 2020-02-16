@@ -1,18 +1,18 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../components/Layout';
+import { NextSeo } from 'next-seo';
 
-const title = "양업고등학교 - 그로테스큐 스튜디오 || Studio GrotesQ";
+const title = '양업고등학교 - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  "그누보드 기반의 양업고등학교 웹사이트를 Modern PHP 에서 동작하도록 튜닝했습니다.";
-const ogTitle = "양업고등학교 - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/yangeob/";
+  '그누보드 기반의 양업고등학교 웹사이트를 Modern PHP 에서 동작하도록 튜닝했습니다.';
+const ogTitle = '양업고등학교 - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/yangeob/';
 const ogImage =
-  "https://www.grotesq.com/assets/images/works/thumbnail/yangeob.jpg";
+  'https://www.grotesq.com/assets/images/works/thumbnail/yangeob.jpg';
 const ogImageWidth = 1000;
 const ogImageHeight = 500;
 const ogDescription =
-  "그누보드 기반의 양업고등학교 웹사이트를 Modern PHP 에서 동작하도록 튜닝했습니다.";
+  '그누보드 기반의 양업고등학교 웹사이트를 Modern PHP 에서 동작하도록 튜닝했습니다.';
 
 export default () => (
   <Layout>
@@ -28,10 +28,10 @@ export default () => (
             url: ogImage,
             width: ogImageWidth,
             height: ogImageHeight,
-            alt: ogTitle
-          }
+            alt: ogTitle,
+          },
         ],
-        site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+        site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
       }}
     />
     <div className="gq-section gq-section--dark">
@@ -80,7 +80,7 @@ export default () => (
           여러 작업자들이 동시에 작업을 진행하게 되므로 우선 형상관리 시스템부터
           도입했습니다.
           <br />
-          형상 관리 도구는 <code>git</code>을 사용하기로 하고, 저장소는{" "}
+          형상 관리 도구는 <code>git</code>을 사용하기로 하고, 저장소는{' '}
           <code>github</code>를 이용하기로 했습니다.
         </p>
 
@@ -88,7 +88,7 @@ export default () => (
           그누보드는 <code>/data</code> 디렉토리 안에 캐시, 세션, 사용자 파일 등
           모든 내용들이 저장되는 구조입니다.
           <br />
-          따라서 <code>.gitignore</code>에 <code>/data</code>를 등록하고{" "}
+          따라서 <code>.gitignore</code>에 <code>/data</code>를 등록하고{' '}
           <code>/data</code>안의 내용은 각각의 작업자들이 <code>curl</code>을
           통해서 내려받도록 스크립트를 만들어 처리했습니다.
           <br />
@@ -124,16 +124,16 @@ export default () => (
 
         <p>
           최신 PHP 에서는 숏태그가 기본 비활성이며 코드의 품질 및 관리면에서도
-          사용하지 않는 것이 좋으므로 <code>&lt;?</code> 태그와{" "}
-          <code>&lt;?=</code> 태그를 모두 <code>&lt;?php</code> 태그와{" "}
+          사용하지 않는 것이 좋으므로 <code>&lt;?</code> 태그와{' '}
+          <code>&lt;?=</code> 태그를 모두 <code>&lt;?php</code> 태그와{' '}
           <code>&lt;?php echo</code> 태그로 대체했습니다.
           <br />
-          <code>mysql_*</code> 함수들도 더 이상 지원되지 않으므로{" "}
+          <code>mysql_*</code> 함수들도 더 이상 지원되지 않으므로{' '}
           <code>mysqli_*</code> 함수와 <code>PDO</code> 함수로 대체했습니다.
         </p>
 
         <p>
-          Composer를 도입해 <code>dotenv</code>, <code>var-dumper</code>,{" "}
+          Composer를 도입해 <code>dotenv</code>, <code>var-dumper</code>,{' '}
           <code>mobiledetect</code> 등의 의존성 패키지들을 사용하고, 헬퍼
           함수들의 오토로드를 처리했습니다.
         </p>
@@ -168,14 +168,14 @@ export default () => (
           <code>$g4[path]</code>를 사용하는 부분은 <code>app_path()</code>라는
           이름의 헬퍼 함수를 이용하도록 변경합니다.
           <br />
-          string이 아닌 참조 방식은 deprecated 되었기 때문에, 겸사겸사{" "}
+          string이 아닌 참조 방식은 deprecated 되었기 때문에, 겸사겸사{' '}
           <code>app_path()</code>, <code>data_path()</code> 등의 헬퍼 함수로
           경로를 사용하도록 대체했습니다. 라라벨 헬퍼에서 차용해온 방식입니다.
           <br />
           헬퍼 함수를 사용하지 않는 부분이라도 <code>$member[mb_datetime]</code>
           로 된 부분을 <code>$member['mb_datetime']</code>로 변경이 필요합니다.
           <br />
-          이런 부분들은 프로젝트 전반에 있으므로,{" "}
+          이런 부분들은 프로젝트 전반에 있으므로,{' '}
           <code>\$(\w+)\[([a-zA-Z]\w+)\]</code> 정규식으로 탐색해 하나씩 변경을
           해줘야 합니다.
         </p>

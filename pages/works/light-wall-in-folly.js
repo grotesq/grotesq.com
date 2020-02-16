@@ -1,17 +1,17 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../components/Layout';
+import { NextSeo } from 'next-seo';
 
-const title = "Light Wall in Folly - 그로테스큐 스튜디오 || Studio GrotesQ";
+const title = 'Light Wall in Folly - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  "도심 예술 조형인 폴리 중 `꿈집`의 내부 벽면을 미디어 월로 채우는 전시 기획의 파일럿 전시. 유니티로 구현된 인터렉션 미디어 아트 프로젝트입니다.";
-const ogTitle = "Light Wall in Folly - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/light-wall-in-folly/";
-const ogImage = "https://img.youtube.com/vi/Rh1QAW_7z2I/maxresdefault.jpg";
+  '도심 예술 조형인 폴리 중 `꿈집`의 내부 벽면을 미디어 월로 채우는 전시 기획의 파일럿 전시. 유니티로 구현된 인터렉션 미디어 아트 프로젝트입니다.';
+const ogTitle = 'Light Wall in Folly - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/light-wall-in-folly/';
+const ogImage = 'https://img.youtube.com/vi/Rh1QAW_7z2I/maxresdefault.jpg';
 const ogImageWidth = 1280;
 const ogImageHeight = 720;
 const ogDescription =
-  "도심 예술 조형인 폴리 중 `꿈집`의 내부 벽면을 미디어 월로 채우는 전시 기획의 파일럿 전시. 유니티로 구현된 인터렉션 미디어 아트 프로젝트입니다.";
+  '도심 예술 조형인 폴리 중 `꿈집`의 내부 벽면을 미디어 월로 채우는 전시 기획의 파일럿 전시. 유니티로 구현된 인터렉션 미디어 아트 프로젝트입니다.';
 
 export default () => (
   <Layout>
@@ -27,10 +27,10 @@ export default () => (
             url: ogImage,
             width: ogImageWidth,
             height: ogImageHeight,
-            alt: ogTitle
-          }
+            alt: ogTitle,
+          },
         ],
-        site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+        site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
       }}
     />
     <div className="gq-section gq-section--dark">

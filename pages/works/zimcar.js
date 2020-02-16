@@ -1,16 +1,16 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../components/Layout';
+import { NextSeo } from 'next-seo';
 
-const title = "짐카: 이사 말고 짐카 - 그로테스큐 스튜디오 || Studio GrotesQ";
-const metaDescription = "1인 가구 이사 서비스 짐카 서비스를 개발했습니다.";
-const ogTitle = "짐카: 이사 말고 짐카 - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/zimcar/";
+const title = '짐카: 이사 말고 짐카 - 그로테스큐 스튜디오 || Studio GrotesQ';
+const metaDescription = '1인 가구 이사 서비스 짐카 서비스를 개발했습니다.';
+const ogTitle = '짐카: 이사 말고 짐카 - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/zimcar/';
 const ogImage =
-  "https://www.grotesq.com/assets/images/works/thumbnail/zimcar.png";
+  'https://www.grotesq.com/assets/images/works/thumbnail/zimcar.png';
 const ogImageWidth = 1000;
 const ogImageHeight = 500;
-const ogDescription = "1인 가구 이사 서비스 짐카 서비스를 개발했습니다.";
+const ogDescription = '1인 가구 이사 서비스 짐카 서비스를 개발했습니다.';
 
 export default () => (
   <Layout>
@@ -26,10 +26,10 @@ export default () => (
             url: ogImage,
             width: ogImageWidth,
             height: ogImageHeight,
-            alt: ogTitle
-          }
+            alt: ogTitle,
+          },
         ],
-        site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+        site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
       }}
     />
     <div className="gq-section gq-section--dark">

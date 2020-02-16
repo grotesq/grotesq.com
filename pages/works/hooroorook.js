@@ -1,18 +1,19 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../components/Layout';
+import { NextSeo } from 'next-seo';
 
-const title = "아이유의 후루룩 칼국수 - 그로테스큐 스튜디오 || Studio GrotesQ";
+const title = '아이유의 후루룩 칼국수 - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  "인터렉티브 무비 컨텐츠였던 아이유의 후루룩 칼국수 프로젝트를 진행했습니다.";
-const ogTitle = "아이유의 후루룩 칼국수 - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/hooroorook/";
+  '인터렉티브 무비 컨텐츠였던 아이유의 후루룩 칼국수 프로젝트를 진행했습니다.';
+const ogTitle =
+  '아이유의 후루룩 칼국수 - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/hooroorook/';
 const ogImage =
-  "https://www.grotesq.com/assets/images/works/thumbnail/hooroorook.png";
+  'https://www.grotesq.com/assets/images/works/thumbnail/hooroorook.png';
 const ogImageWidth = 1000;
 const ogImageHeight = 500;
 const ogDescription =
-  "인터렉티브 무비 컨텐츠였던 아이유의 후루룩 칼국수 프로젝트를 진행했습니다.";
+  '인터렉티브 무비 컨텐츠였던 아이유의 후루룩 칼국수 프로젝트를 진행했습니다.';
 
 export default () => (
   <Layout>
@@ -28,10 +29,10 @@ export default () => (
             url: ogImage,
             width: ogImageWidth,
             height: ogImageHeight,
-            alt: ogTitle
-          }
+            alt: ogTitle,
+          },
         ],
-        site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+        site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
       }}
     />
     <div className="gq-section gq-section--dark">

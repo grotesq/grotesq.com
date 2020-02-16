@@ -1,18 +1,18 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../../components/Layout';
+import { NextSeo } from 'next-seo';
 
-const title = "Welaaa Web Service - 그로테스큐 스튜디오 || Studio GrotesQ";
+const title = 'Welaaa Web Service - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  "(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 웹 서비스를 구축했습니다. React, next.js, Sass, SSR, AWS, Elastic Beanstalk";
-const ogTitle = "Welaaa Web Service - 그로테스큐 스튜디오 || Studio GrotesQ";
-const ogUrl = "https://www.grotesq.com/works/welaaa-web/";
+  '(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 웹 서비스를 구축했습니다. React, next.js, Sass, SSR, AWS, Elastic Beanstalk';
+const ogTitle = 'Welaaa Web Service - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogUrl = 'https://www.grotesq.com/works/welaaa-web/';
 const ogImage =
-  "https://www.grotesq.com/assets/images/works/welaaa-web/welaaa-1.png";
+  'https://www.grotesq.com/assets/images/works/welaaa-web/welaaa-1.png';
 const ogImageWidth = 2116;
 const ogImageHeight = 1608;
 const ogDescription =
-  "(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 웹 서비스를 구축했습니다. React, next.js, Sass, SSR, AWS, Elastic Beanstalk";
+  '(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 웹 서비스를 구축했습니다. React, next.js, Sass, SSR, AWS, Elastic Beanstalk';
 
 export default () => (
   <Layout>
@@ -28,10 +28,10 @@ export default () => (
             url: ogImage,
             width: ogImageWidth,
             height: ogImageHeight,
-            alt: ogTitle
-          }
+            alt: ogTitle,
+          },
         ],
-        site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+        site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
       }}
     />
     <div className="gq-section gq-section--dark">

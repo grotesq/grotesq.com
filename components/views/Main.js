@@ -1,36 +1,36 @@
-import React from "react";
-import Layout from "../Layout";
-import TweenMax from "gsap";
-import { NextSeo } from "next-seo";
+import React from 'react';
+import Layout from '../Layout';
+import TweenMax from 'gsap';
+import { NextSeo } from 'next-seo';
 
-const title = "그로테스큐 스튜디오 || Studio GrotesQ";
+const title = '그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  "컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.";
-const ogTitle = "Big Hit Global Audition";
-const ogUrl = "https://www.grotesq.com";
-const ogImage = "https://www.grotesq.com/assets/images/social.png";
+  '컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.';
+const ogTitle = 'Big Hit Global Audition';
+const ogUrl = 'https://www.grotesq.com';
+const ogImage = 'https://www.grotesq.com/assets/images/social.png';
 const ogImageWidth = 1200;
 const ogImageHeight = 1200;
 const ogDescription =
-  "그로테스큐 스튜디오는 컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.";
+  '그로테스큐 스튜디오는 컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.';
 
 export default props => {
   React.useEffect(() => {
-    TweenMax.from("#visual-bar-0", 0.7, { opacity: 0 });
-    TweenMax.from("#visual-bar-1", 1.1, { opacity: 0, delay: 0.4 });
-    TweenMax.from("#visual-bar-2", 1, { opacity: 0, delay: 0.5 });
-    TweenMax.from("#visual-bar-3", 1.1, { opacity: 0, delay: 0.4 });
-    TweenMax.from("#visual-bar-4", 0.7, { opacity: 0, delay: 0.6 });
-    TweenMax.from("#visual-bar-5", 0.8, { opacity: 0, delay: 0.7 });
-    TweenMax.from("#visual-bar-6", 1.4, { opacity: 0, delay: 0.5 });
-    TweenMax.from("#visual-center", 0.9, { opacity: 0, delay: 0.5 });
-    TweenMax.from("#visual-cloud", 1, { opacity: 0, delay: 0.7 });
-    TweenMax.from("#visual-left", 0.9, { opacity: 0, delay: 0.6 });
-    TweenMax.from("#visual-right", 0.9, { opacity: 0, delay: 0.6 });
-    TweenMax.from("#visual-desktop", 1.1, { opacity: 0, delay: 0.7 });
-    TweenMax.from("#visual-gear", 1.2, { opacity: 0, delay: 1 });
-    TweenMax.from("#visual-code", 1.2, { opacity: 0, delay: 0.7 });
-    TweenMax.from("#visual-bubble", 1.4, { opacity: 0, delay: 0.8 });
+    TweenMax.from('#visual-bar-0', 0.7, { opacity: 0 });
+    TweenMax.from('#visual-bar-1', 1.1, { opacity: 0, delay: 0.4 });
+    TweenMax.from('#visual-bar-2', 1, { opacity: 0, delay: 0.5 });
+    TweenMax.from('#visual-bar-3', 1.1, { opacity: 0, delay: 0.4 });
+    TweenMax.from('#visual-bar-4', 0.7, { opacity: 0, delay: 0.6 });
+    TweenMax.from('#visual-bar-5', 0.8, { opacity: 0, delay: 0.7 });
+    TweenMax.from('#visual-bar-6', 1.4, { opacity: 0, delay: 0.5 });
+    TweenMax.from('#visual-center', 0.9, { opacity: 0, delay: 0.5 });
+    TweenMax.from('#visual-cloud', 1, { opacity: 0, delay: 0.7 });
+    TweenMax.from('#visual-left', 0.9, { opacity: 0, delay: 0.6 });
+    TweenMax.from('#visual-right', 0.9, { opacity: 0, delay: 0.6 });
+    TweenMax.from('#visual-desktop', 1.1, { opacity: 0, delay: 0.7 });
+    TweenMax.from('#visual-gear', 1.2, { opacity: 0, delay: 1 });
+    TweenMax.from('#visual-code', 1.2, { opacity: 0, delay: 0.7 });
+    TweenMax.from('#visual-bubble', 1.4, { opacity: 0, delay: 0.8 });
   }, []);
   return (
     <Layout>
@@ -46,10 +46,10 @@ export default props => {
               url: ogImage,
               width: ogImageWidth,
               height: ogImageHeight,
-              alt: ogTitle
-            }
+              alt: ogTitle,
+            },
           ],
-          site_name: "그로테스큐 스튜디오 || Studio GrotesQ"
+          site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
         }}
       />
       <div className="gq-visual-banner">
