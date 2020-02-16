@@ -3,14 +3,13 @@
 ## 설치
 
 ```bash
-composer install
 yarn
 ```
 
 ## 개발
 
 ```bash
-yarn watch
+yarn dev
 ```
 
 ## 배포용 빌드
