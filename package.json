@@ -6,7 +6,9 @@
     "export": "next export",
     "start": "next start",
     "dev": "next dev",
-    "deploy": "yarn build && aws s3 sync ./out/ s3://grotesq-official/ --delete"
+    "s3": "aws s3 sync ./out/ s3://grotesq-official/ --delete",
+    "cf": "aws cloudfront create-invalidation --distribution-id E3905GMQA1YNQ0 --paths \"/*\"",
+    "deploy": "yarn build && yarn s3 && yarn cf"
   },
   "devDependencies": {
     "cpy-cli": "^3.1.0",
