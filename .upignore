@@ -1,0 +1,4 @@
+# .upignore
+
+!.next
+.env

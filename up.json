@@ -1,0 +1,40 @@
+{
+  "name": "grotesq-official",
+  "profile": "default",
+  "regions": ["ap-northeast-2"],
+  "lambda": {
+    "memory": 512,
+    "runtime": "nodejs12.x",
+    "warm": true
+  },
+  "proxy": {
+    "command": "npm start",
+    "timeout": 25,
+    "listen_timeout": 15,
+    "shutdown_timeout": 15
+  },
+  "stages": {
+    "production": {
+      "domain": "www.grotesq.com",
+      "lambda": {
+        "warm": true
+      }
+    },
+    "staging": {
+      "domain": "stage.grotesq.com",
+      "lambda": {
+        "warm": true
+      }
+    }
+  },
+  "environment": {
+    "NODE_ENV": "production",
+    "TZ": "Asia/Seoul"
+  },
+  "error_pages": {
+    "variables": {
+      "support_email": "unknown@grotesq.com",
+      "color": "#2986e2"
+    }
+  }
+}
