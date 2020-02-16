@@ -10,6 +10,8 @@
 
 .next
 
+docs/
+out/
 
 composer.lock
 package-lock.json
