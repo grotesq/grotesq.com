@@ -1,13 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn build.next && yarn export && yarn replace && yarn cname",
+    "build": "yarn build.next && yarn export",
     "build.next": "next build",
     "export": "next export",
-    "cname": "rimraf ./docs/CNAME && cpy ./CNAME ./docs/",
-    "replace": "rimraf ./docs && move-cli ./out ./docs",
     "start": "next start",
-    "dev": "next dev"
+    "dev": "next dev",
+    "deploy": "yarn build && aws s3 sync ./out/ s3://grotesq-official/ --delete"
   },
   "devDependencies": {
     "cpy-cli": "^3.1.0",
