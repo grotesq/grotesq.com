@@ -8,6 +8,8 @@
 /node_modules/
 /vendor/
 
+.next
+
 composer.lock
 package-lock.json
 yarn.lock
