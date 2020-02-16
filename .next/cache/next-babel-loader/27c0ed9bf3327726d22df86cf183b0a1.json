@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport Main from \"../../components/views/works/Main\";\n\nlet Page = props => {\n  return __jsx(Main, null);\n};\n\nexport default Page;","map":null,"metadata":{},"sourceType":"module"}
