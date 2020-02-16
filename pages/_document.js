@@ -11,16 +11,19 @@ export default class Document extends SuperDocument {
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-127707652-1"
           />
-          {/*<script>*/}
-          {/*    window.dataLayer = window.dataLayer || [];*/}
-          {/*    function gtag(){dataLayer.push(arguments);}*/}
-          {/*    gtag('js', new Date());*/}
-
-          {/*    gtag('config', 'UA-127707652-1');*/}
-          {/*</script>*/}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments)};
+                gtag('js', new Date());
+                gtag('config', 'UA-127707652-1');
+              `,
+            }}
+          />
           {/* End of Global site tag (gtag.js) - Google Analytics */}
 
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
