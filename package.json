@@ -9,8 +9,7 @@
     "deploy": "yarn build && up",
     "deploy:production": "yarn build && up production",
     "deploy:root": "yarn build && up root",
-    "deploy:team": "yarn build && up team",
-    "deploy:all": "yarn deploy:production; yarn deploy:root; yarn deploy:team"
+    "deploy:all": "yarn deploy:production; yarn deploy:root"
   },
   "devDependencies": {
     "cpy-cli": "^3.1.0",

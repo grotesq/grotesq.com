@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import { NextSeo } from 'next-seo';
 
 const title = '양업고등학교 - 그로테스큐 스튜디오 || Studio GrotesQ';
-const metaDescriptio =
+const metaDescription =
   '그누보드 기반의 양업고등학교 웹사이트를 Modern PHP 에서 동작하도록 튜닝했습니다.';
 const ogTitle = '양업고등학교 - 그로테스큐 스튜디오 || Studio GrotesQ';
 const ogUrl = 'https://www.grotesq.com/works/yangeob';

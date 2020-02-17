@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 import { NextSeo } from 'next-seo';
 
 const title = 'Welaaa App 2.0 - 그로테스큐 스튜디오 || Studio GrotesQ';
-const metaDescriptio =
+const metaDescription =
   '(주)인플루엔셜의 스마트러닝 서비스인 `윌라`의 앱을 리뉴얼했습니다. React Native, Firebase, Native 연동';
 const ogTitle = 'Welaaa App 2.0 - 그로테스큐 스튜디오 || Studio GrotesQ';
 const ogUrl = 'https://www.grotesq.com/works/welaaa-app-v2';
