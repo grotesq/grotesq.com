@@ -55,7 +55,11 @@ export default () => (
       </h2>
       <div className="container">
         <div className="text-center">
-          <img src="/assets/images/about/about-image.png" alt="about-image" />
+          <img
+            src="/assets/images/about/about-image.png"
+            style={{ maxWidth: '100%', marginBottom: '2rem' }}
+            alt="about-image"
+          />
         </div>
         <div className="h3-wrap">
           <h3 className="font-noto">
