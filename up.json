@@ -20,6 +20,12 @@
         "warm": true
       }
     },
+    "root": {
+      "domain": "grotesq.com",
+      "lambda": {
+        "warm": true
+      }
+    },
     "staging": {
       "domain": "stage.grotesq.com",
       "lambda": {
