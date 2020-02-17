@@ -30,6 +30,15 @@ export default props => {
         </div>
       </nav>
       {props.children}
+      <div
+        className="text-center p-4"
+        style={{ background: '#000', color: '#fff' }}
+      >
+        그로테스큐 스튜디오 / 대표: 김나람 /{' '}
+        <a href="mailto:unknown@grotesq.com">unknown@grotesq.com</a>
+        <br />
+        Copyright © 2017-2020 GrotesQ, All rights reserved.
+      </div>
     </>
   );
 };
