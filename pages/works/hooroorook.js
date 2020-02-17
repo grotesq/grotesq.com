@@ -7,7 +7,7 @@ const metaDescription =
   '인터렉티브 무비 컨텐츠였던 아이유의 후루룩 칼국수 프로젝트를 진행했습니다.';
 const ogTitle =
   '아이유의 후루룩 칼국수 - 그로테스큐 스튜디오 || Studio GrotesQ';
-const ogUrl = 'https://www.grotesq.com/works/hooroorook/';
+const ogUrl = 'https://www.grotesq.com/works/hooroorook';
 const ogImage =
   'https://www.grotesq.com/assets/images/works/thumbnail/hooroorook.png';
 const ogImageWidth = 1000;

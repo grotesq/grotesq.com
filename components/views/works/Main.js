@@ -6,7 +6,7 @@ import { NextSeo } from 'next-seo';
 const title = 'Our Works - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription = '그로테스큐 스튜디오에서 진행한 프로젝트 목록';
 const ogTitle = 'Our Works - 그로테스큐 스튜디오 || Studio GrotesQ';
-const ogUrl = 'https://www.grotesq.com/works/';
+const ogUrl = 'https://www.grotesq.com/works';
 const ogImage = 'https://www.grotesq.com/assets/images/social.png';
 const ogImageWidth = 1200;
 const ogImageHeight = 1200;

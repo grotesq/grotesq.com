@@ -136,6 +136,32 @@ export default props => {
             - 데스크탑/모바일 애플리케이션 개발
             <br />- 솔루션 설치 및 커스터마이징
           </p>
+          <div className="h3-wrap">
+            <h3 className="text-center font-poiret">
+              <span className="black-span-title">Tech</span>
+            </h3>
+          </div>
+          <p className="text-center">
+            개발사는 기술을 통해 사회에 기여할 수 있다는 믿음으로, 항상 최신 기술을 연구하고 선도하기 위해 노력합니다.
+            <br />
+            <br />
+            - React
+            <br />
+            - React Native
+            <br />
+            - Next.js
+            <br />- Flutter
+            <br />
+            - Vue.js
+            <br />
+            - Laravel on Modern PHP
+            <br />
+            - Django on Python
+            <br />
+            - Amazon Web Services
+            <br />- Serverless
+          </p>
+
           <div className="text-center">
             <img src="/assets/images/about/about-image.png" alt="about-image" />
           </div>

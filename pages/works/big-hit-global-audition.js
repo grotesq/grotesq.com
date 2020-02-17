@@ -7,7 +7,7 @@ const metaDescription =
   '빅히트 엔터테인먼트의 글로벌 오디션 사이트. QR코드를 이용한 접수 자동화 시스템을 구축했습니다.';
 const ogTitle =
   'Big Hit Global Audition - 그로테스큐 스튜디오 || Studio GrotesQ';
-const ogUrl = 'https://www.grotesq.com/works/big-hit-global-audition/';
+const ogUrl = 'https://www.grotesq.com/works/big-hit-global-audition';
 const ogImage =
   'https://www.grotesq.com/assets/images/works/big-hit-global-audition/bighit-user-1.png';
 const ogImageWidth = 1600;

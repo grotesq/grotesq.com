@@ -22,6 +22,11 @@ export default props => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link href="/recruit">
+                <a className="nav-link">Recruit</a>
+              </Link>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href="mailto:unknown@grotesq.com">
                 Contact
               </a>

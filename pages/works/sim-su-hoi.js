@@ -5,10 +5,10 @@ import { NextSeo } from 'next-seo';
 const title =
   '전설은 살아있다 : 40년 우정을 낚다, 심수회 - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
-  '한국을 대표하는 만화가 10인의 40년 넘게 지속된 우정과 추억을 ‘낚시’라는 공통의 매개체를 통해 돌아보는 전시 입니다.';
+  '한국을대표하는 만화가 10인의 40년 넘게 지속된 우정과 추억을 ‘낚시’라는 공통의 매개체를 통해 돌아보는 전시 입니다.';
 const ogTitle =
   '전설은 살아있다 : 40년 우정을 낚다, 심수회 - 그로테스큐 스튜디오 || Studio GrotesQ';
-const ogUrl = 'https://www.grotesq.com/works/sim-su-hoi/';
+const ogUrl = 'https://www.grotesq.com/works/sim-su-hoi';
 const ogImage =
   'https://www.grotesq.com/assets/images/works/sim-su-hoi/sim-su-hoi-cover.jpg';
 const ogImageWidth = 1280;

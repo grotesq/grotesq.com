@@ -3,10 +3,10 @@ import Layout from '../../components/Layout';
 import { NextSeo } from 'next-seo';
 
 const title = 'Series Eight - 그로테스큐 스튜디오 || Studio GrotesQ';
-const metaDescription =
+const metaDescriptio =
   '가방 렌탈 서비스 시리즈 에잇의 개발을 진행했습니다. Laravel, Vue.js';
 const ogTitle = 'Series Eight - 그로테스큐 스튜디오 || Studio GrotesQ';
-const ogUrl = 'https://www.grotesq.com/works/series-eight/';
+const ogUrl = 'https://www.grotesq.com/works/series-eight';
 const ogImage =
   'https://www.grotesq.com/assets/images/works/series-eight/series-eight-w-1.png';
 const ogImageWidth = 1000;
