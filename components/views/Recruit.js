@@ -115,6 +115,11 @@ export default () => (
           <br />
           - 인터넷 익스플로러 프로젝트 안하기
           <br />
+          <br />
+          <strong>- 기타 장점</strong>
+          <br />
+          <br />
+          - 카카오맵 기준 강남역 1번출구에서 도보 6분거리에 위치
         </p>
         <div className="h3-wrap">
           <h3 className="font-noto">
