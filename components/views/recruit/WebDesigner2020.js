@@ -4,13 +4,13 @@ import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
 
 const title = 'Recruit - 그로테스큐 스튜디오 || Studio GrotesQ';
-const metaDescription = '그로테스큐 스튜디오에서 웹디자이너를 찾습니다.';
+const metaDescription = '그로테스큐 스튜디오에서 디자이너를 찾습니다.';
 const ogTitle = 'Recruit - 그로테스큐 스튜디오 || Studio GrotesQ';
 const ogUrl = 'https://www.grotesq.com/recruit/20-web-designer';
 const ogImage = 'https://www.grotesq.com/assets/images/social.png';
 const ogImageWidth = 1200;
 const ogImageHeight = 1200;
-const ogDescription = '그로테스큐 스튜디오에서 웹디자이너를 찾습니다.';
+const ogDescription = '그로테스큐 스튜디오에서 디자이너를 찾습니다.';
 
 export default () => {
   return (
@@ -69,7 +69,7 @@ export default () => {
               <span className="black-span-title">모집 분야</span>
             </h3>
           </div>
-          <p>- 웹 디자이너 신입 or 초급</p>
+          <p>- 웹/앱 디자이너 신입 or 초급</p>
           <div className="h3-wrap">
             <h3 className="font-noto">
               <span className="black-span-title">요약</span>
@@ -129,7 +129,7 @@ export default () => {
             </h3>
           </div>
           <p>
-            - 웹 디자이너로 첫 취업을 준비중이거나 타 직군에서 이직을 준비하는
+            - 웹/앱 디자이너로 첫 취업을 준비중이거나 타 직군에서 이직을 준비하는
             신입 디자이너
             <br />- 1~2년 정도 경력이 있는 초급 디자이너
           </p>
