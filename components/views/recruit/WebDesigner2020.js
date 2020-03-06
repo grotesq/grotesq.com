@@ -66,10 +66,22 @@ export default () => {
 
           <div className="h3-wrap">
             <h3 className="font-noto">
+              <span className="black-span-title">저희는 이런 고민을 하고 있습니다.</span>
+            </h3>
+          </div>
+          <p>
+            웹 기술은 성숙해 가는데 아직도 20년 30년 전의 방법론이 현재의 작업자들을 괴롭힙니다.<br/>
+            앱에는 앱에 맞는 디자인 정책이 필요하지만 웹에서 축적된 방법론을 앱 스크린에 우겨넣기만 하려고 합니다.<br/>
+            디자이너를 사내 하청처럼 취급하고 단순 생산직처럼 다루는 회사들이 아직도 너무나 많습니다.<br/>
+            협업을 위한 도구들이 많이 개발되지만, 여전히 도입을 꺼리고 사일로 업무를 진행하는 곳들이 있습니다.<br/>
+            저희는 좀 더 진보되고 나아진 UI/UX 디자인 업무에 대한 방법을 늘 고민하고 있습니다.
+          </p>
+          <div className="h3-wrap">
+            <h3 className="font-noto">
               <span className="black-span-title">모집 분야</span>
             </h3>
           </div>
-          <p>- 웹/앱 디자이너 신입 or 초급</p>
+          <p>- UI/UX 디자이너 신입 or 초급</p>
           <div className="h3-wrap">
             <h3 className="font-noto">
               <span className="black-span-title">요약</span>
@@ -129,7 +141,7 @@ export default () => {
             </h3>
           </div>
           <p>
-            - 웹/앱 디자이너로 첫 취업을 준비중이거나 타 직군에서 이직을 준비하는
+            - UI/UX 디자이너로 첫 취업을 준비중이거나 타 직군에서 이직을 준비하는
             신입 디자이너
             <br />- 1~2년 정도 경력이 있는 초급 디자이너
           </p>
