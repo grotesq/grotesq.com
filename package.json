@@ -2,14 +2,14 @@
   "private": true,
   "scripts": {
     "clean": "rimraf .next",
-    "build": "yarn clean && yarn build.next",
+    "build": "npm run clean && npm run build.next",
     "build.next": "next build",
     "start": "next start -p $PORT",
     "dev": "next dev",
-    "deploy": "yarn build && up",
-    "deploy:production": "yarn build && up production",
-    "deploy:root": "yarn build && up root",
-    "deploy:all": "yarn deploy:production; yarn deploy:root"
+    "deploy": "npm run build && up",
+    "deploy:production": "npm run build && up production",
+    "deploy:root": "npm run build && up root",
+    "deploy:all": "npm run deploy:production; npm run deploy:root"
   },
   "devDependencies": {
     "cpy-cli": "^3.1.0",
