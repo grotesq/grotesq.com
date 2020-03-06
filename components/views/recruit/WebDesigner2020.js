@@ -66,7 +66,7 @@ export default () => {
 
           <div className="h3-wrap">
             <h3 className="font-noto">
-              <span className="black-span-title">저희는 이런 고민을 하고 있습니다.</span>
+              <span className="black-span-title">이런 고민을 하고 있습니다.</span>
             </h3>
           </div>
           <p>
