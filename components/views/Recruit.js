@@ -78,11 +78,16 @@ export default () => {
           </div>
           <div>
             <ul>
-              <li>
-                <Link href={'/recruit/20-web-designer'}>
-                  <a>웹 디자이너 신입 or 초급</a>
-                </Link>
-              </li>
+                <li>
+                    <Link href={'/recruit/20-april-backend-contractor'}>
+                        <a>백엔드 개발자 (계약직)</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href={'/recruit/20-april-frontend-contractor'}>
+                        <a>프론트엔드 개발자 (계약직)</a>
+                    </Link>
+                </li>
             </ul>
           </div>
           <div className="h3-wrap">
@@ -92,6 +97,11 @@ export default () => {
           </div>
           <div>
             <ul>
+                <li>
+                    <Link href={'/recruit/20-web-designer'}>
+                        <a>웹 디자이너 신입 or 초급</a>
+                    </Link>
+                </li>
               <li>
                 <Link href={'/recruit/20-frontend-developer'}>
                   <a>프론트엔드 개발자 신입 or 초급</a>
