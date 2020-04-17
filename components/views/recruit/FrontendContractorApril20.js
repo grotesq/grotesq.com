@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const title = 'Recruit - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
   '그로테스큐 스튜디오에서 계약직 프론트엔드 개발자를 찾습니다.';
-const ogTitle = 'Recruit - 그로테스큐 스튜디오 || Studio GrotesQ';
+const ogTitle = '프론트엔드 개발자를 찾습니다 - 그로테스큐 스튜디오 || Studio GrotesQ';
 const ogUrl = 'https://www.grotesq.com/recruit/20-april-frontend-contractor';
 const ogImage = 'https://www.grotesq.com/assets/images/social.png';
 const ogImageWidth = 1200;
