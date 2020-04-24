@@ -75,22 +75,22 @@ export default () => {
                 </Link>
               </div>
             </li>
-            <li className="col-sm-6 col-md-4">
-              <div className="gq-works__list-item">
-                <Link href="/works/big-hit-global-audition">
-                  <a>
-                    <div className="gq-works__thumbnail">
-                      <img src="/assets/images/works/big-hit-global-audition/bighit-user-1.png" />
-                    </div>
-                    <div className="gq-works__contents">
-                      <div className="gq-works__title">
-                        빅히트 글로벌 오디션 시스템
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-            </li>
+            {/*<li className="col-sm-6 col-md-4">*/}
+            {/*  <div className="gq-works__list-item">*/}
+            {/*    <Link href="/works/big-hit-global-audition">*/}
+            {/*      <a>*/}
+            {/*        <div className="gq-works__thumbnail">*/}
+            {/*          <img src="/assets/images/works/big-hit-global-audition/bighit-user-1.png" />*/}
+            {/*        </div>*/}
+            {/*        <div className="gq-works__contents">*/}
+            {/*          <div className="gq-works__title">*/}
+            {/*            빅히트 글로벌 오디션 시스템*/}
+            {/*          </div>*/}
+            {/*        </div>*/}
+            {/*      </a>*/}
+            {/*    </Link>*/}
+            {/*  </div>*/}
+            {/*</li>*/}
             <li className="col-sm-6 col-md-4">
               <div className="gq-works__list-item">
                 <Link href="/works/light-wall-in-folly">

@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../components/Layout';
 import { NextSeo } from 'next-seo';
 
 const title = 'Big Hit Global Audition - 그로테스큐 스튜디오 || Studio GrotesQ';
