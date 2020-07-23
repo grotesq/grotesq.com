@@ -6,7 +6,7 @@ import { NextSeo } from 'next-seo';
 const title = '그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription =
   '컨설턴트, 기획, 디자인, 개발, 인프라 구축, 출시, 유지보수에 이르기까지 제품 출시와 관리를 위한 모든 작업을 수행할 수 있는 전문 개발사입니다.';
-const ogTitle = 'Big Hit Global Audition';
+const ogTitle = '그로테스큐 스튜디오 || Studio GrotesQ';
 const ogUrl = 'https://www.grotesq.com';
 const ogImage = 'https://www.grotesq.com/assets/images/social.png';
 const ogImageWidth = 1200;
