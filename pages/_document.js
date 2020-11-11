@@ -1,7 +1,20 @@
 import React from 'react';
 import SuperDocument, { Head, Html, Main, NextScript } from 'next/document';
+import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
 
 export default class Document extends SuperDocument {
+  static getInitialProps(context) {
+    const sheet = new ServerStyleSheet(); // 서버사이드 렌더링 할 수 있게함.
+    const page = context.renderPage(App => props =>
+      sheet.collectStyles(
+        <>
+          <App {...props} />
+        </>,
+      ),
+    ); // 아래의 스타일들을 모아서 페이지를 그려준다. 원래는 <GlobalStyles/> 없이 하는데 글로벌 스타일을 지정해주기 위해 저렇게 적었다.
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
+  }
   render() {
     return (
       <Html lang="en">
@@ -118,6 +131,8 @@ export default class Document extends SuperDocument {
             href="/assets/images/favicons/Grotesq-favicon-16.png"
           />
           <link rel="stylesheet" href="/assets/css/main.css" />
+
+          {this.props.styleTags}
         </Head>
         <body>
           <Main />

@@ -3,6 +3,7 @@ import Layout from '../Layout';
 import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Title from '../ui/Title';
 
 const title = 'Recruit - 그로테스큐 스튜디오 || Studio GrotesQ';
 const metaDescription = '그로테스큐 스튜디오의 구인 정보입니다.';
@@ -60,9 +61,12 @@ export default () => {
         }}
       />
       <div className="gq-section">
-        <h2 className="text-center font-poiret">
-          <span> Recruit </span>
-        </h2>
+        {/*<h2 className="text-center font-poiret">*/}
+        {/*  <span> Recruit </span>*/}
+        {/*</h2>*/}
+        <Title>
+          <h1>Recruit</h1>
+        </Title>
         <div className="container">
           <div className="text-center">
             <img
@@ -71,28 +75,28 @@ export default () => {
               alt="about-image"
             />
           </div>
-          <div className="h3-wrap">
-            <h3 className="font-noto">
-              <span className="black-span-title">모집중</span>
-            </h3>
-          </div>
+          <Title textAlign={'left'}>
+            <h3 className="font-noto">모집중</h3>
+          </Title>
           <div>
             <ul>
-              <li>현재 모집중인 공고가 없습니다.</li>
+              <li>
+                <Link href={'/recruit/20-frontend-senior'}>
+                  <a>프론트엔드 개발자 (경력)</a>
+                </Link>
+              </li>
             </ul>
           </div>
-          <div className="h3-wrap">
-            <h3 className="font-noto">
-              <span className="black-span-title">지난 공고</span>
-            </h3>
-          </div>
+          <Title textAlign={'left'}>
+            <h3 className="font-noto">지난 공고</h3>
+          </Title>
           <div>
             <ul>
-                <li>
-                    <Link href={'/recruit/20-june-publisher'}>
-                        <a>웹 퍼블리셔 (정규직)</a>
-                    </Link>
-                </li>
+              <li>
+                <Link href={'/recruit/20-june-publisher'}>
+                  <a>웹 퍼블리셔 (정규직)</a>
+                </Link>
+              </li>
               <li>
                 <Link href={'/recruit/20-april-backend-contractor'}>
                   <a>백엔드 개발자 (계약직)</a>

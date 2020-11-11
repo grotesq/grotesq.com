@@ -33,24 +33,6 @@ export default () => {
           site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
         }}
       />
-      <NextSeo
-        title={title}
-        description={metaDescription}
-        openGraph={{
-          url: ogUrl,
-          title: ogTitle,
-          description: ogDescription,
-          images: [
-            {
-              url: ogImage,
-              width: ogImageWidth,
-              height: ogImageHeight,
-              alt: ogTitle,
-            },
-          ],
-          site_name: '그로테스큐 스튜디오 || Studio GrotesQ',
-        }}
-      />
       <div className="gq-section">
         <h2 className="text-center font-poiret">
           <span> Recruit </span>
