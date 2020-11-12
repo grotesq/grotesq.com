@@ -2,12 +2,20 @@ import React from 'react';
 import SuperDocument, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
 
+const GlobalStyles = createGlobalStyle`
+body {
+  font-size: 14px;
+  line-height: 1.6em;
+}
+`;
+
 export default class Document extends SuperDocument {
   static getInitialProps(context) {
     const sheet = new ServerStyleSheet(); // 서버사이드 렌더링 할 수 있게함.
     const page = context.renderPage(App => props =>
       sheet.collectStyles(
         <>
+          <GlobalStyles />
           <App {...props} />
         </>,
       ),
