@@ -81,6 +81,11 @@ export default () => {
           <div>
             <ul>
               <li>
+                <Link href={'/recruit/20-internship'}>
+                  <a>인턴십</a>
+                </Link>
+              </li>
+              <li>
                 <Link href={'/recruit/20-frontend-senior'}>
                   <a>프론트엔드 개발자 (경력)</a>
                 </Link>
