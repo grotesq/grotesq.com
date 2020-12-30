@@ -12,7 +12,7 @@ const ogImageWidth = 1200;
 const ogImageHeight = 1200;
 const ogDescription = '그로테스큐 스튜디오 개발자 인턴십';
 
-export default () => {
+const Internship2020 = () => {
   const [fold, setFold] = React.useState(true);
   return (
     <Layout>
@@ -220,3 +220,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Internship2020;

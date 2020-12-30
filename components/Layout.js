@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default props => {
+const Layout = props => {
   return (
     <>
       <nav className="gq-nav navbar fixed-top navbar-expand navbar-dark bg-dark">
@@ -47,3 +47,5 @@ export default props => {
     </>
   );
 };
+
+export default Layout;
