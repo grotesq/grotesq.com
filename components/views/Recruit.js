@@ -21,7 +21,7 @@ const FoldButton = styled.button`
   padding-right: 0;
 `;
 
-export default () => {
+const Recruit = () => {
   return (
     <Layout>
       <NextSeo
@@ -81,11 +81,6 @@ export default () => {
           <div>
             <ul>
               <li>
-                <Link href={'/recruit/20-internship'}>
-                  <a>인턴십</a>
-                </Link>
-              </li>
-              <li>
                 <Link href={'/recruit/20-frontend-senior'}>
                   <a>프론트엔드 개발자 (경력)</a>
                 </Link>
@@ -97,6 +92,11 @@ export default () => {
           </Title>
           <div>
             <ul>
+              <li>
+                <Link href={'/recruit/20-internship'}>
+                  <a>인턴십</a>
+                </Link>
+              </li>
               <li>
                 <Link href={'/recruit/20-june-publisher'}>
                   <a>웹 퍼블리셔 (정규직)</a>
@@ -129,3 +129,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Recruit;
