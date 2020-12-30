@@ -3,19 +3,19 @@
 ## 설치
 
 ```bash
-yarn
+npm i
 ```
 
 ## 개발
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ## 배포
 
 ```bash
-yarn deploy
+npm run deploy
 ```
 
 ## 주의
