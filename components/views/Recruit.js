@@ -81,9 +81,7 @@ const Recruit = () => {
           <div>
             <ul>
               <li>
-                <Link href={'/recruit/20-frontend-senior'}>
-                  <a>프론트엔드 개발자 (경력)</a>
-                </Link>
+                현재 모집중인 공고가 없습니다.
               </li>
             </ul>
           </div>
@@ -92,6 +90,11 @@ const Recruit = () => {
           </Title>
           <div>
             <ul>
+              <li>
+                <Link href={'/recruit/20-frontend-senior'}>
+                  <a>프론트엔드 개발자 (경력)</a>
+                </Link>
+              </li>
               <li>
                 <Link href={'/recruit/20-internship'}>
                   <a>인턴십</a>
