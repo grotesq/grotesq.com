@@ -81,7 +81,14 @@ const Recruit = () => {
           <div>
             <ul>
               <li>
-                현재 모집중인 공고가 없습니다.
+                <a
+                  href={
+                    'https://www.notion.so/grotesq/2021-1-2-f403aaadfbed474588d188b3ae466de4'
+                  }
+                  target={'_blank'}
+                >
+                  2021 퍼블리셔/프론트엔드 경력직(주니어/1~2년차)
+                </a>
               </li>
             </ul>
           </div>
