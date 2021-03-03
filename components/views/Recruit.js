@@ -83,11 +83,11 @@ const Recruit = () => {
               <li>
                 <a
                   href={
-                    'https://www.notion.so/grotesq/2021-1-2-f403aaadfbed474588d188b3ae466de4'
+                    'https://www.notion.so/grotesq/2021-1-2-d45419fa3d4e42b0a41b44dae5162a68'
                   }
                   target={'_blank'}
                 >
-                  2021 퍼블리셔/프론트엔드 경력직(주니어/1~2년차)
+                  2021 백엔드 경력직(주니어/1~2년차)
                 </a>
               </li>
             </ul>
@@ -97,6 +97,16 @@ const Recruit = () => {
           </Title>
           <div>
             <ul>
+              <li>
+                <a
+                  href={
+                    'https://www.notion.so/grotesq/2021-1-2-f403aaadfbed474588d188b3ae466de4'
+                  }
+                  target={'_blank'}
+                >
+                  2021 퍼블리셔/프론트엔드 경력직(주니어/1~2년차)
+                </a>
+              </li>
               <li>
                 <Link href={'/recruit/20-frontend-senior'}>
                   <a>프론트엔드 개발자 (경력)</a>
