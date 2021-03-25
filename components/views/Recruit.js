@@ -83,11 +83,11 @@ const Recruit = () => {
               <li>
                 <a
                   href={
-                    'https://www.notion.so/grotesq/2021-1-2-d45419fa3d4e42b0a41b44dae5162a68'
+                    'https://www.notion.so/grotesq/iOS-Android-React-Native-9917b375a8404b84964a701b6fc859c7'
                   }
                   target={'_blank'}
                 >
-                  2021 백엔드 경력직(주니어/1~2년차)
+                  앱 개발자 (iOS, Android, React Native) 구인
                 </a>
               </li>
             </ul>
@@ -97,6 +97,16 @@ const Recruit = () => {
           </Title>
           <div>
             <ul>
+              <li>
+                <a
+                  href={
+                    'https://www.notion.so/grotesq/2021-1-2-d45419fa3d4e42b0a41b44dae5162a68'
+                  }
+                  target={'_blank'}
+                >
+                  2021 백엔드 경력직(주니어/1~2년차)
+                </a>
+              </li>
               <li>
                 <a
                   href={
