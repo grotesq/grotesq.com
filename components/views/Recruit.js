@@ -83,6 +83,16 @@ const Recruit = () => {
               <li>
                 <a
                   href={
+                    'https://www.notion.so/grotesq/UI-UX-fd5935199b6d422bab4bfdaeb4d48234'
+                  }
+                  target={'_blank'}
+                >
+                  UI/UX 기획자 구인
+                </a>
+              </li>
+              <li>
+                <a
+                  href={
                     'https://www.notion.so/grotesq/iOS-Android-React-Native-9917b375a8404b84964a701b6fc859c7'
                   }
                   target={'_blank'}
