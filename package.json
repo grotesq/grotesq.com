@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "gsap": "^3.5.1",
+    "loadcss": "0.0.2",
     "next": "^9.5.5",
     "next-seo": "^4.16.0",
     "react": "^16.14.0",
