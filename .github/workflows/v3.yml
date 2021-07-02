@@ -1,0 +1,37 @@
+name: GrotesQ Deployment
+on:
+  push:
+    branches:
+      - v3
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies and build the app
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: NPM Install
+        run: npm install
+      - name: Next.js Build
+        run: npm run build:next
+      - name: Prepare up
+        run: rm -rf node_modules && npm i --only=production
+      - name: Deploy v3
+        env:
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        uses: apex/actions/up@v0.5.0
+        with:
+          args: deploy v3 --no-build
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: official-website
+          SLACK_MESSAGE: 'https://v3.grotesq.com'
+          SLACK_TITLE: 'v3 배포 완료'
+          SLACK_USERNAME: Github Action
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
