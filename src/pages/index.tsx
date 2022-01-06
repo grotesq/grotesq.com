@@ -1,14 +1,19 @@
 import Head from 'next/head';
+import BaseLayout from '../components/layouts/BaseLayout'
 
 export default function Home() {
   return (
-    <div>
+    <BaseLayout>
       <Head>
         <title>메인 :: 그로테스큐 GrotesQ</title>
       </Head>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
+      main content
+
+      <div className="flex">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+      </div>
+    </BaseLayout>
   );
 }
