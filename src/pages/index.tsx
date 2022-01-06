@@ -6,7 +6,9 @@ export default function Home() {
       <Head>
         <title>메인 :: 그로테스큐 GrotesQ</title>
       </Head>
-      메인
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
     </div>
   );
 }
