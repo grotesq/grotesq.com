@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import BaseLayout from '../components/layouts/BaseLayout';
+import BaseLayout from '../layouts/BaseLayout';
 
-export default function Works() {
+export default function WorksView() {
   return (
     <BaseLayout>
       <Head>
