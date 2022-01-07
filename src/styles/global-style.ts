@@ -2,5 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import { reset } from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
-    ${reset}
+    ${reset};
+    /* TODO: font적용하기 */
 `;

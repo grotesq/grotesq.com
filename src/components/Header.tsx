@@ -1,17 +1,18 @@
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 import styled from 'styled-components';
-import logo from '../../public/assets/images/logo/logo.png';
-import BtnMobileMenu from '../../public/assets/images/btn_mobile-menu.svg';
-import React, { useState } from 'react';
+import logo from '../../public/assets/image/logo/logo.png';
+import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
+import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg'
 
 const HeaderContainer = styled.header`
-  background: #e5e5e5;
   min-width: 300px;
   height: 100px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   @media ${({ theme }) => theme.mediaQuery('sm')} {
     height: 60px;
   }
@@ -32,12 +33,11 @@ const NavContainer = styled.nav`
 `;
 const MobileNavContainer = styled.nav`
   position: absolute;
+  background: white;
   width: 250px;
   top: 0;
   right: 0;
   height: 100%;
-  background: beige;
-  padding-top: 87px;
   padding-left: 30px;
   text-align: left;
   a:hover {
@@ -51,7 +51,7 @@ const MobileNavContainer = styled.nav`
 const MobileNavCloseBtn = styled.button`
   padding-top: 22.5px;
   padding-right: 22.5px;
-  color: ${({theme}) => theme.color.blue};
+  padding-bottom: 19.5px;
 `;
 const BlackBackground = styled.div`
   position: absolute;
@@ -61,10 +61,61 @@ const BlackBackground = styled.div`
   height: 100vh;
   background: rgb(26, 28, 35, 0.7);
 `;
+interface Menu { 
+  title: string;
+  path: string;
+  isInternal: boolean;
+}
+
+const menues = [ 
+  {
+    title: 'Works',
+    path: '/works',
+    isInternal: true,
+  },
+  {
+    title: 'Recruit',
+    path: '/',
+    isInternal: false,
+  },
+  {
+    title: 'Contact',
+    path: '/',
+    isInternal: false,
+  }
+]
+
+function Menues({ title, path, isInternal }: Menu) {
+  return (
+    <li>
+      {
+        isInternal ?
+        <Link href={ path }><a>{ title }</a></Link>
+        : <a href={ path }>{ title }</a>
+      }
+    </li>
+  )
+}
 
 export default function Header() {
+  const router = useRouter();
   const [ isMobileNavOpened, setIsMobileNavOpened ] = useState(false);
-  const toggleMobileNav = () => setIsMobileNavOpened(!isMobileNavOpened);
+  const toggleMobileNav = () => {
+    setIsMobileNavOpened(!isMobileNavOpened)
+  };
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if(isMobileNavOpened) {
+        setIsMobileNavOpened(isMobileNavOpened => !isMobileNavOpened)
+      }
+    }
+    router.events.on('routeChangeStart', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+    }
+  }, [])
+
   return (
     <HeaderContainer className="px-5 md:px-40">
       <div>
@@ -76,43 +127,44 @@ export default function Header() {
       </div>
       <div>
         <button type="button" className="flex sm:hidden" onClick={toggleMobileNav}>
-          <BtnMobileMenu/>
+          <BtnMobileMenu />
         </button>
       </div>
-      {isMobileNavOpened &&
+      { isMobileNavOpened &&
         <BlackBackground>
           <MobileNavContainer className="sm:hidden">
             <ul>
               <li className="text-right">
-                <MobileNavCloseBtn onClick={toggleMobileNav}>x</MobileNavCloseBtn>
+                <MobileNavCloseBtn>
+                  <BtnMobileClose onClick={toggleMobileNav} />
+                </MobileNavCloseBtn>
               </li>
-              <li>
-                <Link href="/works">
-                  <a>Works</a>
-                </Link>
-              </li>
-              <li>
-                <a>Recruit</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
+              {
+                menues.map((menu: Menu) => (
+                  <Menues 
+                    key={menu.title}
+                    title={menu.title} 
+                    path={menu.path} 
+                    isInternal={menu.isInternal}
+                  />
+                ))
+              }
             </ul>
           </MobileNavContainer>
         </BlackBackground>
       }
-      
       <NavContainer className="hidden sm:flex">
         <ul>
-          <Link href="/works">
-              <a>Works</a>
-            </Link>
-          <li>
-            <a href="/">Recruit</a>
-          </li>
-          <li>
-            <a href="/">Contact</a>
-          </li>
+          {
+            menues.map((menu: Menu) => (
+              <Menues 
+                key={menu.title}
+                title={menu.title} 
+                path={menu.path} 
+                isInternal={menu.isInternal} 
+              />
+            ))
+          }
         </ul>
       </NavContainer>
     </HeaderContainer>
