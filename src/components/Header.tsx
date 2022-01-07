@@ -1,19 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
-import logo from '../../public/assets/logo/logo.png';
+import logo from '../../public/assets/images/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/images/btn_mobile-menu.svg';
+import React, { useState } from 'react';
 
-const HeaderWrapper = styled.header`
+const HeaderContainer = styled.header`
   background: #e5e5e5;
+  min-width: 300px;
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 375px;
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    height: 60px;
+  }
 `;
 
-const NavWrapper = styled.nav`
+const NavContainer = styled.nav`
    ul {
      display: flex;
      font-size: 18px;
@@ -22,13 +26,31 @@ const NavWrapper = styled.nav`
      }
    }
 `
-const MobileNav = styled.nav`
+const MobileNavContainer = styled.nav`
+  position: absolute;
+  width: 250px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: beige;
+  padding-top: 87px;
+  padding-left: 30px;
+  text-align: left;
+  li {
+    padding-bottom: 30px;
+  }
+`
 
+const MobileNavCloseBtn = styled.button`
+  padding-top: 22.5px;
+  padding-right: 22.5px;
 `
 
 export default function Header() {
+  const [ isMobileNavOpened, setIsMobileNavOpened ] = useState(false);
+  const toggleMobileNav = () => setIsMobileNavOpened(!isMobileNavOpened);
   return (
-    <HeaderWrapper className="px-5 sm:px-40">
+    <HeaderContainer className="px-5 md:px-40">
       <div>
         <Link href="/">
           <a>
@@ -37,15 +59,36 @@ export default function Header() {
         </Link>
       </div>
       <div>
-        <button type="button" className="flex sm:hidden">
-          <BtnMobileMenu />
+        <button type="button" className="flex sm:hidden" onClick={toggleMobileNav}>
+          <BtnMobileMenu/>
         </button>
       </div>
-      <NavWrapper className="hidden sm:flex">
+      {isMobileNavOpened &&
+        <MobileNavContainer className="sm:hidden">
+          <ul>
+            <li className="text-right">
+              <MobileNavCloseBtn onClick={toggleMobileNav}>x</MobileNavCloseBtn>
+            </li>
+            <li>
+              <Link href="/works">
+                <a>Works</a>
+              </Link>
+            </li>
+            <li>
+              Recruit
+            </li>
+            <li>
+              Contact
+              </li>
+          </ul>
+        </MobileNavContainer>
+      }
+      
+      <NavContainer className="hidden sm:flex">
         <ul>
-          <li>
-            <a href="/">Works</a>
-          </li>
+          <Link href="/works">
+              <a>Works</a>
+            </Link>
           <li>
             <a href="/">Recruit</a>
           </li>
@@ -53,7 +96,7 @@ export default function Header() {
             <a href="/">Contact</a>
           </li>
         </ul>
-      </NavWrapper>
-    </HeaderWrapper>
+      </NavContainer>
+    </HeaderContainer>
   );
 }
