@@ -3,5 +3,4 @@ import { reset } from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
     ${reset};
-    /* TODO: font적용하기 */
 `;
