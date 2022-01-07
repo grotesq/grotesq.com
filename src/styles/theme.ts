@@ -16,7 +16,7 @@ const mediaQuery = (sizeName: string) => {
 
 export const theme: DefaultTheme = {
   color: {
-    blue: "#00bac7",
+    blue: "#4a63fe",
   },
   mediaQuery
 };

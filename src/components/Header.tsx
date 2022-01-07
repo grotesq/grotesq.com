@@ -16,16 +16,20 @@ const HeaderContainer = styled.header`
     height: 60px;
   }
 `;
-
 const NavContainer = styled.nav`
    ul {
      display: flex;
      font-size: 18px;
+     a:hover {
+      color: ${({theme}) => theme.color.blue};
+      text-decoration: underline;
+     }
      li {
        padding-left: 45px;
+       }
      }
    }
-`
+`;
 const MobileNavContainer = styled.nav`
   position: absolute;
   width: 250px;
@@ -36,15 +40,27 @@ const MobileNavContainer = styled.nav`
   padding-top: 87px;
   padding-left: 30px;
   text-align: left;
+  a:hover {
+    color: ${({theme}) => theme.color.blue};
+    text-decoration: underline;
+  }
   li {
     padding-bottom: 30px;
   }
-`
-
+`;
 const MobileNavCloseBtn = styled.button`
   padding-top: 22.5px;
   padding-right: 22.5px;
-`
+  color: ${({theme}) => theme.color.blue};
+`;
+const BlackBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(26, 28, 35, 0.7);
+`;
 
 export default function Header() {
   const [ isMobileNavOpened, setIsMobileNavOpened ] = useState(false);
@@ -64,24 +80,26 @@ export default function Header() {
         </button>
       </div>
       {isMobileNavOpened &&
-        <MobileNavContainer className="sm:hidden">
-          <ul>
-            <li className="text-right">
-              <MobileNavCloseBtn onClick={toggleMobileNav}>x</MobileNavCloseBtn>
-            </li>
-            <li>
-              <Link href="/works">
-                <a>Works</a>
-              </Link>
-            </li>
-            <li>
-              Recruit
-            </li>
-            <li>
-              Contact
+        <BlackBackground>
+          <MobileNavContainer className="sm:hidden">
+            <ul>
+              <li className="text-right">
+                <MobileNavCloseBtn onClick={toggleMobileNav}>x</MobileNavCloseBtn>
               </li>
-          </ul>
-        </MobileNavContainer>
+              <li>
+                <Link href="/works">
+                  <a>Works</a>
+                </Link>
+              </li>
+              <li>
+                <a>Recruit</a>
+              </li>
+              <li>
+                <a>Contact</a>
+              </li>
+            </ul>
+          </MobileNavContainer>
+        </BlackBackground>
       }
       
       <NavContainer className="hidden sm:flex">
