@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import Header from '../Header';
 
 export default function BaseLayout({ children }: React.PropsWithChildren<{}>) {
   return (
     <Container>
-      <Header>header</Header>
+      <Header/>
       <Content>{children}</Content>
       <Footer>footer</Footer>
     </Container>
@@ -17,10 +18,6 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
-const Header = styled.header`
-  background: #e5e5e5;
-  height: 100px;
-`;
 
 const Content = styled.div`
   flex: 1;

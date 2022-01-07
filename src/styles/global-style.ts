@@ -4,7 +4,7 @@ import { media } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
-    :focus {
+    /* :focus {
         outline: none;
         border: none;
     }
@@ -50,5 +50,5 @@ export const GlobalStyle = createGlobalStyle`
         ${media.mobile} {
             display: block;
         }
-    }
+    } */
 `;
