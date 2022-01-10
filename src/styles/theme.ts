@@ -30,7 +30,6 @@ const subTitleBlue = css`
   font-size: ${pxToRem(22)};
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  letter-spacing: ${pxToRem(4.4)};
 `;
 
 export const theme: DefaultTheme = {

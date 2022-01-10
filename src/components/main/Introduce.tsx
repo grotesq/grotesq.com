@@ -25,6 +25,7 @@ const MainTitle = styled.h1`
 const SubTitleBlue = styled.div`
   ${({ theme }) => theme.subTitleBlue};
   padding-bottom: ${pxToRem(35)};
+  letter-spacing: ${pxToRem(4.4)};
 `;
 
 const Description = styled.div`
