@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import Header from '../Header';
+import Footer from '../Footer'
 
 export default function BaseLayout({ children }: React.PropsWithChildren<{}>) {
   return (
     <Container>
       <Header />
       <Content>{children}</Content>
-      <Footer>footer</Footer>
+      <Footer/>
     </Container>
   );
 }
@@ -20,8 +21,4 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex: 1;
-`;
-
-const Footer = styled.footer`
-  height: 100px;
 `;
