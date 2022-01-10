@@ -13,10 +13,9 @@ const mediaQuery = (sizeName: string) => {
   return `screen and (max-width: ${deviceSizes[sizeName]})`
 }
 
-
 export const theme: DefaultTheme = {
   color: {
-    blue: "#4a63fe",
+    'primary-blue': "#4a63fe",
   },
   mediaQuery
 };

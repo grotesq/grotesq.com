@@ -22,7 +22,7 @@ const NavContainer = styled.nav`
      display: flex;
      font-size: 18px;
      a:hover {
-      color: ${({theme}) => theme.color.blue};
+      color: ${({theme}) => theme.color['primary-blue']};
       text-decoration: underline;
      }
      li {
@@ -41,7 +41,7 @@ const MobileNavContainer = styled.nav`
   padding-left: 30px;
   text-align: left;
   a:hover {
-    color: ${({theme}) => theme.color.blue};
+    color: ${({theme}) => theme.color['primary-blue']};
     text-decoration: underline;
   }
   li {

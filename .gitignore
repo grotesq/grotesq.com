@@ -44,3 +44,5 @@ yarn-error.log*
 package-lock.json
 pnpm-lock.yaml
 pnpm-lock.yml
+
+.history
