@@ -1,25 +1,24 @@
 import styled, { css } from 'styled-components';
 import { pxToRem } from '../utils/utils';
 
+const primaryBlue = css`
+  ${({ theme }) => theme.color['primary-blue']};
+`;
+
 const CustomButton = styled.button`
-  background: ${({ theme }) => theme.color['primary-blue']};
+  background: ${primaryBlue};
   color: #fff;
-  min-width: ${({ width }) => pxToRem(width)};
-  min-height: ${({ height }) => pxToRem(height)};
-  font-size: ${pxToRem(18)};
+  width: ${({ width }) => pxToRem(width)};
+  height: ${({ height }) => pxToRem(height)};
   padding: ${pxToRem(21)} ${pxToRem(52)};
   line-height: 1.67;
   box-shadow: ${pxToRem(20)} ${pxToRem(20)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.15);
-  ${({ round }) =>
-    round &&
-    css`
-      border-radius: ${pxToRem(50)};
-    `}
+  border-radius: ${pxToRem(50)};
 `;
 
-export default function Button({ children, width, height, border, round }) {
+export default function Button({ children, width, height, border = false, round }) {
   return (
-    <CustomButton width={width} height={height} round>
+    <CustomButton width={width} height={height} round border={border}>
       {children}
     </CustomButton>
   );

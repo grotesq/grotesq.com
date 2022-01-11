@@ -32,9 +32,19 @@ const subTitleBlue = css`
   font-weight: 600;
 `;
 
+const subTitle1 = css`
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: ${pxToRem(50)};
+  font-weight: 600;
+  line-height: 1.52;
+  padding-bottom: ${pxToRem(18)};
+`;
+
 export const theme: DefaultTheme = {
   color,
   mediaQuery,
   flexCenter,
   subTitleBlue,
+  subTitle1,
 };
