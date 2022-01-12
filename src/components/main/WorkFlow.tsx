@@ -16,10 +16,8 @@ const WorkFlowSection = styled.section`
       font-size: ${pxToRem(14)};
     }
   }
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
-    padding-right: ${pxToRem(39)};
-    padding-left: ${pxToRem(38)};
-  }
+  padding-right: ${pxToRem(39)};
+  padding-left: ${pxToRem(38)};
 `;
 
 const ContentSection = styled.section`
@@ -29,6 +27,9 @@ const ContentSection = styled.section`
     background-image: url('/assets/image/main/workflow/background-1.svg');
     background-position: 210% 90%;
     padding-top: ${pxToRem(120)};
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      background: none;
+    }
   }
   &:first-child::after {
     background-image: url('/assets/image/main/workflow/background-2.svg');
