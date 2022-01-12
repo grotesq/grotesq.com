@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="250" viewBox="0 0 1920 250">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        opacity: 0.7;
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        opacity: 0.35;
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.32" y1="-0.776" x2="0.866" y2="2.376" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5870ff"/>
+      <stop offset="1" stop-color="#6d51ff"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="사각형_466" data-name="사각형 466" class="cls-1" width="1920" height="250" transform="translate(-5 7329)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="-0.225" y1="0.219" x2="0.914" y2="1.063" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#827cff"/>
+      <stop offset="0.063" stop-color="#827cff" stop-opacity="0.89"/>
+      <stop offset="0.21" stop-color="#e3e3ff" stop-opacity="0.659"/>
+      <stop offset="0.356" stop-color="#e5e5ff" stop-opacity="0.459"/>
+      <stop offset="0.499" stop-color="#e6e6ff" stop-opacity="0.294"/>
+      <stop offset="0.637" stop-color="#e7e7ff" stop-opacity="0.165"/>
+      <stop offset="0.77" stop-color="#e8e8ff" stop-opacity="0.075"/>
+      <stop offset="1" stop-color="#e9e9ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="마스크_그룹_1" data-name="마스크 그룹 1" class="cls-2" transform="translate(5 -7329)">
+    <path id="패스_2384" data-name="패스 2384" class="cls-3" d="M-2807.944,208.519s131.467-65.769,243.25,43.524c80.707,86.936,54.64,198.291,94.38,299.1s126.682,168.274,126.682,168.274,109.3,59.989,155.251,168.272c45.939,108.284,34.77,215.091,34.77,229.993h-686.8V237.14S-2816.493,212.189-2807.944,208.519Z" transform="translate(1130.408 4926.067) rotate(-88)"/>
+  </g>
+</svg>

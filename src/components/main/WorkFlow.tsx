@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import { pxToRem } from '../../utils/utils';
+import Bg1 from '../../../public/assets/image/main/workflow/background-1.svg';
 
 const WorkFlowSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -16,18 +17,69 @@ const WorkFlowSection = styled.section`
 
 const ContentSection = styled.section`
   width: 100%;
-  background-image: url(${({ bgUrl }) => bgUrl});
   background-repeat: no-repeat;
   &:first-child {
     padding-top: ${pxToRem(120)};
+    background-image: url('/assets/image/main/workflow/background-1.svg');
+    background-position: 210% 90%;
+  }
+  &:first-child::after {
+    background-image: url('/assets/image/main/workflow/background-2.svg');
+    content: '';
+    position: absolute;
+    right: ${pxToRem(300)};
+    width: ${pxToRem(201)};
+    height: ${pxToRem(155)};
+    margin-top: -15rem;
+  }
+  &:nth-child(2)::before {
+    position: absolute;
+    content: '';
+    right: ${pxToRem(115)};
+    width: ${pxToRem(266)};
+    height: ${pxToRem(266)};
+    margin-top: -10rem;
+    background-image: url('/assets/image/main/workflow/background-3.svg');
+  }
+  &:nth-child(3)::after {
+    position: absolute;
+    content: '';
+    background-image: url('/assets/image/main/workflow/background-4.svg');
+    width: ${pxToRem(700)};
+    height: ${pxToRem(1352)};
+    left: -10%;
+    margin-top: -12rem;
+  }
+  &:nth-child(4)::before {
+    background-image: url('/assets/image/main/workflow/background-5.svg');
+    background-position: right;
+    position: absolute;
+    content: '';
+    width: ${pxToRem(350)};
+    height: ${pxToRem(700)};
+    left: 0;
+    margin-top: -8rem;
+  }
+  &:nth-child(4)::after {
+    background-image: url('/assets/image/main/workflow/background-6.svg');
+    position: absolute;
+    content: '';
+    width: ${pxToRem(300)};
+    height: ${pxToRem(300)};
+    margin-top: -30rem;
+    left: ${pxToRem(200)};
+  }
+  &:nth-child(5)::before {
+    background-image: url('/assets/image/main/workflow/background-7.svg');
+    position: absolute;
+    content: '';
+    width: ${pxToRem(1005)};
+    height: ${pxToRem(1697)};
+    margin-top: -53.55rem;
   }
   &:last-child {
     padding-bottom: ${pxToRem(120)};
   }
-`;
-
-const backgroundDiv = styled.div`
-  background-image: url(${({ bgUrl }) => bgUrl});
 `;
 
 const SubTitleBlue = styled.div`
@@ -60,7 +112,7 @@ function ImageContainer({ src, width, height, enTitle, koTitle }) {
 export default function WorkFlow() {
   return (
     <WorkFlowSection>
-      <ContentSection bgUrl="/assets/image/main/workflow/background-1.svg" className="bg-right-bottom">
+      <ContentSection>
         <SubTitle1>WORK FLOW</SubTitle1>
         <p>
           만들어져있는 솔루션이 아닌 프로젝트별 맞춤형 컨설팅을 통해 만족스러운 퀄리티의 산출물을 제공할 수 있도록
@@ -75,6 +127,14 @@ export default function WorkFlow() {
           koTitle="서비스 컨설팅"
         ></ImageContainer>
         <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" />
+        <div className="flex">
+          <div className="relative">
+            <Image src="/assets/image/main/workflow/background-2.svg" layout="fill" />
+          </div>
+          <div className="relative">
+            <Image src="/assets/image/main/workflow/background-3.svg" layout="fill" />
+          </div>
+        </div>
       </ContentSection>
       <ContentSection>
         <ImageContainer
@@ -109,7 +169,7 @@ export default function WorkFlow() {
         </div>
       </ContentSection>
 
-      <ContentSection bgUrl="/assets/image/main/workflow/background-4.svg" className="flex justify-center bg-left-top">
+      <ContentSection className="flex justify-center bg-left-top">
         <div className="ml-20">
           <Image src="/assets/image/main/workflow/left-arrow-2.svg" width="500" height="648" />
         </div>
@@ -130,7 +190,7 @@ export default function WorkFlow() {
         </div>
       </ContentSection>
 
-      <ContentSection bgUrl="/assets/image/main/workflow/background-5.svg" className="pb-10 bg-left">
+      <ContentSection className="pb-10 bg-left">
         <div className="pb-7">
           <ImageContainer
             src="/assets/image/main/workflow/workflow-6.svg"
@@ -144,7 +204,7 @@ export default function WorkFlow() {
           <Image src="/assets/image/main/workflow/down-arrow-3.svg" width="17" height="104" />
         </div>
       </ContentSection>
-      <ContentSection bgUrl="/assets/image/main/workflow/background-8.svg" className="-ml-20 bg-right-top">
+      <ContentSection>
         <ImageContainer
           src="/assets/image/main/workflow/workflow-7.svg"
           width="758"

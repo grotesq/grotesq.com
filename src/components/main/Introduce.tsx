@@ -56,7 +56,7 @@ export default function Introduce() {
           <p>효과적인 제작 과정을 통하여 안정성&접근성 높은 결과물을 제작합니다.</p>
         </Description>
         <div>
-          <Button width="240" height="70" round border="false">
+          <Button width="240" height="70" round>
             프로젝트 문의하기
           </Button>
         </div>

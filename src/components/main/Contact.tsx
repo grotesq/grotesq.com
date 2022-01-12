@@ -8,7 +8,8 @@ const ContactSection = styled.section`
   color: #fff;
   padding-top: ${pxToRem(60)};
   padding-bottom: ${pxToRem(49)};
-  background-image: linear-gradient(127deg, #5870ff 22%, #6d51ff 100%);
+  background-image: url('/assets/image/main/contact/background-1.svg'),
+    url('/assets/image/main/contact/background-2.svg'), linear-gradient(127deg, #5870ff 22%, #6d51ff 100%);
   line-height: 1.5;
 `;
 const Title = styled.h1`
@@ -29,7 +30,9 @@ export default function Contact() {
       <div>
         <SubTitle>Ready to get started?</SubTitle>
         <Title>프로젝트를 문의하세요.</Title>
-        <button className="bg-white rounded-full text-primary-blue py-4 px-11">문의하기</button>
+        <Button width="150" height="50" round color="white">
+          문의하기
+        </Button>
       </div>
     </ContactSection>
   );
