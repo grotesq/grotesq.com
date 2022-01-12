@@ -7,75 +7,101 @@ const WorkFlowSection = styled.section`
   ${({ theme }) => theme.flexCenter};
   flex-direction: column;
   p {
-    font-family: 'Noto Sans KR', sans-serif;
     color: #5a6282;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: ${pxToRem(18)};
     line-height: 1.67;
     padding-bottom: ${pxToRem(46)};
+    @media ${({ theme }) => theme.mediaQuery('sm')} {
+      font-size: ${pxToRem(14)};
+    }
+  }
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    padding-right: ${pxToRem(39)};
+    padding-left: ${pxToRem(38)};
   }
 `;
 
 const ContentSection = styled.section`
-  width: 100%;
   background-repeat: no-repeat;
+  width: 100%;
   &:first-child {
-    padding-top: ${pxToRem(120)};
     background-image: url('/assets/image/main/workflow/background-1.svg');
     background-position: 210% 90%;
+    padding-top: ${pxToRem(120)};
   }
   &:first-child::after {
     background-image: url('/assets/image/main/workflow/background-2.svg');
     content: '';
+    height: ${pxToRem(155)};
+    margin-top: -15rem;
     position: absolute;
     right: ${pxToRem(300)};
     width: ${pxToRem(201)};
-    height: ${pxToRem(155)};
-    margin-top: -15rem;
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      display: none;
+    }
   }
   &:nth-child(2)::before {
-    position: absolute;
+    background-image: url('/assets/image/main/workflow/background-3.svg');
     content: '';
-    right: ${pxToRem(115)};
-    width: ${pxToRem(266)};
     height: ${pxToRem(266)};
     margin-top: -10rem;
-    background-image: url('/assets/image/main/workflow/background-3.svg');
+    position: absolute;
+    right: ${pxToRem(115)};
+    width: ${pxToRem(266)};
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      display: none;
+    }
   }
   &:nth-child(3)::after {
-    position: absolute;
-    content: '';
     background-image: url('/assets/image/main/workflow/background-4.svg');
-    width: ${pxToRem(700)};
+    content: '';
     height: ${pxToRem(1352)};
     left: -10%;
     margin-top: -12rem;
+    position: absolute;
+    width: ${pxToRem(700)};
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      display: none;
+    }
   }
   &:nth-child(4)::before {
     background-image: url('/assets/image/main/workflow/background-5.svg');
     background-position: right;
-    position: absolute;
     content: '';
-    width: ${pxToRem(350)};
     height: ${pxToRem(700)};
     left: 0;
     margin-top: -8rem;
+    position: absolute;
+    width: ${pxToRem(350)};
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      display: none;
+    }
   }
   &:nth-child(4)::after {
     background-image: url('/assets/image/main/workflow/background-6.svg');
-    position: absolute;
     content: '';
-    width: ${pxToRem(300)};
     height: ${pxToRem(300)};
-    margin-top: -30rem;
     left: ${pxToRem(200)};
+    margin-top: -30rem;
+    position: absolute;
+    width: ${pxToRem(300)};
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      display: none;
+    }
   }
   &:nth-child(5)::before {
     background-image: url('/assets/image/main/workflow/background-7.svg');
-    position: absolute;
     content: '';
-    width: ${pxToRem(1005)};
+    width: ${pxToRem(1000)};
     height: ${pxToRem(1697)};
     margin-top: -53.55rem;
+    position: absolute;
+    right: 0;
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      background: none;
+    }
   }
   &:last-child {
     padding-bottom: ${pxToRem(120)};
@@ -85,6 +111,9 @@ const ContentSection = styled.section`
 const SubTitleBlue = styled.div`
   ${({ theme }) => theme.subTitleBlue};
   line-height: 1.36;
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    font-size: ${pxToRem(16)};
+  }
 `;
 
 const SubTitle1 = styled.h1`
@@ -93,17 +122,19 @@ const SubTitle1 = styled.h1`
 
 const SubTitle2 = styled.h2`
   color: #000;
-  font-family: 'Noto Sans KR', sans-serif;
   font-size: ${pxToRem(32)};
   line-height: 0.94;
   padding-bottom: ${pxToRem(23)};
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    font-size: ${pxToRem(20)};
+  }
 `;
 
 function ImageContainer({ src, width, height, enTitle, koTitle }) {
   return (
     <div>
       <Image src={src} width={width} height={height} />
-      <SubTitleBlue className="pt-9">{enTitle}</SubTitleBlue>
+      <SubTitleBlue className="pt-7 sm:pt-9">{enTitle}</SubTitleBlue>
       <SubTitle2>{koTitle}</SubTitle2>
     </div>
   );
@@ -145,12 +176,11 @@ export default function WorkFlow() {
           koTitle="서비스 기획 (Wireframe 동시진행)"
         ></ImageContainer>
         <div className="flex flex-col items-center">
-          <div className="flex pb-8">
+          <div className="flex pl-16 pr-8 pb-8">
             <Image src="/assets/image/main/workflow/left-arrow-1.svg" width="367" height="232" />
             <Image src="/assets/image/main/workflow/right-arrow-1.svg" width="422" height="219" />
           </div>
-
-          <div className="flex md:space-x-96">
+          <div className="flex space-x-16 md:space-x-96 ">
             <ImageContainer
               src="/assets/image/main/workflow/workflow-3.svg"
               width="390"
@@ -169,28 +199,45 @@ export default function WorkFlow() {
         </div>
       </ContentSection>
 
-      <ContentSection className="flex justify-center bg-left-top">
-        <div className="ml-20">
-          <Image src="/assets/image/main/workflow/left-arrow-2.svg" width="500" height="648" />
+      <ContentSection className="flex justify-center">
+        <div className="sm:ml-20">
+          <div className="hidden sm:flex">
+            <Image src="/assets/image/main/workflow/left-arrow-2.svg" width="500" height="648" />
+          </div>
+          <div className="sm:hidden w-max">
+            <Image src="/assets/image/main/workflow/mb_left-arrow-2.svg" width="244" height="411" />
+          </div>
         </div>
         <div>
-          <div className="ml-44 pb-6">
-            <Image src="/assets/image/main/workflow/down-arrow-2.svg" width="17" height="88" />
-            <ImageContainer
-              src="/assets/image/main/workflow/workflow-5.svg"
-              width="359"
-              height="320"
-              enTitle="Front-end"
-              koTitle="프론트 엔드 구축"
-            ></ImageContainer>
+          <div className="sm:ml-44 pb-6">
+            <div>
+              <Image src="/assets/image/main/workflow/down-arrow-2.svg" width="17" height="88" />
+              <ImageContainer
+                src="/assets/image/main/workflow/workflow-5.svg"
+                width="359"
+                height="320"
+                enTitle="Front-end"
+                koTitle="프론트 엔드 구축"
+              ></ImageContainer>
+            </div>
           </div>
-          <div className="mr-44">
-            <Image src="/assets/image/main/workflow/right-arrow-2.svg" width="359" height="94" />
+          <div>
+            <div className="hidden sm:flex sm:mr-44">
+              <Image src="/assets/image/main/workflow/right-arrow-2.svg" width="359" height="94" />
+            </div>
+            <div className="sm:hidden">
+              <Image
+                src="/assets/image/main/workflow/mb_right-arrow-2.svg"
+                width="94"
+                height="122"
+                layout="responsive"
+              />
+            </div>
           </div>
         </div>
       </ContentSection>
 
-      <ContentSection className="pb-10 bg-left">
+      <ContentSection className="pb-10">
         <div className="pb-7">
           <ImageContainer
             src="/assets/image/main/workflow/workflow-6.svg"

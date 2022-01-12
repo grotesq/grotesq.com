@@ -39,6 +39,9 @@ const subTitle1 = css`
   font-weight: 600;
   line-height: 1.52;
   padding-bottom: ${pxToRem(18)};
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    font-size: ${pxToRem(30)};
+  }
 `;
 
 export const theme: DefaultTheme = {

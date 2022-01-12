@@ -1,20 +1,34 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import { pxToRem } from '../utils/utils';
 
 const FooterContainer = styled.footer`
-  height: 154px;
-  display: flex;
+  ${({ theme }) => theme.flexCenter};
   align-items: center;
+  display: flex;
+  height: 154px;
   justify-content: center;
+  font-weight: 500;
+  line-height: 1.86;
+  p {
+    font-size: ${pxToRem(14)};
+    color: #757b94;
+  }
+`;
+
+const Copyright = styled.p`
+  font-weight: 100;
 `;
 
 export default function Footer() {
-    return(
-      <FooterContainer>
-        <div>
-          <p>그로테스큐 스튜디오 / 대표: 김나람 / unknown@grotesq.com</p>
-          <p>Copyright © 2017-2020 GrotesQ, All rights reserved.</p>
-        </div>
-      </FooterContainer>
-    )
+  return (
+    <FooterContainer>
+      <div>
+        <p>
+          그로테스큐 스튜디오 / 대표: 김나람 / <a href="mailto:unknown@grotesq.com">unknown@grotesq.com</a>
+        </p>
+        <Copyright>{`Copyright © 2017-${new Date().getFullYear()} GrotesQ, All rights reserved.`}</Copyright>
+      </div>
+    </FooterContainer>
+  );
 }

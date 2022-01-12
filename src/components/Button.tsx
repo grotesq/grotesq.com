@@ -7,13 +7,13 @@ const primaryBlue = css`
 
 const CustomButton = styled.button`
   /* 공통 스타일 */
+  background: ${primaryBlue};
+  box-shadow: ${pxToRem(20)} ${pxToRem(20)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.15);
+  color: #fff;
   font-family: NotoSansCJKkr;
   font-size: 1.125rem;
-  width: ${({ width }) => pxToRem(width)};
   height: ${({ height }) => pxToRem(height)};
-  background: ${primaryBlue};
-  color: #fff;
-  box-shadow: ${pxToRem(20)} ${pxToRem(20)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.15);
+  width: ${({ width }) => pxToRem(width)};
 
   /* round */
   ${({ round }) =>
@@ -27,9 +27,9 @@ const CustomButton = styled.button`
     border &&
     css`
       background: none;
-      color: ${primaryBlue};
       border: 2px solid ${primaryBlue};
       box-shadow: none;
+      color: ${primaryBlue};
     `};
 
   /* color */
@@ -37,8 +37,8 @@ const CustomButton = styled.button`
     color &&
     css`
       background: ${color};
-      color: ${primaryBlue};
       box-shadow: none;
+      color: ${primaryBlue};
     `};
 `;
 

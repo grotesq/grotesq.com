@@ -6,60 +6,65 @@ import styled from 'styled-components';
 import logo from '../../public/assets/image/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
 import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg'
+import { pxToRem } from '../utils/utils';
 
 const HeaderContainer = styled.header`
-  min-width: 300px;
-  height: 100px;
-  display: flex;
   align-items: center;
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  height: ${pxToRem(100)};
   justify-content: space-between;
+  min-width: 300px;
   @media ${({ theme }) => theme.mediaQuery('sm')} {
-    height: 60px;
+    height: ${pxToRem(60)};
   }
 `;
 const NavContainer = styled.nav`
-   ul {
-     display: flex;
-     font-size: 18px;
-     a:hover {
-      color: ${({theme}) => theme.color['primary-blue']};
+  ul {
+    display: flex;
+    font-size: ${pxToRem(18)};
+    a:hover {
+      color: ${({ theme }) => theme.color['primary-blue']};
       text-decoration: underline;
-     }
-     li {
-       padding-left: 45px;
-       }
-     }
-   }
+      font-weight: 600;
+    }
+
+    li {
+      padding-left: ${pxToRem(45)};
+    }
+  }
 `;
 const MobileNavContainer = styled.nav`
-  position: absolute;
   background: white;
-  width: 250px;
-  top: 0;
-  right: 0;
   height: 100%;
-  padding-left: 30px;
+  padding-left: ${pxToRem(30)};
+  position: absolute;
+  right: 0;
   text-align: left;
+  top: 0;
+  width: 250px;
   a:hover {
-    color: ${({theme}) => theme.color['primary-blue']};
+    color: ${({ theme }) => theme.color['primary-blue']};
     text-decoration: underline;
+    font-weight: 600;
   }
   li {
-    padding-bottom: 30px;
+    padding-bottom: ${pxToRem(30)};
   }
 `;
 const MobileNavCloseBtn = styled.button`
-  padding-top: 22.5px;
-  padding-right: 22.5px;
   padding-bottom: 19.5px;
+  padding-right: 22.5px;
+  padding-top: 22.5px;
 `;
 const BlackBackground = styled.div`
+  background: rgb(26, 28, 35, 0.7);
+  height: 100vh;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100vw;
-  height: 100vh;
-  background: rgb(26, 28, 35, 0.7);
 `;
 interface Menu { 
   title: string;

@@ -28,13 +28,23 @@ export default class MyDocument extends Document {
   }
   render() {
     return (
-      <Html>
+      <Html lang="ko">
         <Head>
+          <meta charSet="utf-8" />
+          <meta property="og:title" content="" />
+          <meta property="og:image" content="" />
+          <meta property="og:description" content="" />
+          <meta property="og:url" content="//" />
+          <meta name="description" content="" />
+          <meta name="keywords" content="" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap"
+            rel="stylesheet"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;900&display=swap"
             rel="stylesheet"

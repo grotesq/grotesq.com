@@ -6,5 +6,6 @@ export const GlobalStyle = createGlobalStyle`
     html {
       word-break: keep-all;
       font-family: 'Noto Sans KR', sans-serif;
+      ::-webkit-scrollbar { display: none; }
     }
 `;

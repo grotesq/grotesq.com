@@ -45,8 +45,8 @@ const THUMBNAIL_INFOS = [
 const PortfolioSection = styled.section`
   ${({ theme }) => theme.flexCenter};
   flex-direction: column;
-  padding-top: ${pxToRem(167)};
   padding-bottom: ${pxToRem(100)};
+  padding-top: ${pxToRem(167)};
 `;
 
 const SubTitle1 = styled.h1`
@@ -56,10 +56,12 @@ const SubTitle1 = styled.h1`
 const Description = styled.div`
   padding-bottom: ${pxToRem(60)};
   p {
-    font-size: ${pxToRem(18)};
-    font-family: 'Noto Sans KR', sans-serif;
     color: #000;
+    font-size: ${pxToRem(18)};
     line-height: 1.67;
+    @media ${({ theme }) => theme.mediaQuery('sm')} {
+      font-size: ${pxToRem(14)};
+    }
   }
 `;
 
@@ -67,7 +69,7 @@ function GalleryItem({ src, title }) {
   return (
     <div>
       <Image src={src} alt={title} />
-      <p className="pt-[1.125rem] text-xl">{title}</p>
+      <p className="pt-[1.125rem] text-sm md:text-xl">{title}</p>
     </div>
   );
 }
@@ -80,7 +82,7 @@ export default function Portfolio() {
         <p>그로테스큐 스튜디오의 주요 프로젝트 입니다.</p>
         <p>완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.</p>
       </Description>
-      <div className="grid grid-cols-3 gap-x-5 gap-y-16 pb-20">
+      <div className="grid md:grid-cols-3 gap-x-5 gap-y-16 pb-20 ">
         {THUMBNAIL_INFOS.map((thumb) => (
           <GalleryItem src={thumb.src} title={thumb.title} key={thumb.title} />
         ))}

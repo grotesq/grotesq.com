@@ -8,16 +8,7 @@ import Portfolio from '../components/main/Portfolios';
 import Contact from '../components/main/Contact';
 
 export default function Home() {
-  const PortfolioSection = styled.section`
-    ${({ theme }) => theme.flexCenter};
-    background: #fad4ae;
-    height: 1477px;
-  `;
-  const ContactSection = styled.section`
-    ${({ theme }) => theme.flexCenter};
-    background: #d9f1f1;
-    height: 250px;
-  `;
+
   return (
     <BaseLayout>
       <Head>

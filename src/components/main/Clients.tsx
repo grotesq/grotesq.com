@@ -9,9 +9,9 @@ const SubTitle1 = styled.h1`
 
 const ClientSection = styled.section`
   ${({ theme }) => theme.flexCenter};
-  height: 711px;
+  width: 100%
   background: #fbfcfe;
-
+  padding-top: ${pxToRem(120)};
   p {
     font-size: ${pxToRem(18)};
     font-family: 'Noto Sans KR', sans-serif;
@@ -27,6 +27,13 @@ const ClientSection = styled.section`
     height: ${pxToRem(180)};
     right: ${pxToRem(375)};
     margin-top: 50rem;
+    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+      display: none;
+    }
+  }
+
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    padding-top: ${pxToRem(60)};
   }
 `;
 

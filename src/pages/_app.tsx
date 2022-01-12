@@ -26,7 +26,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicons/Grotesq-favicon-32.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicons/Grotesq-favicon-96.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/Grotesq-favicon-16.png" />
-
       </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
