@@ -7,17 +7,12 @@ const ContactSection = styled.section`
   background-image: url('/assets/image/main/contact/background-1.svg'),
     url('/assets/image/main/contact/background-2.svg'), linear-gradient(127deg, #5870ff 22%, #6d51ff 100%);
   color: #fff;
-  height: ${pxToRem(250)};
   line-height: 1.5;
-  padding-bottom: ${pxToRem(49)};
-  padding-top: ${pxToRem(60)};
+
   @media ${({ theme }) => theme.mediaQuery('sm')} {
     background-size: contain;
     background-position: top, bottom;
     background-repeat: no-repeat;
-    padding-bottom: ${pxToRem(26)};
-    padding-top: ${pxToRem(26)};
-    height: ${pxToRem(100)};
   }
 `;
 const Title = styled.h1`
@@ -39,7 +34,7 @@ const SubTitle = styled.div`
 
 export default function Contact() {
   return (
-    <ContactSection>
+    <ContactSection className="py-6 px-5 sm:pt-15 sm:pb-12">
       <div>
         <SubTitle>Ready to get started?</SubTitle>
         <Title>프로젝트를 문의하세요.</Title>

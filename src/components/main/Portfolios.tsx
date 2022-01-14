@@ -45,8 +45,6 @@ const THUMBNAIL_INFOS = [
 const PortfolioSection = styled.section`
   ${({ theme }) => theme.flexCenter};
   flex-direction: column;
-  padding-bottom: ${pxToRem(100)};
-  padding-top: ${pxToRem(167)};
 `;
 
 const SubTitle1 = styled.h1`
@@ -76,19 +74,19 @@ function GalleryItem({ src, title }) {
 
 export default function Portfolio() {
   return (
-    <PortfolioSection>
+    <PortfolioSection className="pt-28 pb-7 px-5 sm:pt-40 sm:pb-25">
       <SubTitle1>PORTFOLIOS</SubTitle1>
       <Description>
         <p>그로테스큐 스튜디오의 주요 프로젝트 입니다.</p>
         <p>완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.</p>
       </Description>
-      <div className="grid md:grid-cols-3 gap-x-5 gap-y-16 pb-20 ">
+      <div className="grid md:grid-cols-3 gap-x-5 gap-y-8 sm:gap-y-16 pb-12 sm:pb-20 ">
         {THUMBNAIL_INFOS.map((thumb) => (
           <GalleryItem src={thumb.src} title={thumb.title} key={thumb.title} />
         ))}
       </div>
       <div>
-        <Button width="280" height="70" round border>
+        <Button className="text-sm leading-7 sm:text-lg" width="280" height="70" round border>
           프로젝트 전체보기
         </Button>
       </div>

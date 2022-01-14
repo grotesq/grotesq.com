@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import { pxToRem } from '../../utils/utils';
-import clients from '../../../public/assets/image/main/clients/clients.png';
+import Clients from '../../../public/assets/image/main/clients/clients.png';
+import MobileClients from '../../../public/assets/image/main/clients/mb_clients.png';
 
 const SubTitle1 = styled.h1`
   ${({ theme }) => theme.subTitle1};
@@ -9,15 +10,12 @@ const SubTitle1 = styled.h1`
 
 const ClientSection = styled.section`
   ${({ theme }) => theme.flexCenter};
-  width: 100%
+  width: 100%;
   background: #fbfcfe;
-  padding-top: ${pxToRem(120)};
   p {
     font-size: ${pxToRem(18)};
-    font-family: 'Noto Sans KR', sans-serif;
     color: #000;
     line-height: 1.67;
-    padding-bottom: ${pxToRem(12.2)};
   }
   &::after {
     content: '';
@@ -31,19 +29,20 @@ const ClientSection = styled.section`
       display: none;
     }
   }
-
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
-    padding-top: ${pxToRem(60)};
-  }
 `;
 
 export default function Client() {
   return (
-    <ClientSection>
+    <ClientSection className="pt-15 px-14 lg:pt-30">
       <div>
         <SubTitle1>OUR CLIENTS</SubTitle1>
-        <p>그로테스큐 스튜디오와 함께한 고객사입니다.</p>
-        <Image src={clients} />
+        <p className="pb-14 sm:pb-3">그로테스큐 스튜디오와 함께한 고객사입니다.</p>
+        <div className="hidden sm:flex w-screen">
+          <Image src={Clients} />
+        </div>
+        <div className="flex sm:hidden w-screen">
+          <Image src={MobileClients} />
+        </div>
       </div>
     </ClientSection>
   );

@@ -5,13 +5,10 @@ import { pxToRem } from '../../utils/utils';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
-  background: rgb(26, 28, 35, 0.8);
+  background: linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8)),
+    url('/assets/image/main/introduce/background-1.jpg');
+  background-size: cover;
   color: #fff;
-  height: 980px;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
-    padding-right: ${pxToRem(48)};
-    padding-left: ${pxToRem(47)};
-  }
 `;
 
 const MainTitle = styled.h1`
@@ -37,23 +34,22 @@ const SubTitleBlue = styled.div`
 const Description = styled.div`
   p {
     font-weight: 300;
-    line-height: 1.88;
+    opacity: 0.8;
   }
-  padding-bottom: ${pxToRem(100)};
 `;
 
 export default function Introduce() {
   return (
-    <IntroduceSection>
+    <IntroduceSection className="pt-32 pb-28 px-12 lg:pt-62 lg:pb-52">
       <div>
         <SubTitleBlue>Studio GrotesQ</SubTitleBlue>
         <div>
-          <MainTitle>
+          <MainTitle className="leading-6 sm:leading-5 ">
             서비스 하고 싶은 <strong>아이디어가 있으신가요?</strong> <br />
             어떤 기술을 활용하여 서비스 제작을 해야 할지 <strong>막막하신가요?</strong>
           </MainTitle>
         </div>
-        <Description>
+        <Description className="pb-15 text-sm leading-6 sm:pb-25 sm:text-base sm:leading-7">
           <p>그로테스큐 스튜디오는 기획, 디자인부터 앱, 플랫폼 서비스 런칭까지 도와드립니다.</p>
           <div className="hidden sm:block">
             <p>가지고 계신 아이디어를 전문적인 컨설팅을 통해 구체화시켜드립니다.</p>
@@ -64,7 +60,7 @@ export default function Introduce() {
           </div>
         </Description>
         <div>
-          <Button width="240" height="70" round>
+          <Button className="text-sm leading-8 sm:text-lg" width="240" height="70" round>
             프로젝트 문의하기
           </Button>
         </div>
