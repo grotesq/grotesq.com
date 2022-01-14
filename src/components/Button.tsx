@@ -23,12 +23,12 @@ const CustomButton = styled.button<ButtonProps>`
   ${({ height }) =>
     height &&
     css`
-      height: pxToRem(height);
+      height: ${pxToRem(height)};
     `};
   ${({ width }) =>
     width &&
     css`
-      width: pxToRem(width);
+      width: ${pxToRem(width)};
     `};
   /* round */
   ${({ round }) =>

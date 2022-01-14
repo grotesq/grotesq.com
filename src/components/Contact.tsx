@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { pxToRem } from '../../utils/utils';
-import Button from '../Button';
+import { pxToRem } from '../utils/utils';
+import Button from './Button';
 
 const ContactSection = styled.section`
   ${({ theme }) => theme.flexCenter};

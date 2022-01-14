@@ -121,7 +121,7 @@ export default function Header() {
     return () => {
       router.events.off('routeChangeStart', handleRouteChange);
     };
-  }, []);
+  }, [isMobileNavOpened, router.events]);
 
   return (
     <HeaderContainer className="px-5 md:px-40">

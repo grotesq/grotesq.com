@@ -5,7 +5,7 @@ import Introduce from '../components/main/Introduce';
 import WorkFlow from '../components/main/WorkFlow';
 import Clients from '../components/main/Clients';
 import Portfolio from '../components/main/Portfolios';
-import Contact from '../components/main/Contact';
+import Contact from '../components/Contact';
 
 export default function Home() {
 
