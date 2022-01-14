@@ -15,18 +15,19 @@ module.exports = withBundleAnalyzer({
         {
           loader: "@svgr/webpack",
           options: {
+            prettier: false,
+            svgo: true,
             svgoConfig: {
               plugins: [
                 {
-                  // Enable figma's wrong mask-type attribute work
-                  removeRasterImages: false,
-                  removeStyleElement: false,
-                  removeUnknownsAndDefaults: false,
-                  // Enable svgr's svg to fill the size
-                  removeViewBox: false,
-                },
+                  name: 'removeAttrs',
+                  params: {
+                      attrs: 'fill'
+                      }
+                  }
               ],
             },
+            titleProp: true,
           },
         },
       ],

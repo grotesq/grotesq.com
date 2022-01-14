@@ -1,27 +1,53 @@
-import { DefaultTheme } from "styled-components";
+import styled, { DefaultTheme, css } from 'styled-components';
+import { pxToRem } from '../utils/utils';
 
-export const theme: DefaultTheme = {
-  color: {
-    purple: "#8661de",
-    blue: "#00bac7",
-    gray: "#f6f6f6",
-    green: "#07b495",
-    lightGreen: "#99ecdd",
-    darkGray: "#54595d",
-  },
-  boxShadow: {
-    normal: "0 3px 8px 0 rgb(0 0 0 / 10%)",
-    purple: "0 3px 8px 0 #d6c9ff",
-    blue: "0 3px 8px 0 #b3e2e6",
-  },
+const color = {
+  'primary-blue': '#4a63fe',
 };
 
-const customMediaQuery = (maxWidth: number): string =>
-  `@media (max-width: ${maxWidth}px)`;
+const deviceSizes: Record<string, string> = {
+  xs: '375px',
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+};
 
-export const media = {
-  custom: customMediaQuery,
-  pc: customMediaQuery(1440),
-  tablet: customMediaQuery(768),
-  mobile: customMediaQuery(576),
+const mediaQuery = (sizeName: string) => {
+  return `screen and (max-width: ${deviceSizes[sizeName]})`;
+};
+
+const flexCenter = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
+const subTitleBlue = css`
+  color: ${color['primary-blue']};
+  font-size: ${pxToRem(22)};
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+`;
+
+const subTitle1 = css`
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: ${pxToRem(50)};
+  font-weight: 600;
+  line-height: 1.52;
+  padding-bottom: ${pxToRem(18)};
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    font-size: ${pxToRem(30)};
+  }
+`;
+
+export const theme: DefaultTheme = {
+  color,
+  mediaQuery,
+  flexCenter,
+  subTitleBlue,
+  subTitle1,
 };

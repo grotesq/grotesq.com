@@ -1,0 +1,22 @@
+<svg id="bg_3" xmlns="http://www.w3.org/2000/svg" width="266" height="266" viewBox="0 0 266 266">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #4a63fe;
+        stroke-width: 30px;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="타원_154" data-name="타원 154" class="cls-1">
+    <circle class="cls-2" cx="133" cy="133" r="133"/>
+    <circle class="cls-3" cx="133" cy="133" r="118"/>
+  </g>
+</svg>
