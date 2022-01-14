@@ -63,7 +63,7 @@ const Description = styled.div`
   }
 `;
 
-function GalleryItem({ src, title }) {
+function GalleryItem({ src, title }: { src: string | StaticImageData; title: string }) {
   return (
     <div>
       <Image src={src} alt={title} />

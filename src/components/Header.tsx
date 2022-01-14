@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import logo from '../../public/assets/image/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
-import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg'
+import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg';
 import { pxToRem } from '../utils/utils';
 
 const HeaderContainer = styled.header`
@@ -66,13 +66,13 @@ const BlackBackground = styled.div`
   top: 0;
   width: 100vw;
 `;
-interface Menu { 
+interface Menu {
   title: string;
   path: string;
   isInternal: boolean;
 }
 
-const menues = [ 
+const menues = [
   {
     title: 'Works',
     path: '/works',
@@ -87,39 +87,41 @@ const menues = [
     title: 'Contact',
     path: '/',
     isInternal: false,
-  }
-]
+  },
+];
 
 function Menues({ title, path, isInternal }: Menu) {
   return (
     <li>
-      {
-        isInternal ?
-        <Link href={ path }><a>{ title }</a></Link>
-        : <a href={ path }>{ title }</a>
-      }
+      {isInternal ? (
+        <Link href={path}>
+          <a>{title}</a>
+        </Link>
+      ) : (
+        <a href={path}>{title}</a>
+      )}
     </li>
-  )
+  );
 }
 
 export default function Header() {
   const router = useRouter();
-  const [ isMobileNavOpened, setIsMobileNavOpened ] = useState(false);
+  const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
   const toggleMobileNav = () => {
-    setIsMobileNavOpened(!isMobileNavOpened)
+    setIsMobileNavOpened(!isMobileNavOpened);
   };
 
   useEffect(() => {
     const handleRouteChange = () => {
-      if(isMobileNavOpened) {
-        setIsMobileNavOpened(isMobileNavOpened => !isMobileNavOpened)
+      if (isMobileNavOpened) {
+        setIsMobileNavOpened((isMobileNavOpened) => !isMobileNavOpened);
       }
-    }
-    router.events.on('routeChangeStart', handleRouteChange)
+    };
+    router.events.on('routeChangeStart', handleRouteChange);
     return () => {
-      router.events.off('routeChangeStart', handleRouteChange)
-    }
-  }, [])
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, []);
 
   return (
     <HeaderContainer className="px-5 md:px-40">
@@ -135,7 +137,7 @@ export default function Header() {
           <BtnMobileMenu />
         </button>
       </div>
-      { isMobileNavOpened &&
+      {isMobileNavOpened && (
         <BlackBackground>
           <MobileNavContainer className="sm:hidden">
             <ul>
@@ -144,32 +146,18 @@ export default function Header() {
                   <BtnMobileClose onClick={toggleMobileNav} />
                 </MobileNavCloseBtn>
               </li>
-              {
-                menues.map((menu: Menu) => (
-                  <Menues 
-                    key={menu.title}
-                    title={menu.title} 
-                    path={menu.path} 
-                    isInternal={menu.isInternal}
-                  />
-                ))
-              }
+              {menues.map((menu: Menu) => (
+                <Menues key={menu.title} title={menu.title} path={menu.path} isInternal={menu.isInternal} />
+              ))}
             </ul>
           </MobileNavContainer>
         </BlackBackground>
-      }
+      )}
       <NavContainer className="hidden sm:flex">
         <ul>
-          {
-            menues.map((menu: Menu) => (
-              <Menues 
-                key={menu.title}
-                title={menu.title} 
-                path={menu.path} 
-                isInternal={menu.isInternal} 
-              />
-            ))
-          }
+          {menues.map((menu: Menu) => (
+            <Menues key={menu.title} title={menu.title} path={menu.path} isInternal={menu.isInternal} />
+          ))}
         </ul>
       </NavContainer>
     </HeaderContainer>

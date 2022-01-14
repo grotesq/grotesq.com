@@ -41,10 +41,10 @@ export default function Client() {
         <SubTitle1>OUR CLIENTS</SubTitle1>
         <p className="pb-14 px-14 sm:pb-3 ">그로테스큐 스튜디오와 함께한 고객사입니다.</p>
         <div className="hidden sm:flex w-screen">
-          <Image src={Clients} />
+          <Image src={Clients} alt="고객사 로고들" />
         </div>
         <div className="flex sm:hidden w-screen">
-          <Image src={MobileClients} />
+          <Image src={MobileClients} alt="고객사 로고들" />
         </div>
       </div>
     </ClientSection>
