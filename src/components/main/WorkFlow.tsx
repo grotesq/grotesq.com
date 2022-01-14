@@ -4,7 +4,6 @@ import { pxToRem } from '../../utils/utils';
 import Bg1 from '../../../public/assets/image/main/workflow/background-1.svg';
 import { useState, useEffect } from 'react';
 import { debounce } from 'lodash';
-import useResize from '../../hooks/useResize';
 
 const WorkFlowSection = styled.section`
   background-image: 
@@ -211,11 +210,18 @@ function Divide3() {
 }
 
 export default function WorkFlow() {
-  const [windowWidth, setWindowWidth] = useState(0);
-  useResize((width: number) => {
-    setWindowWidth(width);
-  });
-
+  const [windowWidth, setWindowWidth] = useState();
+  useEffect(() => {
+    const handleResize = debounce(() => {
+      const width = window.innerWidth;
+      setWindowWidth(width);
+    });
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
   return (
     <WorkFlowSection className=" px-[2.4rem] py-15 sm:py-30">
       <Divide1 />
