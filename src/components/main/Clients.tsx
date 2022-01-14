@@ -16,6 +16,9 @@ const ClientSection = styled.section`
     font-size: ${pxToRem(18)};
     color: #000;
     line-height: 1.67;
+    @media ${({ theme }) => theme.mediaQuery('sm')} {
+      font-size: ${pxToRem(14)};
+    }
   }
   &::after {
     content: '';
@@ -33,10 +36,10 @@ const ClientSection = styled.section`
 
 export default function Client() {
   return (
-    <ClientSection className="pt-15 px-14 lg:pt-30">
+    <ClientSection className="pt-15 lg:pt-30">
       <div>
         <SubTitle1>OUR CLIENTS</SubTitle1>
-        <p className="pb-14 sm:pb-3">그로테스큐 스튜디오와 함께한 고객사입니다.</p>
+        <p className="pb-14 px-14 sm:pb-3 ">그로테스큐 스튜디오와 함께한 고객사입니다.</p>
         <div className="hidden sm:flex w-screen">
           <Image src={Clients} />
         </div>

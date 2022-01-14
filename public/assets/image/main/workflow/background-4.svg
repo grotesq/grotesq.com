@@ -2,21 +2,13 @@
     <defs>
         <linearGradient id="a" x1="-.225" y1=".219" x2=".914" y2="1.063" gradientUnits="objectBoundingBox">
             <stop offset="0" stop-color="#fbfcfe"/>
-            <stop offset=".063" stop-color="#b197fc" stop-opacity="1"/>
-            <stop offset=".21" stop-color="#b197fc" stop-opacity="1"/>
-            <stop offset=".356" stop-color="#b197fc" stop-opacity="1"/>
-            <stop offset=".499" stop-color="#b197fc" stop-opacity="1"/>
-            <stop offset=".637" stop-color="#b197fc" stop-opacity="1"/>
-            <stop offset=".77" stop-color="#b197fc" stop-opacity="1"/>
-            <stop offset="1" stop-color="#b197fc" stop-opacity="1"/>
-            <!-- <stop offset="0" stop-color="#fbfcfe"/>
             <stop offset=".063" stop-color="#e1e1ff" stop-opacity=".89"/>
             <stop offset=".21" stop-color="#e3e3ff" stop-opacity=".659"/>
             <stop offset=".356" stop-color="#e5e5ff" stop-opacity=".459"/>
             <stop offset=".499" stop-color="#e6e6ff" stop-opacity=".294"/>
             <stop offset=".637" stop-color="#e7e7ff" stop-opacity=".165"/>
             <stop offset=".77" stop-color="#e8e8ff" stop-opacity=".075"/>
-            <stop offset="1" stop-color="#e9e9ff" stop-opacity="0"/> -->
+            <stop offset="1" stop-color="#e9e9ff" stop-opacity="0"/>
         </linearGradient>
     </defs>
     <path data-name="패스 2381" d="M-2793.132 217.47s191.441-95.772 354.219 63.379c117.525 126.6 79.566 288.75 137.435 435.546s184.473 245.04 184.473 245.04 159.157 87.355 226.076 245.037c66.9 157.682 50.631 313.214 50.631 334.914h-1000.114V259.147s34.83-36.333 47.28-41.677z" transform="translate(2840.412 -188.899)" style="opacity:.35;fill:url(#a)"/>
