@@ -36,7 +36,7 @@ const ClientSection = styled.section`
 
 export default function Client() {
   return (
-    <ClientSection className="pt-15 lg:pt-30">
+    <ClientSection className="pt-15 pb-13 sm:pt-30 sm:pb-28">
       <div>
         <SubTitle1>OUR CLIENTS</SubTitle1>
         <p className="pb-14 px-14 sm:pb-3 ">그로테스큐 스튜디오와 함께한 고객사입니다.</p>

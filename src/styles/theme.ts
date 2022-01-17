@@ -25,6 +25,21 @@ const flexCenter = css`
   text-align: center;
 `;
 
+const logoTitle = css`
+  color: ${color['primary-blue']};
+  font-size: ${pxToRem(22)};
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.275rem;
+  line-height: 1.5;
+
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.56;
+  }
+`;
+
 const subTitleBlue = css`
   color: ${color['primary-blue']};
   font-size: ${pxToRem(22)};
@@ -50,4 +65,5 @@ export const theme: DefaultTheme = {
   flexCenter,
   subTitleBlue,
   subTitle1,
+  logoTitle,
 };

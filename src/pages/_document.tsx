@@ -49,6 +49,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;900&display=swap"
             rel="stylesheet"
           ></link>
+          <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         </Head>
         <body>
           <Main />

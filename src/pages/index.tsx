@@ -4,11 +4,10 @@ import styled, { css } from 'styled-components';
 import Introduce from '../components/main/Introduce';
 import WorkFlow from '../components/main/WorkFlow';
 import Clients from '../components/main/Clients';
-import Portfolio from '../components/main/Portfolios';
+import Portfolio from '../components/main/Portfolio';
 import Contact from '../components/Contact';
 
 export default function Home() {
-
   return (
     <BaseLayout>
       <Head>

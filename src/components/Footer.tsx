@@ -14,6 +14,12 @@ const FooterContainer = styled.footer`
     font-size: ${pxToRem(14)};
     color: #757b94;
   }
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    padding: 2rem 1.7rem;
+    p {
+      font-size: ${pxToRem(12)};
+    }
+  }
 `;
 
 const Copyright = styled.p`

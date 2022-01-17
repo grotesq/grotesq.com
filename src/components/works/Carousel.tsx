@@ -1,0 +1,130 @@
+import styled, { css } from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import Button from '../../components/Button';
+import { pxToRem } from '../../utils/utils';
+
+const MainTitle = styled.h1`
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    font-size: 2rem;
+    padding-bottom: 1.3rem;
+    line-height: 1.25;
+  }
+  font-size: 3.375rem;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: 900;
+  padding-bottom: 1.75rem;
+`;
+
+const LogoTitle = styled.div`
+  ${({ theme }) => theme['logoTitle']};
+  padding-bottom: 1.75rem;
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    padding-bottom: 1rem;
+  }
+`;
+
+const SubTitle1 = styled.h1`
+  ${({ theme }) => theme.subTitle1};
+`;
+
+const Description = styled.div`
+  font-size: 1rem;
+  line-height: 1.88;
+  padding-bottom: 6.25rem;
+  color: #ffffff;
+  opacity: 0.8;
+  font-weight: 300;
+
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    padding-bottom: 3.75rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    p {
+      font-size: 0.875rem;
+      letter-spacing: -0.28px;
+      line-height: 1.57;
+    }
+  }
+`;
+
+const SwiperSection = styled.section`
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    .swiper {
+      margin-top: 3.75rem;
+      .swiper-button-prev,
+      .swiper-button-next {
+        color: #fff;
+        top: 94%;
+        left: 80%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .swiper-button-next {
+        left: 93%;
+        justify-content: space-between;
+      }
+      .swiper-button-prev:after,
+      .swiper-button-next:after {
+        font-size: 0.875rem;
+      }
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #fff;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+`;
+
+const SlideContaier = styled.div`
+  ${({ theme }) => theme.flexCenter};
+  flex-direction: column;
+  background: linear-gradient(rgb(26, 28, 35, 0.7), rgb(26, 28, 35, 0.7)), url('/assets/image/works/slide-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 17.438rem;
+  padding-bottom: 17.5rem;
+
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    background-position: left 2% center;
+    padding-top: 7.9rem;
+    padding-bottom: 9.3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+`;
+
+export default function Carousel() {
+  SwiperCore.use([Autoplay, Navigation]);
+  return (
+    <SwiperSection>
+      <Swiper
+        slidesPerView={1}
+        navigation={true}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+      >
+        <SwiperSlide>
+          <SlideContaier>
+            <LogoTitle>Studio GrotesQ</LogoTitle>
+            <MainTitle>스마트 러닝 윌라 웹서비스 리뉴얼</MainTitle>
+            <Description>
+              <p>(주)인플루엔셜의 스마트러닝 서비스인 &apos;윌라&apos;의 앱을 리뉴얼했습니다.</p>
+              <p>기존의 웹뷰 하이브리드 방식에서 네이티브 방식으로 전면 개편했습니다.</p>
+              <p>개편을 통해 앱 진입 속도가 초기 로딩 속도, 뷰 반응 속도 등이 크게 개선되었습니다.</p>
+            </Description>
+            <Button round border color="white" width="240" height="60">
+              프로젝트 살펴보기
+            </Button>
+          </SlideContaier>
+        </SwiperSlide>
+      </Swiper>
+    </SwiperSection>
+  );
+}

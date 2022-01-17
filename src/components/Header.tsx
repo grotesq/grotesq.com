@@ -18,6 +18,10 @@ const HeaderContainer = styled.header`
   min-width: 300px;
   @media ${({ theme }) => theme.mediaQuery('sm')} {
     height: ${pxToRem(60)};
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: #fff;
   }
 `;
 const NavContainer = styled.nav`
@@ -49,6 +53,7 @@ const MobileNavContainer = styled.nav`
     text-decoration: underline;
     font-weight: 600;
   }
+
   li {
     padding-bottom: ${pxToRem(30)};
   }
@@ -66,7 +71,7 @@ const BlackBackground = styled.div`
   top: 0;
   width: 100vw;
 `;
-interface Menu {
+interface Menus {
   title: string;
   path: string;
   isInternal: boolean;
@@ -85,12 +90,12 @@ const menues = [
   },
   {
     title: 'Contact',
-    path: '/',
+    path: 'mailto:unknown@grotesq.com',
     isInternal: false,
   },
 ];
 
-function Menues({ title, path, isInternal }: Menu) {
+function Menues({ title, path, isInternal }: Menus) {
   return (
     <li>
       {isInternal ? (
@@ -118,6 +123,7 @@ export default function Header() {
       }
     };
     router.events.on('routeChangeStart', handleRouteChange);
+
     return () => {
       router.events.off('routeChangeStart', handleRouteChange);
     };
@@ -146,7 +152,7 @@ export default function Header() {
                   <BtnMobileClose onClick={toggleMobileNav} />
                 </MobileNavCloseBtn>
               </li>
-              {menues.map((menu: Menu) => (
+              {menues.map((menu: Menus) => (
                 <Menues key={menu.title} title={menu.title} path={menu.path} isInternal={menu.isInternal} />
               ))}
             </ul>
@@ -155,7 +161,7 @@ export default function Header() {
       )}
       <NavContainer className="hidden sm:flex">
         <ul>
-          {menues.map((menu: Menu) => (
+          {menues.map((menu: Menus) => (
             <Menues key={menu.title} title={menu.title} path={menu.path} isInternal={menu.isInternal} />
           ))}
         </ul>

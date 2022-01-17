@@ -7,8 +7,8 @@ interface ButtonProps {
   height?: string;
   border?: boolean;
   round?: boolean;
+  fill?: boolean;
 }
-
 
 const primaryBlue = css`
   ${({ theme }) => theme.color['primary-blue']};
@@ -51,15 +51,31 @@ const CustomButton = styled.button<ButtonProps>`
   ${({ color }) =>
     color &&
     css`
-      background: ${color};
+      background: none;
       box-shadow: none;
+      color: ${color};
+      border: 2px solid ${color};
+    `};
+
+  /* fill */
+  ${({ fill, color }) =>
+    fill &&
+    css`
+      background: ${color};
       color: ${primaryBlue};
+      box-shadow: none;
     `};
 `;
 
-export default function Button({ children, width, height, ...rest }: ButtonProps & React.HTMLAttributes<HTMLButtonElement>) {
+export default function Button({
+  children,
+  width,
+  height,
+  fill,
+  ...rest
+}: ButtonProps & React.HTMLAttributes<HTMLButtonElement>) {
   return (
-    <CustomButton width={width} height={height} {...rest}>
+    <CustomButton width={width} height={height} fill={fill} {...rest}>
       {children}
     </CustomButton>
   );

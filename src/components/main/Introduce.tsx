@@ -11,6 +11,14 @@ const IntroduceSection = styled.section`
   color: #fff;
 `;
 
+const LogoTitle = styled.div`
+  ${({ theme }) => theme['logoTitle']};
+  padding-bottom: 2rem;
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    padding-bottom: 1.25rem;
+  }
+`;
+
 const MainTitle = styled.h1`
   font-size: ${pxToRem(48)};
   font-weight: 100;
@@ -42,7 +50,7 @@ export default function Introduce() {
   return (
     <IntroduceSection className="pt-32 pb-28 px-12 lg:pt-62 lg:pb-52">
       <div>
-        <SubTitleBlue>Studio GrotesQ</SubTitleBlue>
+        <LogoTitle>Studio GrotesQ</LogoTitle>
         <div>
           <MainTitle className="leading-6 sm:leading-5 ">
             서비스 하고 싶은 <strong>아이디어가 있으신가요?</strong> <br />
@@ -60,7 +68,13 @@ export default function Introduce() {
           </div>
         </Description>
         <div>
-          <Button className="text-sm leading-8 sm:text-lg" width="240" height="70" round>
+          <Button
+            className="text-sm leading-8 sm:text-lg"
+            width="240"
+            height="70"
+            round
+            onClick={() => (window.location.href = 'mailto:unknown@grotesq.com')}
+          >
             프로젝트 문의하기
           </Button>
         </div>
