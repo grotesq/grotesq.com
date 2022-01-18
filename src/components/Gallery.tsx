@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import styled, { css } from 'styled-components';
 import { pxToRem } from '../utils/utils';
 import Thumbnail1 from '/public/assets/image/main/portfolios/thumbnail-1.jpg';
@@ -80,11 +81,12 @@ function GalleryItem({ src, title }: { src: string | StaticImageData; title: str
   );
 }
 
-export default function Gallery({ location }: { location: string | undefined }) {
+export default function Gallery() {
+  const router = useRouter();
   return (
     <GalleryContainer>
       <div className="grid sm:grid-cols-3 gap-x-5 gap-y-8 sm:gap-y-16 ">
-        {location === 'main'
+        {router.pathname === '/'
           ? THUMBNAIL_INFOS.slice(0, 6).map((thumb) => (
               <GalleryItem src={thumb.src} title={thumb.title} key={thumb.title} />
             ))

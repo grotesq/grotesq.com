@@ -6,12 +6,8 @@ const OurWorksSection = styled.section`
   flex-direction: column;
   padding-top: 7.435rem;
   padding-bottom: 4.437rem;
-  padding-left: 10rem;
-  padding-right: 10rem;
   @media ${({ theme }) => theme.mediaQuery('sm')} {
     padding-top: 3.75rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
     padding-bottom: 0;
   }
 `;
@@ -35,13 +31,13 @@ const Description = styled.div`
 
 export default function OurWorks() {
   return (
-    <OurWorksSection>
+    <OurWorksSection className="px-5 xl:px-40">
       <SubTitle1>OUR WORKS</SubTitle1>
       <Description>
         <p>그로테스큐 스튜디오의 주요 프로젝트 입니다.</p>
         <p>완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.</p>
       </Description>
-      <Gallery location="works" />
+      <Gallery />
     </OurWorksSection>
   );
 }

@@ -2,11 +2,18 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import logo from '../../public/assets/image/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
 import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg';
 import { pxToRem } from '../utils/utils';
+
+interface Menus {
+  title: string;
+  path: string;
+  isInternal: boolean;
+  isSelected?: boolean;
+}
 
 const HeaderContainer = styled.header`
   align-items: center;
@@ -15,7 +22,7 @@ const HeaderContainer = styled.header`
   font-weight: 300;
   height: ${pxToRem(100)};
   justify-content: space-between;
-  min-width: 300px;
+  min-width: 23.437rem;
   @media ${({ theme }) => theme.mediaQuery('sm')} {
     height: ${pxToRem(60)};
     position: fixed;
@@ -24,18 +31,26 @@ const HeaderContainer = styled.header`
     background-color: #fff;
   }
 `;
+
+const activeStyle = css`
+  color: ${({ theme }) => theme.color['primary-blue']};
+  text-decoration: underline;
+  font-weight: 600;
+`;
+
 const NavContainer = styled.nav`
   ul {
     display: flex;
     font-size: ${pxToRem(18)};
-    a:hover {
-      color: ${({ theme }) => theme.color['primary-blue']};
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
     li {
       padding-left: ${pxToRem(45)};
+      a:hover {
+        ${activeStyle}
+      }
+      .selected {
+        ${activeStyle}
+        text-decoration: none;
+      }
     }
   }
 `;
@@ -49,11 +64,8 @@ const MobileNavContainer = styled.nav`
   top: 0;
   width: 250px;
   a:hover {
-    color: ${({ theme }) => theme.color['primary-blue']};
-    text-decoration: underline;
-    font-weight: 600;
+    ${activeStyle}
   }
-
   li {
     padding-bottom: ${pxToRem(30)};
   }
@@ -71,36 +83,34 @@ const BlackBackground = styled.div`
   top: 0;
   width: 100vw;
 `;
-interface Menus {
-  title: string;
-  path: string;
-  isInternal: boolean;
-}
 
-const menues = [
+const menus = [
   {
     title: 'Works',
     path: '/works',
     isInternal: true,
+    isSelected: false,
   },
   {
     title: 'Recruit',
-    path: '/',
-    isInternal: false,
+    path: '',
+    isInternal: true,
+    isSelected: false,
   },
   {
     title: 'Contact',
     path: 'mailto:unknown@grotesq.com',
     isInternal: false,
+    isSelected: false,
   },
 ];
 
-function Menues({ title, path, isInternal }: Menus) {
+function Menus({ title, path, isInternal, isSelected }: Menus) {
   return (
     <li>
       {isInternal ? (
         <Link href={path}>
-          <a>{title}</a>
+          <a className={isSelected ? 'selected' : null}>{title}</a>
         </Link>
       ) : (
         <a href={path}>{title}</a>
@@ -111,6 +121,7 @@ function Menues({ title, path, isInternal }: Menus) {
 
 export default function Header() {
   const router = useRouter();
+
   const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
   const toggleMobileNav = () => {
     setIsMobileNavOpened(!isMobileNavOpened);
@@ -153,7 +164,13 @@ export default function Header() {
                 </MobileNavCloseBtn>
               </li>
               {menues.map((menu: Menus) => (
-                <Menues key={menu.title} title={menu.title} path={menu.path} isInternal={menu.isInternal} />
+                <Menus
+                  key={menu.title}
+                  title={menu.title}
+                  path={menu.path}
+                  isInternal={menu.isInternal}
+                  isSelected={menu.isSelected}
+                />
               ))}
             </ul>
           </MobileNavContainer>
@@ -161,8 +178,14 @@ export default function Header() {
       )}
       <NavContainer className="hidden sm:flex">
         <ul>
-          {menues.map((menu: Menus) => (
-            <Menues key={menu.title} title={menu.title} path={menu.path} isInternal={menu.isInternal} />
+          {menus.map((menu: Menus) => (
+            <Menus
+              key={menu.title}
+              title={menu.title}
+              path={menu.path}
+              isInternal={menu.isInternal}
+              isSelected={router.pathname === menu.path}
+            />
           ))}
         </ul>
       </NavContainer>

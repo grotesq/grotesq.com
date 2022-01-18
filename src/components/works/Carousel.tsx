@@ -39,18 +39,28 @@ const Description = styled.div`
 
   @media ${({ theme }) => theme.mediaQuery('sm')} {
     padding-bottom: 3.75rem;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
     p {
       font-size: 0.875rem;
-      letter-spacing: -0.28px;
+      letter-spacing: -0.017rem;
       line-height: 1.57;
     }
   }
 `;
 
 const SwiperSection = styled.section`
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  .swiper {
+    .swiper-button-prev {
+      left: 8vw;
+    }
+    .swiper-button-next {
+      left: 92vw;
+    }
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+      font-size: 3.5vw;
+    }
+  }
+  @media ${({ theme }) => theme.mediaQuery('md')} {
     .swiper {
       margin-top: 3.75rem;
       .swiper-button-prev,
@@ -74,8 +84,6 @@ const SwiperSection = styled.section`
   .swiper-button-prev,
   .swiper-button-next {
     color: #fff;
-    padding-left: 10rem;
-    padding-right: 10rem;
   }
 `;
 
@@ -92,8 +100,6 @@ const SlideContaier = styled.div`
     background-position: left 2% center;
     padding-top: 7.9rem;
     padding-bottom: 9.3rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
 `;
 
@@ -111,13 +117,25 @@ export default function Carousel() {
         }}
       >
         <SwiperSlide>
-          <SlideContaier>
+          <SlideContaier className="px-10 lg:px-40">
             <LogoTitle>Studio GrotesQ</LogoTitle>
-            <MainTitle>스마트 러닝 윌라 웹서비스 리뉴얼</MainTitle>
-            <Description>
-              <p>(주)인플루엔셜의 스마트러닝 서비스인 &apos;윌라&apos;의 앱을 리뉴얼했습니다.</p>
-              <p>기존의 웹뷰 하이브리드 방식에서 네이티브 방식으로 전면 개편했습니다.</p>
-              <p>개편을 통해 앱 진입 속도가 초기 로딩 속도, 뷰 반응 속도 등이 크게 개선되었습니다.</p>
+            <MainTitle>
+              <span>스마트 러닝</span>
+              <span className="block lg:inline">&nbsp;윌라 웹서비스 리뉴얼</span>
+            </MainTitle>
+            <Description className="px-6">
+              <p>
+                (주)인플루엔셜의 스마트러닝 서비스인
+                <span className="block md:inline">&apos;윌라&apos;의 앱을 리뉴얼했습니다.</span>
+              </p>
+              <p>
+                기존의 웹뷰 하이브리드 방식에서
+                <span className="block md:inline">네이티브 방식으로 전면 개편했습니다.</span>
+              </p>
+              <p>
+                개편을 통해 앱 진입 속도가 초기 로딩 속도,
+                <span className="block md:inline">뷰 반응 속도 등이 크게 개선되었습니다.</span>
+              </p>
             </Description>
             <Button round border color="white" width="240" height="60">
               프로젝트 살펴보기
