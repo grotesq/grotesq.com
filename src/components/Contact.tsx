@@ -43,7 +43,7 @@ export default function Contact() {
           width="150"
           height="50"
           round
-          fill
+          fill="true"
           color="white"
           onClick={() => (window.location.href = 'mailto:unknown@grotesq.com')}
         >
