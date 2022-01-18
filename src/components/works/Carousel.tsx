@@ -62,7 +62,6 @@ const SwiperSection = styled.section`
   }
   @media ${({ theme }) => theme.mediaQuery('md')} {
     .swiper {
-      margin-top: 3.75rem;
       .swiper-button-prev,
       .swiper-button-next {
         color: #fff;
@@ -91,6 +90,11 @@ const SlideContaier = styled.div`
   ${({ theme }) => theme.flexCenter};
   flex-direction: column;
   background: linear-gradient(rgb(26, 28, 35, 0.7), rgb(26, 28, 35, 0.7)), url('/assets/image/works/slide-1.jpg');
+
+  @supports (background-image: -webkit-image-set(url('/assets/image/works/introduce/slide-1.webp') 1x)) {
+    background-image: linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8)),
+      -webkit-image-set(url('/assets/image/works/slide-1.webp') 1x);
+  }
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 17.438rem;
@@ -112,7 +116,7 @@ export default function Carousel() {
         navigation={true}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 3500,
           disableOnInteraction: false,
         }}
       >

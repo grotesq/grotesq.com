@@ -21,4 +21,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex: 1;
+  @media ${({ theme }) => theme.mediaQuery('sm')} {
+    margin-top: 3.75rem;
+  }
 `;

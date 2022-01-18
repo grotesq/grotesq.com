@@ -7,6 +7,11 @@ const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
   background: linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8)),
     url('/assets/image/main/introduce/background-1.jpg');
+
+  @supports (background-image: -webkit-image-set(url('/assets/image/main/introduce/background-1.webp') 1x)) {
+    background-image: linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8)),
+      -webkit-image-set(url('/assets/image/main/introduce/background-1.webp') 1x);
+  }
   background-size: cover;
   color: #fff;
 `;

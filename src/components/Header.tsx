@@ -62,7 +62,7 @@ const MobileNavContainer = styled.nav`
   right: 0;
   text-align: left;
   top: 0;
-  width: 250px;
+  width: 15.625rem;
   a:hover {
     ${activeStyle}
   }
@@ -81,7 +81,7 @@ const BlackBackground = styled.div`
   left: 0;
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
 `;
 
 const menus = [
@@ -160,7 +160,7 @@ export default function Header() {
         </Link>
       </div>
       <div>
-        <button type="button" className="flex sm:hidden" onClick={toggleMobileNav}>
+        <button type="button" className="flex sm:hidden" onClick={toggleMobileNav} aria-label="open menu">
           <BtnMobileMenu />
         </button>
       </div>
