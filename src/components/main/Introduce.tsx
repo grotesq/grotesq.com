@@ -70,8 +70,7 @@ export default function Introduce() {
         <div>
           <Button
             className="text-sm leading-8 sm:text-lg"
-            width="240"
-            height="70"
+            size="md"
             round
             onClick={() => (window.location.href = 'mailto:unknown@grotesq.com')}
           >

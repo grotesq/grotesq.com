@@ -42,7 +42,7 @@ export default function Portfolio() {
       <Gallery />
       <Link href="/works">
         <a>
-          <Button className="text-sm leading-7 sm:text-lg" width="280" height="70" round border>
+          <Button className="text-sm leading-7 sm:text-lg" size="lg" round border>
             프로젝트 전체보기
           </Button>
         </a>

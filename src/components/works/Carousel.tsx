@@ -137,7 +137,7 @@ export default function Carousel() {
                 <span className="block md:inline">뷰 반응 속도 등이 크게 개선되었습니다.</span>
               </p>
             </Description>
-            <Button round border color="white" width="240" height="60">
+            <Button round border color="white" size="md">
               프로젝트 살펴보기
             </Button>
           </SlideContaier>

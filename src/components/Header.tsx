@@ -143,11 +143,19 @@ export default function Header() {
   }, [isMobileNavOpened, router.events]);
 
   return (
-    <HeaderContainer className="px-5 md:px-40">
+    <HeaderContainer className="px-5 lg:px-40">
       <div>
         <Link href="/">
           <a>
-            <Image src={logo} alt="grtesq studio 그로테스큐 스튜디오" width={185} height={30} layout="fixed"></Image>
+            <div className="w-32 sm:w-44">
+              <Image
+                src={logo}
+                alt="grtesq studio 그로테스큐 스튜디오"
+                width={185}
+                height={30}
+                layout="responsive"
+              ></Image>
+            </div>
           </a>
         </Link>
       </div>

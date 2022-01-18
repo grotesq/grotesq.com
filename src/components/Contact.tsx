@@ -40,11 +40,10 @@ export default function Contact() {
         <Title>프로젝트를 문의하세요.</Title>
         <Button
           className="hidden md:inline-block"
-          width="150"
-          height="50"
+          color="white"
+          size="sm"
           round
           fill="true"
-          color="white"
           onClick={() => (window.location.href = 'mailto:unknown@grotesq.com')}
         >
           문의하기

@@ -3,11 +3,10 @@ import { pxToRem } from '../utils/utils';
 interface ButtonProps {
   children?: React.ReactNode;
   color?: string;
-  width?: string;
-  height?: string;
+  size?: string;
   border?: boolean;
   round?: boolean;
-  fill?: boolean;
+  fill?: boolean | string;
 }
 
 const primaryBlue = css`
@@ -19,17 +18,38 @@ const CustomButton = styled.button<ButtonProps>`
   background: ${primaryBlue};
   box-shadow: ${pxToRem(20)} ${pxToRem(20)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.15);
   color: #fff;
-  font-size: 1.125rem;
-  ${({ height }) =>
-    height &&
+  ${({ size }) =>
+    size === 'lg' &&
     css`
-      height: ${pxToRem(height)};
+      width: 17.5rem;
+      height: 4.375rem;
+      font-size: 1.125rem;
+      @media ${({ theme }) => theme.mediaQuery('sm')} {
+        width: 15rem;
+        height: 3.37rem;
+        font-size: 0.938rem;
+      }
     `};
-  ${({ width }) =>
-    width &&
+  ${({ size }) =>
+    size === 'md' &&
     css`
-      width: ${pxToRem(width)};
+      width: 15.5rem;
+      height: 4.375rem;
+      font-size: 1.125rem;
+      @media ${({ theme }) => theme.mediaQuery('sm')} {
+        width: 15rem;
+        height: 3.37rem;
+        font-size: 0.938rem;
+      }
     `};
+  ${({ size }) =>
+    size === 'sm' &&
+    css`
+      width: 9.375rem;
+      height: 3.125rem;
+      font-size: 1rem;
+    `};
+
   /* round */
   ${({ round }) =>
     round &&
@@ -67,15 +87,9 @@ const CustomButton = styled.button<ButtonProps>`
     `};
 `;
 
-export default function Button({
-  children,
-  width,
-  height,
-  fill,
-  ...rest
-}: ButtonProps & React.HTMLAttributes<HTMLButtonElement>) {
+export default function Button({ children, size, ...rest }: ButtonProps & React.HTMLAttributes<HTMLButtonElement>) {
   return (
-    <CustomButton width={width} height={height} fill={fill} {...rest}>
+    <CustomButton size={size} {...rest}>
       {children}
     </CustomButton>
   );
