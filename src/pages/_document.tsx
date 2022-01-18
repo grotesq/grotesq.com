@@ -31,12 +31,15 @@ export default class MyDocument extends Document {
       <Html lang="ko">
         <Head>
           <meta charSet="utf-8" />
-          <meta property="og:title" content="" />
+          <meta property="og:type" content="website"></meta>
+          <meta property="og:title" content="그로테스큐 스튜디오 || Studio GrotesQ" />
+          <meta property="og:locale" content="ko_KR"></meta>
+          <meta property="og:site_name" content="그로테스큐 스튜디오 || Studio GrotesQ"></meta>
+          {/* <meta property="og:description" content="" />
+          <meta property="og:url" content=""></meta>
           <meta property="og:image" content="" />
-          <meta property="og:description" content="" />
-          <meta property="og:url" content="//" />
           <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <meta name="keywords" content="" /> */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />

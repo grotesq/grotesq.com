@@ -94,7 +94,7 @@ const menus = [
   {
     title: 'Recruit',
     path: '',
-    isInternal: true,
+    isInternal: false,
     isSelected: false,
   },
   {
@@ -110,10 +110,12 @@ function Menus({ title, path, isInternal, isSelected }: Menus) {
     <li>
       {isInternal ? (
         <Link href={path}>
-          <a className={isSelected ? 'selected' : null}>{title}</a>
+          <a className={isSelected ? 'selected' : ''}>{title}</a>
         </Link>
       ) : (
-        <a href={path}>{title}</a>
+        <a href={path} target="_blank" rel="noopener noreferrer">
+          {title}
+        </a>
       )}
     </li>
   );
@@ -163,7 +165,7 @@ export default function Header() {
                   <BtnMobileClose onClick={toggleMobileNav} />
                 </MobileNavCloseBtn>
               </li>
-              {menues.map((menu: Menus) => (
+              {menus.map((menu: Menus) => (
                 <Menus
                   key={menu.title}
                   title={menu.title}
