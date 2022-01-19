@@ -8,7 +8,7 @@ import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
 import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg';
 import { pxToRem } from '../utils/utils';
 
-interface Menus {
+interface MenuProps {
   title: string;
   path: string;
   isInternal: boolean;
@@ -28,14 +28,14 @@ const HeaderContainer = styled.header`
     position: fixed;
     z-index: 9999;
     width: 100%;
-    background-color: #fff;
+    background-color: ${(props) => props.theme.color['white']};
   }
 `;
 
 const activeStyle = css`
   color: ${({ theme }) => theme.color['primary-blue']};
-  text-decoration: underline;
   font-weight: 600;
+  text-decoration: underline;
 `;
 
 const NavContainer = styled.nav`
@@ -49,7 +49,6 @@ const NavContainer = styled.nav`
       }
       .selected {
         ${activeStyle}
-        text-decoration: none;
       }
     }
   }
@@ -105,7 +104,7 @@ const menus = [
   },
 ];
 
-function Menus({ title, path, isInternal, isSelected }: Menus) {
+function Menus({ title, path, isInternal, isSelected }: MenuProps) {
   return (
     <li>
       {isInternal ? (

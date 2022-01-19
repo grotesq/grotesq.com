@@ -17,7 +17,7 @@ const CustomButton = styled.button<ButtonProps>`
   /* 공통 스타일 */
   background: ${primaryBlue};
   box-shadow: ${pxToRem(20)} ${pxToRem(20)} ${pxToRem(20)} 0 rgba(0, 0, 0, 0.15);
-  color: #fff;
+  color: ${(props) => props.theme.color['white']};
   ${({ size }) =>
     size === 'lg' &&
     css`

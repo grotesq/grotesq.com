@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { pxToRem } from '../utils/utils';
 import Button from './Button';
 
@@ -6,7 +6,7 @@ const ContactSection = styled.section`
   ${({ theme }) => theme.flexCenter};
   background-image: url('/assets/image/main/contact/background-1.svg'),
     url('/assets/image/main/contact/background-2.svg'), linear-gradient(127deg, #5870ff 22%, #6d51ff 100%);
-  color: #fff;
+  color: ${(props) => props.theme.color['white']};
   line-height: 1.5;
 
   @media ${({ theme }) => theme.mediaQuery('sm')} {

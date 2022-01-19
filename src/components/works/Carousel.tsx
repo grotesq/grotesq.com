@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import Button from '../../components/Button';
-import { pxToRem } from '../../utils/utils';
 
 const MainTitle = styled.h1`
   @media ${({ theme }) => theme.mediaQuery('sm')} {
@@ -12,7 +11,7 @@ const MainTitle = styled.h1`
   }
   font-size: 3.375rem;
   line-height: 1.2;
-  color: #ffffff;
+  color: ${(props) => props.theme.color['white']};
   font-weight: 900;
   padding-bottom: 1.75rem;
 `;
@@ -33,7 +32,7 @@ const Description = styled.div`
   font-size: 1rem;
   line-height: 1.88;
   padding-bottom: 6.25rem;
-  color: #ffffff;
+  color: ${(props) => props.theme.color['white']};
   opacity: 0.8;
   font-weight: 300;
 
@@ -64,7 +63,7 @@ const SwiperSection = styled.section`
     .swiper {
       .swiper-button-prev,
       .swiper-button-next {
-        color: #fff;
+        color: ${(props) => props.theme.color['white']};
         top: 94%;
         left: 80%;
         padding-left: 0;
@@ -82,7 +81,7 @@ const SwiperSection = styled.section`
   }
   .swiper-button-prev,
   .swiper-button-next {
-    color: #fff;
+    color: ${(props) => props.theme.color['white']};
   }
 `;
 

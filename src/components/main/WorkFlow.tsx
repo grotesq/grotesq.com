@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { pxToRem } from '../../utils/utils';
-import Bg1 from '../../../public/assets/image/main/workflow/background-1.svg';
 import { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
 
@@ -38,7 +37,7 @@ const SubTitle1 = styled.h1`
 `;
 
 const SubTitle2 = styled.h2`
-  color: #000;
+  color: ${(props) => props.theme['black']};
   font-size: ${pxToRem(32)};
   line-height: 0.94;
   padding-bottom: ${pxToRem(23)};

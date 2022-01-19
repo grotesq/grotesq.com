@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import styled, { css } from 'styled-components';
-import { pxToRem } from '../utils/utils';
+import styled from 'styled-components';
 import Thumbnail1 from '/public/assets/image/main/portfolios/thumbnail-1.jpg';
 import Thumbnail2 from '/public/assets/image/main/portfolios/thumbnail-2.jpg';
 import Thumbnail3 from '/public/assets/image/main/portfolios/thumbnail-3.jpg';
@@ -66,9 +65,11 @@ const GalleryContainer = styled.div`
   flex-direction: column;
   padding-top: 3.75rem;
   padding-bottom: 5rem;
+  font-size: 1.25rem;
   @media ${({ theme }) => theme.mediaQuery('sm')} {
     padding-top: 2.5rem;
     padding-bottom: 3rem;
+    font-size: 0.875rem;
   }
 `;
 
@@ -76,7 +77,7 @@ function GalleryItem({ src, title }: { src: string | StaticImageData; title: str
   return (
     <div>
       <Image src={src} alt={title} />
-      <p className="pt-[1.125rem] text-sm md:text-xl">{title}</p>
+      <p className="pt-5">{title}</p>
     </div>
   );
 }

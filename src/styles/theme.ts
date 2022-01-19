@@ -1,8 +1,10 @@
-import styled, { DefaultTheme, css } from 'styled-components';
+import { DefaultTheme, css } from 'styled-components';
 import { pxToRem } from '../utils/utils';
 
 const color = {
   'primary-blue': '#4a63fe',
+  black: '#000000',
+  white: '#ffffff',
 };
 
 const deviceSizes: Record<string, string> = {
@@ -33,7 +35,7 @@ const logoTitle = css`
   letter-spacing: 0.275rem;
   line-height: 1.5;
 
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${(props) => props.theme.mediaQuery('sm')} {
     font-size: 1rem;
     letter-spacing: 0.2rem;
     line-height: 1.56;
@@ -48,13 +50,13 @@ const subTitleBlue = css`
 `;
 
 const subTitle1 = css`
-  color: #000;
+  color: ${(props) => props.theme['black']};
   font-family: 'Poppins', sans-serif;
   font-size: ${pxToRem(50)};
   font-weight: 600;
   line-height: 1.52;
   padding-bottom: ${pxToRem(18)};
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${(props) => props.theme.mediaQuery('sm')} {
     font-size: ${pxToRem(30)};
   }
 `;

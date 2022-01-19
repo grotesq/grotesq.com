@@ -1,6 +1,6 @@
 import Button from '../../components/Button';
 import Gallery from '../../components/Gallery';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { pxToRem } from '../../utils/utils';
 import Link from 'next/link';
 
@@ -22,7 +22,7 @@ const SubTitle1 = styled.h1`
 
 const Description = styled.div`
   p {
-    color: #000;
+    color: #${(props) => props.theme['black']};
     font-size: ${pxToRem(18)};
     line-height: 1.67;
     @media ${({ theme }) => theme.mediaQuery('sm')} {

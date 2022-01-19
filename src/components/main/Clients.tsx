@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { pxToRem } from '../../utils/utils';
 import Clients from '../../../public/assets/image/main/clients/clients.png';
 import MobileClients from '../../../public/assets/image/main/clients/mb_clients.png';
@@ -14,7 +14,7 @@ const ClientSection = styled.section`
   background: #fbfcfe;
   p {
     font-size: ${pxToRem(18)};
-    color: #000;
+    color: #${(props) => props.theme['black']};
     line-height: 1.67;
     @media ${({ theme }) => theme.mediaQuery('sm')} {
       font-size: ${pxToRem(14)};

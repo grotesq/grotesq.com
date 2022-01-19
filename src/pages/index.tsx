@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import BaseLayout from '../components/layouts/BaseLayout'
-import styled, { css } from 'styled-components';
+import BaseLayout from '../components/layouts/BaseLayout';
 import Introduce from '../components/main/Introduce';
 import WorkFlow from '../components/main/WorkFlow';
 import Clients from '../components/main/Clients';

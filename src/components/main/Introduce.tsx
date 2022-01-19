@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 import Button from '../Button';
 import { pxToRem } from '../../utils/utils';
@@ -13,7 +12,7 @@ const IntroduceSection = styled.section`
       -webkit-image-set(url('/assets/image/main/introduce/background-1.webp') 1x);
   }
   background-size: cover;
-  color: #fff;
+  color: ${(props) => props.theme.color['white']};
 `;
 
 const LogoTitle = styled.div`
