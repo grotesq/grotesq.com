@@ -9,7 +9,7 @@ const PortfolioSection = styled.section`
   text-align: center;
   padding-top: 10.438rem;
   padding-bottom: 6.25rem;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding-top: 3.75rem;
     padding-bottom: 1.875rem;
   }
@@ -25,7 +25,7 @@ const Description = styled.div`
     color: #${(props) => props.theme['black']};
     font-size: ${pxToRem(18)};
     line-height: 1.67;
-    @media ${({ theme }) => theme.mediaQuery('sm')} {
+    @media ${({ theme }) => theme.mediaQueryMax('sm')} {
       font-size: ${pxToRem(14)};
     }
   }

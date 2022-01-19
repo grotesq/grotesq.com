@@ -9,7 +9,7 @@ const ContactSection = styled.section`
   color: ${(props) => props.theme.color['white']};
   line-height: 1.5;
 
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     background-size: contain;
     background-position: top, bottom;
     background-repeat: no-repeat;
@@ -20,14 +20,14 @@ const Title = styled.h1`
   font-weight: 300;
   line-height: 1;
   padding-bottom: ${pxToRem(15)};
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: ${pxToRem(18)};
   }
 `;
 
 const SubTitle = styled.div`
   font-family: 'Poppins', sans-serif;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: ${pxToRem(14)};
   }
 `;

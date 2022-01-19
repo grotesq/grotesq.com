@@ -4,11 +4,10 @@ import { pxToRem } from '../../utils/utils';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
-  background: linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8)),
-    url('/assets/image/main/introduce/background-1.jpg');
+  background: ${(props) => props.theme.background['gradient80']}, url('/assets/image/main/introduce/background-1.jpg');
 
   @supports (background-image: -webkit-image-set(url('/assets/image/main/introduce/background-1.webp') 1x)) {
-    background-image: linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8)),
+    background-image: ${(props) => props.theme.background['gradient80']},
       -webkit-image-set(url('/assets/image/main/introduce/background-1.webp') 1x);
   }
   background-size: cover;
@@ -18,7 +17,7 @@ const IntroduceSection = styled.section`
 const LogoTitle = styled.div`
   ${({ theme }) => theme['logoTitle']};
   padding-bottom: 2rem;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding-bottom: 1.25rem;
   }
 `;
@@ -32,7 +31,7 @@ const MainTitle = styled.h1`
   & strong {
     font-weight: 900;
   }
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: ${pxToRem(28)};
   }
 `;

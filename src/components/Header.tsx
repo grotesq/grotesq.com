@@ -16,14 +16,14 @@ interface MenuProps {
 }
 
 const HeaderContainer = styled.header`
-  align-items: center;
   display: flex;
+  align-items: center;
   font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  height: ${pxToRem(100)};
   justify-content: space-between;
+  height: ${pxToRem(100)};
   min-width: 23.437rem;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  font-weight: 300;
+  @media ${(props) => props.theme.mediaQueryMax('sm')} {
     height: ${pxToRem(60)};
     position: fixed;
     z-index: 9999;
@@ -33,7 +33,7 @@ const HeaderContainer = styled.header`
 `;
 
 const activeStyle = css`
-  color: ${({ theme }) => theme.color['primary-blue']};
+  color: ${(props) => props.theme.color['primary-blue']};
   font-weight: 600;
   text-decoration: underline;
 `;
@@ -75,7 +75,7 @@ const MobileNavCloseBtn = styled.button`
   padding-top: 22.5px;
 `;
 const BlackBackground = styled.div`
-  background: rgb(26, 28, 35, 0.7);
+  background: ${(props) => props.theme.background['gradient70']};
   height: 100vh;
   left: 0;
   position: absolute;
@@ -172,7 +172,7 @@ export default function Header() {
                   <BtnMobileClose onClick={toggleMobileNav} />
                 </MobileNavCloseBtn>
               </li>
-              {menus.map((menu: Menus) => (
+              {menus.map((menu: MenuProps) => (
                 <Menus
                   key={menu.title}
                   title={menu.title}
@@ -187,7 +187,7 @@ export default function Header() {
       )}
       <NavContainer className="hidden sm:flex">
         <ul>
-          {menus.map((menu: Menus) => (
+          {menus.map((menu: MenuProps) => (
             <Menus
               key={menu.title}
               title={menu.title}

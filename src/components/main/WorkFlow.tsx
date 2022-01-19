@@ -14,7 +14,7 @@ const WorkFlowSection = styled.section`
   background-repeat: no-repeat;
   background-attachment: scroll;
 
-  @media ${({ theme }) => theme.mediaQuery('lg')} {
+  @media ${({ theme }) => theme.mediaQueryMax('lg')} {
     background: none;
     background-image: url('/assets/image/main/workflow/background-1.svg'),
       url('/assets/image/main/workflow/background-2.svg'), url('/assets/image/main/workflow/background-4.svg'),
@@ -27,7 +27,7 @@ const WorkFlowSection = styled.section`
 
 const SubTitleBlue = styled.div`
   ${({ theme }) => theme.subTitleBlue};
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: ${pxToRem(16)};
   }
 `;
@@ -41,7 +41,7 @@ const SubTitle2 = styled.h2`
   font-size: ${pxToRem(32)};
   line-height: 0.94;
   padding-bottom: ${pxToRem(23)};
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: ${pxToRem(20)};
     padding-top: 0.5rem;
   }
@@ -51,7 +51,7 @@ const Description = styled.p`
   color: #5a6282;
   font-size: ${pxToRem(18)};
   line-height: 1.67;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: ${pxToRem(14)};
     line-height: 1.57;
   }

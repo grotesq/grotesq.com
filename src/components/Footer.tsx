@@ -4,17 +4,14 @@ import { pxToRem } from '../utils/utils';
 
 const FooterContainer = styled.footer`
   ${({ theme }) => theme.flexCenter};
-  align-items: center;
-  display: flex;
-  height: 154px;
-  justify-content: center;
+  height: 9.625rem;
   font-weight: 500;
   line-height: 1.86;
   p {
     font-size: ${pxToRem(14)};
     color: #757b94;
   }
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding: 2rem 1.7rem;
     p {
       font-size: ${pxToRem(12)};

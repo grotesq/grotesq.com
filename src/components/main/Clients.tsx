@@ -14,9 +14,9 @@ const ClientSection = styled.section`
   background: #fbfcfe;
   p {
     font-size: ${pxToRem(18)};
-    color: #${(props) => props.theme['black']};
+    color: #${(props) => props.theme.color['black']};
     line-height: 1.67;
-    @media ${({ theme }) => theme.mediaQuery('sm')} {
+    @media ${(props) => props.theme.mediaQueryMax('sm')} {
       font-size: ${pxToRem(14)};
     }
   }
@@ -28,7 +28,7 @@ const ClientSection = styled.section`
     height: ${pxToRem(180)};
     right: ${pxToRem(375)};
     margin-top: 50rem;
-    @media ${({ theme }) => theme.mediaQuery('2xl')} {
+    @media ${(props) => props.theme.mediaQueryMax('2xl')} {
       display: none;
     }
   }

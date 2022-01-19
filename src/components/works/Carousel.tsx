@@ -4,7 +4,7 @@ import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import Button from '../../components/Button';
 
 const MainTitle = styled.h1`
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: 2rem;
     padding-bottom: 1.3rem;
     line-height: 1.25;
@@ -19,7 +19,7 @@ const MainTitle = styled.h1`
 const LogoTitle = styled.div`
   ${({ theme }) => theme['logoTitle']};
   padding-bottom: 1.75rem;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding-bottom: 1rem;
   }
 `;
@@ -36,7 +36,7 @@ const Description = styled.div`
   opacity: 0.8;
   font-weight: 300;
 
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding-bottom: 3.75rem;
     p {
       font-size: 0.875rem;
@@ -59,7 +59,7 @@ const SwiperSection = styled.section`
       font-size: 3.5vw;
     }
   }
-  @media ${({ theme }) => theme.mediaQuery('md')} {
+  @media ${({ theme }) => theme.mediaQueryMax('md')} {
     .swiper {
       .swiper-button-prev,
       .swiper-button-next {
@@ -88,10 +88,10 @@ const SwiperSection = styled.section`
 const SlideContaier = styled.div`
   ${({ theme }) => theme.flexCenter};
   flex-direction: column;
-  background: linear-gradient(rgb(26, 28, 35, 0.7), rgb(26, 28, 35, 0.7)), url('/assets/image/works/slide-1.jpg');
+  background: ${(props) => props.theme.background['gradient70']}, url('/assets/image/works/slide-1.jpg');
 
   @supports (background-image: -webkit-image-set(url('/assets/image/works/introduce/slide-1.webp') 1x)) {
-    background-image: linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8)),
+    background-image: ${(props) => props.theme.background['gradient80']},
       -webkit-image-set(url('/assets/image/works/slide-1.webp') 1x);
   }
   background-size: cover;
@@ -99,7 +99,7 @@ const SlideContaier = styled.div`
   padding-top: 17.438rem;
   padding-bottom: 17.5rem;
 
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     background-position: left 2% center;
     padding-top: 7.9rem;
     padding-bottom: 9.3rem;

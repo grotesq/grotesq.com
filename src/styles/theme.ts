@@ -16,7 +16,7 @@ const deviceSizes: Record<string, string> = {
   '2xl': '1536px',
 };
 
-const mediaQuery = (sizeName: string) => {
+const mediaQueryMax = (sizeName: string) => {
   return `screen and (max-width: ${deviceSizes[sizeName]})`;
 };
 
@@ -34,8 +34,7 @@ const logoTitle = css`
   font-weight: 600;
   letter-spacing: 0.275rem;
   line-height: 1.5;
-
-  @media ${(props) => props.theme.mediaQuery('sm')} {
+  @media ${(props) => props.theme.mediaQueryMax('sm')} {
     font-size: 1rem;
     letter-spacing: 0.2rem;
     line-height: 1.56;
@@ -50,20 +49,26 @@ const subTitleBlue = css`
 `;
 
 const subTitle1 = css`
-  color: ${(props) => props.theme['black']};
+  color: ${color['black']};
   font-family: 'Poppins', sans-serif;
   font-size: ${pxToRem(50)};
   font-weight: 600;
   line-height: 1.52;
   padding-bottom: ${pxToRem(18)};
-  @media ${(props) => props.theme.mediaQuery('sm')} {
+  @media ${(props) => props.theme.mediaQueryMax('sm')} {
     font-size: ${pxToRem(30)};
   }
 `;
 
+const background = {
+  gradient70: 'linear-gradient(rgb(26, 28, 35, 0.7), rgb(26, 28, 35, 0.7))',
+  gradient80: 'linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8))',
+};
+
 export const theme: DefaultTheme = {
   color,
-  mediaQuery,
+  mediaQueryMax,
+  background,
   flexCenter,
   subTitleBlue,
   subTitle1,

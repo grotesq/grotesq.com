@@ -6,7 +6,7 @@ const OurWorksSection = styled.section`
   flex-direction: column;
   padding-top: 7.435rem;
   padding-bottom: 4.437rem;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding-top: 3.75rem;
     padding-bottom: 0;
   }
@@ -20,7 +20,7 @@ const Description = styled.div`
   font-size: 1.125rem;
   line-height: 1.67;
 
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     p {
       font-size: 0.875rem;
       line-height: 1.57;

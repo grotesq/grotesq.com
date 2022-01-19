@@ -66,7 +66,7 @@ const GalleryContainer = styled.div`
   padding-top: 3.75rem;
   padding-bottom: 5rem;
   font-size: 1.25rem;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding-top: 2.5rem;
     padding-bottom: 3rem;
     font-size: 0.875rem;

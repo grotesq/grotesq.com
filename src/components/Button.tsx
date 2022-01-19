@@ -24,7 +24,7 @@ const CustomButton = styled.button<ButtonProps>`
       width: 17.5rem;
       height: 4.375rem;
       font-size: 1.125rem;
-      @media ${({ theme }) => theme.mediaQuery('sm')} {
+      @media ${({ theme }) => theme.mediaQueryMax('sm')} {
         width: 15rem;
         height: 3.37rem;
         font-size: 0.938rem;
@@ -36,7 +36,7 @@ const CustomButton = styled.button<ButtonProps>`
       width: 15.5rem;
       height: 4.375rem;
       font-size: 1.125rem;
-      @media ${({ theme }) => theme.mediaQuery('sm')} {
+      @media ${({ theme }) => theme.mediaQueryMax('sm')} {
         width: 15rem;
         height: 3.37rem;
         font-size: 0.938rem;

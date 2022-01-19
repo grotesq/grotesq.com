@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex: 1;
-  @media ${({ theme }) => theme.mediaQuery('sm')} {
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     margin-top: 3.75rem;
   }
 `;
