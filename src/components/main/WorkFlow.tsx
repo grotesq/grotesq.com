@@ -109,8 +109,8 @@ function Divide2() {
         <div className="text-center">
           <Image
             src="/assets/image/main/workflow/workflow-3.svg"
-            width="367"
-            height="232"
+            width="390"
+            height="350"
             alt="개발 하는 느낌의 일러스트"
           />
           <SubTitleBlue className="pt-5">Back-end</SubTitleBlue>

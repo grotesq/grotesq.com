@@ -72,7 +72,7 @@ export default function Introduce() {
         </Description>
         <div>
           <Button
-            className="text-sm leading-8 sm:text-lg"
+            className="transition ease-in-out  hover:bg-[#4E73FF]"
             size="md"
             round
             onClick={() => (window.location.href = 'mailto:unknown@grotesq.com')}

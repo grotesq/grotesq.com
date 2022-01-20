@@ -6,6 +6,7 @@ import { theme } from "../styles/theme";
 import '../styles/tailwind.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
+
   return (
     <>
       <Head>

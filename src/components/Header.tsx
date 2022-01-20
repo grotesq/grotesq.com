@@ -7,7 +7,7 @@ import logo from '../../public/assets/image/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
 import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg';
 import { pxToRem } from '../utils/utils';
-
+import { motion, AnimatePresence } from 'framer-motion';
 interface MenuProps {
   title: string;
   path: string;
@@ -53,7 +53,7 @@ const NavContainer = styled.nav`
     }
   }
 `;
-const MobileNavContainer = styled.nav`
+const MobileNavContainer = styled(motion.nav)`
   background: white;
   height: 100%;
   padding-left: ${pxToRem(30)};
@@ -70,11 +70,11 @@ const MobileNavContainer = styled.nav`
   }
 `;
 const MobileNavCloseBtn = styled.button`
-  padding-bottom: 19.5px;
-  padding-right: 22.5px;
-  padding-top: 22.5px;
+  padding-bottom: 1.1875rem;
+  padding-right: 1.375rem;
+  padding-top: 1.375rem;
 `;
-const BlackBackground = styled.div`
+const MobileNavBackground = styled(motion.div)`
   background: ${(props) => props.theme.background['gradient70']};
   height: 100vh;
   left: 0;
@@ -122,8 +122,7 @@ function Menus({ title, path, isInternal, isSelected }: MenuProps) {
 
 export default function Header() {
   const router = useRouter();
-
-  const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
+  const [isMobileNavOpened, setIsMobileNavOpened] = useState<boolean>(false);
   const toggleMobileNav = () => {
     setIsMobileNavOpened(!isMobileNavOpened);
   };
@@ -152,6 +151,7 @@ export default function Header() {
                 alt="grtesq studio 그로테스큐 스튜디오"
                 width={185}
                 height={30}
+                sizes="185 123"
                 layout="responsive"
               ></Image>
             </div>
@@ -163,28 +163,40 @@ export default function Header() {
           <BtnMobileMenu />
         </button>
       </div>
-      {isMobileNavOpened && (
-        <BlackBackground>
-          <MobileNavContainer className="sm:hidden">
-            <ul>
-              <li className="text-right">
-                <MobileNavCloseBtn>
-                  <BtnMobileClose onClick={toggleMobileNav} />
-                </MobileNavCloseBtn>
-              </li>
-              {menus.map((menu: MenuProps) => (
-                <Menus
-                  key={menu.title}
-                  title={menu.title}
-                  path={menu.path}
-                  isInternal={menu.isInternal}
-                  isSelected={menu.isSelected}
-                />
-              ))}
-            </ul>
-          </MobileNavContainer>
-        </BlackBackground>
-      )}
+      <AnimatePresence>
+        {isMobileNavOpened && (
+          <MobileNavBackground>
+            <MobileNavContainer
+              className="sm:hidden"
+              initial={{ x: '100%' }}
+              animate={{
+                x: 0,
+              }}
+              exit={{
+                x: '100%',
+              }}
+              transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
+            >
+              <ul>
+                <li className="text-right">
+                  <MobileNavCloseBtn>
+                    <BtnMobileClose onClick={toggleMobileNav} />
+                  </MobileNavCloseBtn>
+                </li>
+                {menus.map((menu: MenuProps) => (
+                  <Menus
+                    key={menu.title}
+                    title={menu.title}
+                    path={menu.path}
+                    isInternal={menu.isInternal}
+                    isSelected={menu.isSelected}
+                  />
+                ))}
+              </ul>
+            </MobileNavContainer>
+          </MobileNavBackground>
+        )}
+      </AnimatePresence>
       <NavContainer className="hidden sm:flex">
         <ul>
           {menus.map((menu: MenuProps) => (

@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Header from '../Header';
-import Footer from '../Footer'
+import Footer from '../Footer';
 
 export default function BaseLayout({ children }: React.PropsWithChildren<{}>) {
   return (
     <Container>
       <Header />
-      <Content>{children}</Content>
-      <Footer/>
+      <Content className="scroll-smooth">{children}</Content>
+      <Footer />
     </Container>
   );
 }
