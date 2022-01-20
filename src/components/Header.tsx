@@ -56,7 +56,7 @@ const NavContainer = styled.nav`
 const MobileNavContainer = styled(motion.nav)`
   background: white;
   height: 100%;
-  padding-left: ${pxToRem(30)};
+  padding-left: 1.875rem;
   position: absolute;
   right: 0;
   text-align: left;
@@ -66,7 +66,7 @@ const MobileNavContainer = styled(motion.nav)`
     ${activeStyle}
   }
   li {
-    padding-bottom: ${pxToRem(30)};
+    padding-bottom: 1.875rem;
   }
 `;
 const MobileNavCloseBtn = styled.button`
@@ -106,7 +106,7 @@ const menus = [
 
 function Menus({ title, path, isInternal, isSelected }: MenuProps) {
   return (
-    <li>
+    <motion.li>
       {isInternal ? (
         <Link href={path}>
           <a className={isSelected ? 'selected' : ''}>{title}</a>
@@ -116,7 +116,7 @@ function Menus({ title, path, isInternal, isSelected }: MenuProps) {
           {title}
         </a>
       )}
-    </li>
+    </motion.li>
   );
 }
 
@@ -168,6 +168,7 @@ export default function Header() {
           <MobileNavBackground>
             <MobileNavContainer
               className="sm:hidden"
+              key="drawer"
               initial={{ x: '100%' }}
               animate={{
                 x: 0,

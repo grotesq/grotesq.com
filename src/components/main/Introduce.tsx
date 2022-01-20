@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Button from '../Button';
 import { pxToRem } from '../../utils/utils';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -14,7 +16,7 @@ const IntroduceSection = styled.section`
   color: ${(props) => props.theme.color['white']};
 `;
 
-const LogoTitle = styled.div`
+const LogoTitle = styled(motion.div)`
   ${({ theme }) => theme['logoTitle']};
   padding-bottom: 2rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
@@ -22,7 +24,7 @@ const LogoTitle = styled.div`
   }
 `;
 
-const MainTitle = styled.h1`
+const MainTitle = styled(motion.h1)`
   font-size: ${pxToRem(48)};
   font-weight: 100;
   letter-spacing: ${pxToRem(-0.96)};
@@ -42,7 +44,7 @@ const SubTitleBlue = styled.div`
   padding-bottom: ${pxToRem(35)};
 `;
 
-const Description = styled.div`
+const Description = styled(motion.div)`
   p {
     font-weight: 300;
     opacity: 0.8;
@@ -50,17 +52,30 @@ const Description = styled.div`
 `;
 
 export default function Introduce() {
+  const controls = useAnimation();
+  useEffect(() => {
+    controls.start((i) => ({
+      opacity: [0, 1],
+      transition: { delay: i * 0.35 },
+    }));
+  }, []);
   return (
     <IntroduceSection className="pt-32 pb-28 px-12 lg:pt-62 lg:pb-52">
       <div>
-        <LogoTitle>Studio GrotesQ</LogoTitle>
+        <LogoTitle custom={0} animate={controls}>
+          Studio GrotesQ
+        </LogoTitle>
         <div>
-          <MainTitle className="leading-6 sm:leading-5 ">
+          <MainTitle className="leading-6 sm:leading-5 " custom={1} animate={controls}>
             서비스 하고 싶은 <strong>아이디어가 있으신가요?</strong> <br />
             어떤 기술을 활용하여 서비스 제작을 해야 할지 <strong>막막하신가요?</strong>
           </MainTitle>
         </div>
-        <Description className="pb-15 text-sm leading-6 sm:pb-25 sm:text-base sm:leading-7">
+        <Description
+          custom={2}
+          animate={controls}
+          className="pb-15 text-sm leading-6 sm:pb-25 sm:text-base sm:leading-7"
+        >
           <p>그로테스큐 스튜디오는 기획, 디자인부터 앱, 플랫폼 서비스 런칭까지 도와드립니다.</p>
           <div className="hidden sm:block">
             <p>가지고 계신 아이디어를 전문적인 컨설팅을 통해 구체화시켜드립니다.</p>
@@ -70,7 +85,7 @@ export default function Introduce() {
             <p>효과적인 제작 과정을 통하여 안정성&접근성 높은 결과물을 제작합니다.</p>
           </div>
         </Description>
-        <div>
+        <motion.div custom={3} animate={controls}>
           <Button
             className="transition ease-in-out  hover:bg-[#4E73FF]"
             size="md"
@@ -79,7 +94,7 @@ export default function Introduce() {
           >
             프로젝트 문의하기
           </Button>
-        </div>
+        </motion.div>
       </div>
     </IntroduceSection>
   );

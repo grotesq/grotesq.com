@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { pxToRem } from '../../utils/utils';
 import { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
 const WorkFlowSection = styled.section`
   background-image: url('/assets/image/main/workflow/background-1.svg'),
-    url('/assets/image/main/workflow/background-3.svg'), url('/assets/image/main/workflow/background-2.svg'),
     url('/assets/image/main/workflow/background-6.svg'), url('/assets/image/main/workflow/background-5.svg'),
     url('/assets/image/main/workflow/background-4.svg'), url('/assets/image/main/workflow/background-7.svg');
-  background-position: 34vw -50%, 90% 16%, 80% 15%, 12% 78%, -25% 75%, -15% 56%, 52vw 121%;
-  background-size: 88%, 16.6rem, 12.5rem, 18rem, 38%, 43rem, 86%;
+  background-position: 34vw -50%, 12% 78%, -25% 75%, -15% 56%, 52vw 121%;
+  background-size: 88%, 18rem, 38%, 43rem, 86%;
   background-repeat: no-repeat;
   background-attachment: scroll;
 
@@ -32,7 +32,7 @@ const SubTitleBlue = styled.div`
   }
 `;
 
-const SubTitle1 = styled.h1`
+const SubTitle1 = styled(motion.h1)`
   ${({ theme }) => theme.subTitle1};
 `;
 
@@ -69,22 +69,50 @@ function Divide1() {
           </Description>
           <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
         </div>
-        <div className="px-7">
-          <Image
-            src="/assets/image/main/workflow/workflow-1.svg"
-            width="457"
-            height="320"
-            alt="상담 하는 느낌의 일러스트"
-          />
-          <SubTitleBlue className="pt-7 sm:pt-9">Service Consulting</SubTitleBlue>
-          <SubTitle2>서비스 컨설팅</SubTitle2>
-        </div>
-        <div className="py-6">
-          <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
+        <div className="px-7 flex justify-center">
+          <motion.div>
+            <Image
+              src="/assets/image/main/workflow/workflow-1.svg"
+              width="457"
+              height="320"
+              alt="상담 하는 느낌의 일러스트"
+            />
+            <SubTitleBlue className="pt-7 sm:pt-9">Service Consulting</SubTitleBlue>
+            <SubTitle2>서비스 컨설팅</SubTitle2>
+            <div className="py-6">
+              <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
+            </div>
+          </motion.div>
+          <div className="absolute right-[10%] top-[180%]">
+            <motion.div
+              className="text-left"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, x: [200, 0] }}
+              transition={{
+                x: { ease: 'easeOut', duration: 0.5 },
+                delay: 0.1,
+              }}
+              viewport={{ once: true }}
+            >
+              <Image src="/assets/image/main/workflow/background-2.svg" width="201" height="155" />
+            </motion.div>
+            <motion.div
+              className="-mt-[4.7rem] ml-[7.4rem]"
+              initial={{ scale: 0.5 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                scale: { type: 'spring' },
+                delay: 0.2,
+              }}
+              viewport={{ once: true }}
+            >
+              <Image src="/assets/image/main/workflow/background-3.svg" width="266" height="266" />
+            </motion.div>
+          </div>
         </div>
       </div>
       <div className="py-5">
-        <div className="">
+        <motion.div>
           <Image
             src="/assets/image/main/workflow/workflow-2.svg"
             width="815"
@@ -93,13 +121,17 @@ function Divide1() {
           />
           <SubTitleBlue className="pt-7 sm:pt-9">Service Planning</SubTitleBlue>
           <SubTitle2>서비스 기획 (Wireframe 동시진행)</SubTitle2>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 function Divide2() {
+  const { scrollYProgress } = useViewportScroll();
+  const initial = useTransform(scrollYProgress, (x) => x + 0.05);
+  scrollYProgress.onChange(console.trace);
+
   return (
     <section className="flex">
       <div className="w-1/2">
