@@ -30,7 +30,7 @@ const SubTitleBlue = styled.div`
   }
 `;
 
-const SubTitle1 = styled(motion.h1)`
+const SubTitle1 = styled.h1`
   ${({ theme }) => theme.subTitle1};
 `;
 
