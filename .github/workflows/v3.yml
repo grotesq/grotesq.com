@@ -18,6 +18,8 @@ jobs:
         run: yarn
       - name: Next.js Build
         run: yarn build:next
+      - name: Prepare serverless deploy
+        run: cp serverless.v3.yaml serverless.yaml
       - name: Deploy
         run: |
           export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
