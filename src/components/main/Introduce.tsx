@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import Button from '../Button';
-import { pxToRem } from '../../utils/utils';
-import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -16,7 +13,7 @@ const IntroduceSection = styled.section`
   color: ${(props) => props.theme.color['white']};
 `;
 
-const LogoTitle = styled(motion.div)`
+const LogoTitle = styled.div`
   ${({ theme }) => theme['logoTitle']};
   padding-bottom: 2rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
@@ -24,58 +21,55 @@ const LogoTitle = styled(motion.div)`
   }
 `;
 
-const MainTitle = styled(motion.h1)`
-  font-size: ${pxToRem(48)};
+const MainTitle = styled.h1`
+  font-size: 3rem;
   font-weight: 100;
-  letter-spacing: ${pxToRem(-0.96)};
+  letter-spacing: -0.06rem;
   line-height: 1.35;
-  padding-bottom: ${pxToRem(31)};
+  padding-bottom: 1.9375rem;
   & strong {
     font-weight: 900;
   }
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    font-size: ${pxToRem(28)};
+    font-size: 1.75rem;
   }
 `;
 
 const SubTitleBlue = styled.div`
   ${({ theme }) => theme.subTitleBlue};
-  letter-spacing: ${pxToRem(4.4)};
-  padding-bottom: ${pxToRem(35)};
+  letter-spacing: 0.25rem;
+  padding-bottom: 2.1875rem;
 `;
 
-const Description = styled(motion.div)`
+const Description = styled.div`
+  padding-bottom: 2.875rem;
   p {
     font-weight: 300;
+    font-size: 1.125rem;
     opacity: 0.8;
+    line-height: 1.67;
+  }
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
+    padding-bottom: 3.25rem;
+    p {
+      font-size: 0.875rem;
+      line-height: 1.57;
+    }
   }
 `;
 
 export default function Introduce() {
-  const controls = useAnimation();
-  useEffect(() => {
-    controls.start((i) => ({
-      opacity: [0, 1],
-      transition: { delay: i * 0.35 },
-    }));
-  }, []);
   return (
     <IntroduceSection className="pt-32 pb-28 px-12 lg:pt-62 lg:pb-52">
       <div>
-        <LogoTitle custom={0} animate={controls}>
-          Studio GrotesQ
-        </LogoTitle>
+        <LogoTitle>Studio GrotesQ</LogoTitle>
         <div>
-          <MainTitle className="leading-6 sm:leading-5 " custom={1} animate={controls}>
+          <MainTitle className="leading-6 sm:leading-5 ">
             서비스 하고 싶은 <strong>아이디어가 있으신가요?</strong> <br />
             어떤 기술을 활용하여 서비스 제작을 해야 할지 <strong>막막하신가요?</strong>
           </MainTitle>
         </div>
-        <Description
-          custom={2}
-          animate={controls}
-          className="pb-15 text-sm leading-6 sm:pb-25 sm:text-base sm:leading-7"
-        >
+        <Description>
           <p>그로테스큐 스튜디오는 기획, 디자인부터 앱, 플랫폼 서비스 런칭까지 도와드립니다.</p>
           <div className="hidden sm:block">
             <p>가지고 계신 아이디어를 전문적인 컨설팅을 통해 구체화시켜드립니다.</p>
@@ -85,7 +79,7 @@ export default function Introduce() {
             <p>효과적인 제작 과정을 통하여 안정성&접근성 높은 결과물을 제작합니다.</p>
           </div>
         </Description>
-        <motion.div custom={3} animate={controls}>
+        <div>
           <Button
             className="transition ease-in-out  hover:bg-[#4E73FF]"
             size="md"
@@ -94,7 +88,7 @@ export default function Introduce() {
           >
             프로젝트 문의하기
           </Button>
-        </motion.div>
+        </div>
       </div>
     </IntroduceSection>
   );

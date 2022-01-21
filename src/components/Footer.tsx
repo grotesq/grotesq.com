@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import styled from 'styled-components';
-import { pxToRem } from '../utils/utils';
 
 const FooterContainer = styled.footer`
   ${({ theme }) => theme.flexCenter};
@@ -8,13 +6,13 @@ const FooterContainer = styled.footer`
   font-weight: 500;
   line-height: 1.86;
   p {
-    font-size: ${pxToRem(14)};
+    font-size: 0.875rem;
     color: #757b94;
   }
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     padding: 2rem 1.7rem;
     p {
-      font-size: ${pxToRem(12)};
+      font-size: 0.75rem;
     }
   }
 `;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { pxToRem } from '../utils/utils';
 import Button from './Button';
 
 const ContactSection = styled.section`
@@ -16,19 +15,19 @@ const ContactSection = styled.section`
   }
 `;
 const Title = styled.h1`
-  font-size: ${pxToRem(30)};
+  font-size: 1.875rem;
   font-weight: 300;
   line-height: 1;
-  padding-bottom: ${pxToRem(15)};
+  padding-bottom: 0.9375rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    font-size: ${pxToRem(18)};
+    font-size: 1.125rem;
   }
 `;
 
 const SubTitle = styled.div`
   font-family: 'Poppins', sans-serif;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    font-size: ${pxToRem(14)};
+    font-size: 0.875rem;
   }
 `;
 

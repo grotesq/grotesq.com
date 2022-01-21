@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { pxToRem } from '../../utils/utils';
 import Clients from '../../../public/assets/image/main/clients/clients.png';
 import MobileClients from '../../../public/assets/image/main/clients/mb_clients.png';
 
@@ -13,20 +12,20 @@ const ClientSection = styled.section`
   width: 100%;
   background: #fbfcfe;
   p {
-    font-size: ${pxToRem(18)};
+    font-size: 1.125rem;
     color: #${(props) => props.theme.color['black']};
     line-height: 1.67;
     @media ${(props) => props.theme.mediaQueryMax('sm')} {
-      font-size: ${pxToRem(14)};
+      font-size: 0.875rem;
     }
   }
   &::after {
     content: '';
     position: absolute;
     background-image: url('/assets/image/main/clients/background-1.svg');
-    width: ${pxToRem(180)};
-    height: ${pxToRem(180)};
-    right: ${pxToRem(375)};
+    width: 11.25rem;
+    height: 11.25rem;
+    right: 23.4375rem;
     margin-top: 50rem;
     @media ${(props) => props.theme.mediaQueryMax('2xl')} {
       display: none;

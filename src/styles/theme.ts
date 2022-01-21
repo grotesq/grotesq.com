@@ -1,5 +1,4 @@
 import { DefaultTheme, css } from 'styled-components';
-import { pxToRem } from '../utils/utils';
 
 const color = {
   'primary-blue': '#4a63fe',
@@ -29,7 +28,7 @@ const flexCenter = css`
 
 const logoTitle = css`
   color: ${color['primary-blue']};
-  font-size: ${pxToRem(22)};
+  font-size: 1.375rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   letter-spacing: 0.275rem;
@@ -43,7 +42,7 @@ const logoTitle = css`
 
 const subTitleBlue = css`
   color: ${color['primary-blue']};
-  font-size: ${pxToRem(22)};
+  font-size: 1.375rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
 `;
@@ -51,12 +50,12 @@ const subTitleBlue = css`
 const subTitle1 = css`
   color: ${color['black']};
   font-family: 'Poppins', sans-serif;
-  font-size: ${pxToRem(50)};
+  font-size: 3.125rem;
   font-weight: 600;
   line-height: 1.52;
-  padding-bottom: ${pxToRem(18)};
+  padding-bottom: 1.125rem;
   @media ${(props) => props.theme.mediaQueryMax('sm')} {
-    font-size: ${pxToRem(30)};
+    font-size: 1.875rem;
   }
 `;
 

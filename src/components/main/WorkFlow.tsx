@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { pxToRem } from '../../utils/utils';
 import { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
 const WorkFlowSection = styled.section`
   background-image: url('/assets/image/main/workflow/background-1.svg'),
@@ -28,7 +26,7 @@ const WorkFlowSection = styled.section`
 const SubTitleBlue = styled.div`
   ${({ theme }) => theme.subTitleBlue};
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    font-size: ${pxToRem(16)};
+    font-size: 1rem;
   }
 `;
 
@@ -38,21 +36,21 @@ const SubTitle1 = styled(motion.h1)`
 
 const SubTitle2 = styled.h2`
   color: ${(props) => props.theme['black']};
-  font-size: ${pxToRem(32)};
+  font-size: 2rem;
   line-height: 0.94;
-  padding-bottom: ${pxToRem(23)};
+  padding-bottom: 1.4375rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    font-size: ${pxToRem(20)};
+    font-size: 1.25rem;
     padding-top: 0.5rem;
   }
 `;
 
 const Description = styled.p`
   color: #5a6282;
-  font-size: ${pxToRem(18)};
+  font-size: 1.125rem;
   line-height: 1.67;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    font-size: ${pxToRem(14)};
+    font-size: 0.875rem;
     line-height: 1.57;
   }
 `;
@@ -70,7 +68,7 @@ function Divide1() {
           <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
         </div>
         <div className="px-7 flex justify-center">
-          <motion.div>
+          <div>
             <Image
               src="/assets/image/main/workflow/workflow-1.svg"
               width="457"
@@ -82,37 +80,19 @@ function Divide1() {
             <div className="py-6">
               <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
             </div>
-          </motion.div>
-          <div className="absolute right-[10%] top-[180%]">
-            <motion.div
-              className="text-left"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, x: [200, 0] }}
-              transition={{
-                x: { ease: 'easeOut', duration: 0.5 },
-                delay: 0.1,
-              }}
-              viewport={{ once: true }}
-            >
+          </div>
+          <div className="absolute right-0">
+            <div className="text-left">
               <Image src="/assets/image/main/workflow/background-2.svg" width="201" height="155" />
-            </motion.div>
-            <motion.div
-              className="-mt-[4.7rem] ml-[7.4rem]"
-              initial={{ scale: 0.5 }}
-              whileInView={{ scale: 1 }}
-              transition={{
-                scale: { type: 'spring' },
-                delay: 0.2,
-              }}
-              viewport={{ once: true }}
-            >
+            </div>
+            <div className="-mt-[4.7rem] ml-[7.4rem]">
               <Image src="/assets/image/main/workflow/background-3.svg" width="266" height="266" />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
       <div className="py-5">
-        <motion.div>
+        <div>
           <Image
             src="/assets/image/main/workflow/workflow-2.svg"
             width="815"
@@ -121,17 +101,13 @@ function Divide1() {
           />
           <SubTitleBlue className="pt-7 sm:pt-9">Service Planning</SubTitleBlue>
           <SubTitle2>서비스 기획 (Wireframe 동시진행)</SubTitle2>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 }
 
 function Divide2() {
-  const { scrollYProgress } = useViewportScroll();
-  const initial = useTransform(scrollYProgress, (x) => x + 0.05);
-  scrollYProgress.onChange(console.trace);
-
   return (
     <section className="flex">
       <div className="w-1/2">

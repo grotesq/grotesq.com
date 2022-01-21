@@ -1,7 +1,6 @@
 import Button from '../../components/Button';
 import Gallery from '../../components/Gallery';
 import styled from 'styled-components';
-import { pxToRem } from '../../utils/utils';
 import Link from 'next/link';
 
 const PortfolioSection = styled.section`
@@ -23,10 +22,10 @@ const SubTitle1 = styled.h1`
 const Description = styled.div`
   p {
     color: #${(props) => props.theme['black']};
-    font-size: ${pxToRem(18)};
+    font-size: 1.125rem;
     line-height: 1.67;
     @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-      font-size: ${pxToRem(14)};
+      font-size: 0.875rem};
     }
   }
 `;

@@ -6,7 +6,6 @@ import styled, { css } from 'styled-components';
 import logo from '../../public/assets/image/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
 import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg';
-import { pxToRem } from '../utils/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 interface MenuProps {
   title: string;
@@ -20,11 +19,11 @@ const HeaderContainer = styled.header`
   align-items: center;
   font-family: 'Poppins', sans-serif;
   justify-content: space-between;
-  height: ${pxToRem(100)};
+  height: 6.25rem;
   min-width: 23.437rem;
   font-weight: 300;
   @media ${(props) => props.theme.mediaQueryMax('sm')} {
-    height: ${pxToRem(60)};
+    height: 3.75rem
     position: fixed;
     z-index: 9999;
     width: 100%;
@@ -41,9 +40,9 @@ const activeStyle = css`
 const NavContainer = styled.nav`
   ul {
     display: flex;
-    font-size: ${pxToRem(18)};
+    font-size: 1.125rem;
     li {
-      padding-left: ${pxToRem(45)};
+      padding-left: 2.8125rem;
       a:hover {
         ${activeStyle}
       }
