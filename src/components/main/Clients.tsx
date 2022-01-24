@@ -2,12 +2,13 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Clients from '../../../public/assets/image/main/clients/clients.png';
 import MobileClients from '../../../public/assets/image/main/clients/mb_clients.png';
+import { motion } from 'framer-motion';
 
-const SubTitle1 = styled.h1`
+const SubTitle1 = styled(motion.h1)`
   ${({ theme }) => theme.subTitle1};
 `;
 
-const ClientSection = styled.section`
+const ClientSection = styled(motion.section)`
   ${({ theme }) => theme.flexCenter};
   width: 100%;
   background: #fbfcfe;
@@ -19,33 +20,54 @@ const ClientSection = styled.section`
       font-size: 0.875rem;
     }
   }
-  &::after {
-    content: '';
-    position: absolute;
-    background-image: url('/assets/image/main/clients/background-1.svg');
-    width: 11.25rem;
-    height: 11.25rem;
-    right: 23.4375rem;
-    margin-top: 50rem;
-    @media ${(props) => props.theme.mediaQueryMax('2xl')} {
-      display: none;
-    }
-  }
 `;
-
+const fadeUp = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'linear',
+      when: 'beforeChildren',
+      staggerChildren: 0.25,
+      delayChildren: 0.3,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 150,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+};
 export default function Client() {
   return (
-    <ClientSection className="pt-15 pb-13 sm:pt-30 sm:pb-28">
+    <ClientSection
+      className="pt-15 pb-13 sm:pt-30 sm:pb-28"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div>
-        <SubTitle1>OUR CLIENTS</SubTitle1>
-        <p className="pb-14 px-14 sm:pb-3 ">그로테스큐 스튜디오와 함께한 고객사입니다.</p>
-        <div className="hidden sm:flex w-screen">
+        <SubTitle1 variants={fadeUp}>OUR CLIENTS</SubTitle1>
+        <motion.p className="pb-14 px-14 sm:pb-3" variants={fadeUp}>
+          그로테스큐 스튜디오와 함께한 고객사입니다.
+        </motion.p>
+        <motion.div className="hidden sm:flex w-screen justify-center" variants={fadeUp}>
           <Image src={Clients} alt="고객사 로고들" />
-        </div>
-        <div className="flex sm:hidden w-screen">
+        </motion.div>
+        <motion.div className="flex sm:hidden w-screen justify-center" variants={fadeUp}>
           <Image src={MobileClients} alt="고객사 로고들" />
-        </div>
+        </motion.div>
       </div>
+      <motion.div
+        className="absolute right-80 lg:mt-[55%] xl:mt-[50%]  2xl:mt-[40%] hidden lg:inline"
+        whileInView={{ opacity: ['0%', '100%'], x: ['100%', '0%'] }}
+        viewport={{ once: true }}
+      >
+        <Image src="/assets/image/main/clients/background-1.svg" width="180" height="180" />
+      </motion.div>
     </ClientSection>
   );
 }
