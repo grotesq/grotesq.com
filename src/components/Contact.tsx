@@ -7,6 +7,8 @@ const ContactSection = styled.section`
     url('/assets/image/main/contact/background-2.svg'), linear-gradient(127deg, #5870ff 22%, #6d51ff 100%);
   color: ${(props) => props.theme.color['white']};
   line-height: 1.5;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     background-size: contain;
