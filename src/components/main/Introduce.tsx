@@ -63,6 +63,7 @@ const fadeIn = {
   visible: {
     opacity: 1,
     transition: {
+      ease: 'easeOut',
       type: 'linear',
       when: 'beforeChildren',
       staggerChildren: 0.2,
@@ -78,7 +79,7 @@ const fadeIn = {
 };
 export default function Introduce() {
   return (
-    <IntroduceSection className="pt-32 pb-28 px-12 lg:pt-62 lg:pb-52">
+    <IntroduceSection className="px-12 pt-32 pb-28 lg:pt-62 lg:pb-52">
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
         <LogoTitle variants={fadeIn}>Studio GrotesQ</LogoTitle>
         <div>

@@ -35,7 +35,10 @@ const SubTitle = styled.div`
 
 export default function Contact() {
   return (
-    <ContactSection className="py-6 px-5 sm:pt-15 sm:pb-12">
+    <ContactSection
+      className="px-5 py-6 sm:pt-15 sm:pb-12"
+      onTouchEnd={() => (window.location.href = 'mailto:unknown@grotesq.com')}
+    >
       <div>
         <SubTitle>Ready to get started?</SubTitle>
         <Title>프로젝트를 문의하세요.</Title>

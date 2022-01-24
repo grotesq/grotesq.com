@@ -10,14 +10,16 @@ const PortfolioSection = styled(motion.section)`
   padding-top: 10.438rem;
   padding-bottom: 6.25rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    padding-top: 3.75rem;
+    padding-top: 1rem;
     padding-bottom: 1.875rem;
   }
 `;
 
 const SubTitle1 = styled(motion.h1)`
   ${({ theme }) => theme.subTitle1};
-  padding-bottom: 0;
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
+    padding-bottom: 0.625rem;
+  }
 `;
 
 const Description = styled.div`

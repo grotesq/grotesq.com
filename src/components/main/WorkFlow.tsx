@@ -104,7 +104,7 @@ function Divide1() {
             <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
           </motion.div>
         </div>
-        <motion.div className="px-8 sm:px-7 pt-13 sm:pt-1 flex justify-center" variants={fadeUp}>
+        <motion.div className="flex justify-center px-8 sm:px-7 pt-13 sm:pt-12" variants={fadeUp}>
           <div>
             <Image
               src="/assets/image/main/workflow/workflow-1.svg"
@@ -118,7 +118,7 @@ function Divide1() {
               <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
             </div>
           </div>
-          <div className="hidden 2xl:inline absolute right-20 mt-60">
+          <div className="absolute hidden 2xl:inline right-20 mt-60">
             <motion.div
               className="text-left"
               initial={{ x: 150 }}
@@ -146,7 +146,7 @@ function Divide1() {
         </motion.div>
       </div>
       <motion.div
-        className="sm:py-5 pb-8"
+        className="pb-8 sm:py-5"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -177,8 +177,8 @@ function Divide2() {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="grid grid-cols-2 w-full text-center">
-        <div className="ml-auto pl-8">
+      <div className="grid w-full grid-cols-2 text-center">
+        <div className="pl-8 ml-auto">
           <Image src="/assets/image/main/workflow/left-arrow-1.svg" width="367" height="232" alt="왼쪽 화살표" />
         </div>
         <div className="mr-auto">
@@ -237,10 +237,10 @@ function MobileDivide2() {
   return (
     <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className="grid grid-cols-2 text-center">
-        <div className="col-span-2 pl-8 pr-4 pb-7 flex justify-center">
+        <div className="flex justify-center col-span-2 pl-8 pr-4 pb-7">
           <Image src="/assets/image/main/workflow/mb_side-arrow-1.svg" width="274" height="125" alt="양쪽 화살표" />
         </div>
-        <motion.div className="pr-4 pb-6" variants={fadeUp}>
+        <motion.div className="pb-6 pr-4" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-3.svg"
             width="200"
@@ -250,7 +250,7 @@ function MobileDivide2() {
           <SubTitleBlue className="pt-5">Back-end</SubTitleBlue>
           <SubTitle2>백엔드 구축</SubTitle2>
         </motion.div>
-        <motion.div className="pt-4 px-6" variants={fadeUp}>
+        <motion.div className="px-6 pt-4" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-4.svg"
             width="331"
@@ -260,14 +260,14 @@ function MobileDivide2() {
           <SubTitleBlue className="pt-3 pb-8">Design</SubTitleBlue>
           <SubTitle2 className="pb-0">디자인</SubTitle2>
         </motion.div>
-        <div className="row-span-3 relative w-screen -left-24">
+        <div className="relative w-screen row-span-3 -left-24">
           <Image src="/assets/image/main/workflow/mb_left-arrow-2.svg" layout="fill" alt="왼쪽 화살표" />
         </div>
         <div>
           <Image src="/assets/image/main/workflow/mb_down-arrow-2.svg" width="6" height="32" alt="아래 화살표" />
         </div>
         <motion.div
-          className="w-2/3 mx-auto pt-4"
+          className="w-2/3 pt-4 mx-auto"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5 }}
@@ -282,7 +282,7 @@ function MobileDivide2() {
           <SubTitleBlue>Front-end</SubTitleBlue>
           <SubTitle2>프론트 엔드 구축</SubTitle2>
         </motion.div>
-        <div className="w-2/3 mb-1 pt-4">
+        <div className="w-2/3 pt-4 mb-1">
           <Image src="/assets/image/main/workflow/mb_right-arrow-2.svg" width="94" height="122" alt="오른쪽 화살표" />
         </div>
       </div>
@@ -301,14 +301,14 @@ function Divide3() {
     >
       <div className="">
         <motion.div
-          className="hidden lg:inline absolute left-0"
+          className="absolute left-0 hidden lg:inline"
           whileInView={{ x: ['-100%', '0%'] }}
           viewport={{ once: true }}
         >
           <div className="absolute -ml-80">
             <Image src="/assets/image/main/workflow/background-5.svg" width="700" height="700" />
           </div>
-          <div className="pt-80 pl-40">
+          <div className="pl-40 pt-80">
             <Image src="/assets/image/main/workflow/background-6.svg" width="300" height="300" />
           </div>
         </motion.div>
