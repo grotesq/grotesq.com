@@ -23,7 +23,7 @@ const HeaderContainer = styled.header`
   min-width: 23.437rem;
   font-weight: 300;
   @media ${(props) => props.theme.mediaQueryMax('sm')} {
-    height: 3.75rem
+    height: 3.75rem;
     position: fixed;
     z-index: 9999;
     width: 100%;

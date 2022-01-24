@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '../Button';
+import { motion, variants } from 'framer-motion';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -32,16 +33,17 @@ const MainTitle = styled.h1`
   }
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: 1.75rem;
+    line-height: 1.43;
   }
 `;
 
-const SubTitleBlue = styled.div`
+const SubTitleBlue = styled(motion.div)`
   ${({ theme }) => theme.subTitleBlue};
   letter-spacing: 0.25rem;
   padding-bottom: 2.1875rem;
 `;
 
-const Description = styled.div`
+const Description = styled(motion.div)`
   padding-bottom: 2.875rem;
   p {
     font-weight: 300;
@@ -59,27 +61,51 @@ const Description = styled.div`
 `;
 
 export default function Introduce() {
+  const fadeIn = {
+    visible: {
+      opacity: 1,
+      transition: {
+        type: 'linear',
+        when: 'beforeChildren',
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+      },
+    },
+  };
   return (
     <IntroduceSection className="pt-32 pb-28 px-12 lg:pt-62 lg:pb-52">
-      <div>
-        <LogoTitle>Studio GrotesQ</LogoTitle>
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <LogoTitle variants={fadeIn}>Studio GrotesQ</LogoTitle>
         <div>
-          <MainTitle className="leading-6 sm:leading-5 ">
-            서비스 하고 싶은 <strong>아이디어가 있으신가요?</strong> <br />
-            어떤 기술을 활용하여 서비스 제작을 해야 할지 <strong>막막하신가요?</strong>
+          <MainTitle>
+            <motion.span variants={fadeIn}>
+              서비스 하고 싶은 <strong>아이디어가 있으신가요?</strong>
+            </motion.span>
+            <br />
+            <motion.span variants={fadeIn}>
+              어떤 기술을 활용하여 서비스 제작을 해야 할지 <strong>막막하신가요?</strong>
+            </motion.span>
           </MainTitle>
         </div>
         <Description>
-          <p>그로테스큐 스튜디오는 기획, 디자인부터 앱, 플랫폼 서비스 런칭까지 도와드립니다.</p>
+          <motion.p variants={fadeIn}>
+            그로테스큐 스튜디오는 기획, 디자인부터 앱, 플랫폼 서비스 런칭까지 도와드립니다.
+          </motion.p>
           <div className="hidden sm:block">
-            <p>가지고 계신 아이디어를 전문적인 컨설팅을 통해 구체화시켜드립니다.</p>
-            <p>
+            <motion.p variants={fadeIn}>가지고 계신 아이디어를 전문적인 컨설팅을 통해 구체화시켜드립니다.</motion.p>
+            <motion.p variants={fadeIn}>
               어려운 전문용어를 이해하지 못할까 봐 걱정하지 마세요. 비전문가도 쉽게 이해할 수 있는 컨설팅을 진행합니다.
-            </p>
-            <p>효과적인 제작 과정을 통하여 안정성&접근성 높은 결과물을 제작합니다.</p>
+            </motion.p>
+            <motion.p variants={fadeIn}>효과적인 제작 과정을 통하여 안정성&접근성 높은 결과물을 제작합니다.</motion.p>
           </div>
         </Description>
-        <div>
+        <motion.div variants={fadeIn}>
           <Button
             className="transition ease-in-out  hover:bg-[#4E73FF]"
             size="md"
@@ -88,8 +114,8 @@ export default function Introduce() {
           >
             프로젝트 문의하기
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </IntroduceSection>
   );
 }

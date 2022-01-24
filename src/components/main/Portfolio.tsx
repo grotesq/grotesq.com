@@ -2,8 +2,9 @@ import Button from '../../components/Button';
 import Gallery from '../../components/Gallery';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
-const PortfolioSection = styled.section`
+const PortfolioSection = styled(motion.section)`
   width: 100%;
   text-align: center;
   padding-top: 10.438rem;
@@ -14,7 +15,7 @@ const PortfolioSection = styled.section`
   }
 `;
 
-const SubTitle1 = styled.h1`
+const SubTitle1 = styled(motion.h1)`
   ${({ theme }) => theme.subTitle1};
   padding-bottom: 0;
 `;
@@ -25,20 +26,50 @@ const Description = styled.div`
     font-size: 1.125rem;
     line-height: 1.67;
     @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-      font-size: 0.875rem};
+      font-size: 0.875rem;
     }
   }
 `;
 
+const fadeUp = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'linear',
+      when: 'beforeChildren',
+      staggerChildren: 0.25,
+      delayChildren: 0.3,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 150,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+};
+
 export default function Portfolio() {
   return (
-    <PortfolioSection className="px-5 xl:px-40">
-      <SubTitle1>OUR WORKS</SubTitle1>
+    <PortfolioSection
+      className="px-5 xl:px-40"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <SubTitle1 variants={fadeUp}>PORTFOLIOS</SubTitle1>
       <Description>
-        <p>그로테스큐 스튜디오의 주요 프로젝트 입니다.</p>
-        <p>완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.</p>
+        <motion.p variants={fadeUp}>그로테스큐 스튜디오의 주요 프로젝트 입니다.</motion.p>
+        <motion.p variants={fadeUp}>
+          완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.
+        </motion.p>
       </Description>
-      <Gallery />
+      <motion.div variants={fadeUp}>
+        <Gallery />
+      </motion.div>
       <Link href="/works">
         <a>
           <Button className="text-sm leading-7 sm:text-lg" size="lg" round border>
