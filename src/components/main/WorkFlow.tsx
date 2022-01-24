@@ -96,7 +96,7 @@ function Divide1() {
             <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
           </motion.div>
         </div>
-        <motion.div className="px-7 pt-1 flex justify-center" variants={fadeUp}>
+        <motion.div className="px-7 pt-13 sm:pt-1 flex justify-center" variants={fadeUp}>
           <div>
             <Image
               src="/assets/image/main/workflow/workflow-1.svg"
@@ -139,7 +139,7 @@ function Divide1() {
         </motion.div>
       </div>
       <motion.div
-        className="py-5"
+        className="sm:py-5 pb-8"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -163,13 +163,21 @@ function Divide1() {
 
 function Divide2() {
   return (
-    <motion.section className="flex" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-      <div className="w-1/2">
-        <div className="text-right">
+    <motion.section
+      className="flex justify-center"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <div className="grid grid-cols-2 w-full text-center">
+        <div className="ml-auto">
           <Image src="/assets/image/main/workflow/left-arrow-1.svg" width="367" height="232" alt="왼쪽 화살표" />
         </div>
-        {/* 백엔드 구축 일러스트 */}
-        <motion.div className="text-center pt-8 pb-2" variants={fadeUp}>
+        <div className="mr-auto">
+          <Image src="/assets/image/main/workflow/right-arrow-1.svg" width="422" height="219" alt="오른쪽 화살표" />
+        </div>
+        <motion.div className="pt-8 pb-2 mx-auto xl:pl-30" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-3.svg"
             width="390"
@@ -179,16 +187,7 @@ function Divide2() {
           <SubTitleBlue className="pt-5">Back-end</SubTitleBlue>
           <SubTitle2>백엔드 구축</SubTitle2>
         </motion.div>
-        <div className="text-right">
-          <Image src="/assets/image/main/workflow/left-arrow-2.svg" width="500" height="648" alt="오른쪽 화살표" />
-        </div>
-      </div>
-      <div className=" w-1/2">
-        <div className="text-left">
-          <Image src="/assets/image/main/workflow/right-arrow-1.svg" width="422" height="219" alt="오른쪽 화살표" />
-        </div>
-        {/* 디자인 일러스트 */}
-        <motion.div className="pt-16 text-center" variants={fadeUp}>
+        <motion.div className="pt-16" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-4.svg"
             width="331"
@@ -198,12 +197,14 @@ function Divide2() {
           <SubTitleBlue className="pt-8">Design</SubTitleBlue>
           <SubTitle2>디자인</SubTitle2>
         </motion.div>
-        <div className="text-center">
+        <div className="row-span-3 ml-auto">
+          <Image src="/assets/image/main/workflow/left-arrow-2.svg" width="500" height="648" alt="오른쪽 화살표" />
+        </div>
+        <div className="">
           <Image src="/assets/image/main/workflow/down-arrow-2.svg" width="17" height="88" alt="아래 화살표" />
         </div>
-        {/* 프론트엔드 일러스트 */}
         <motion.div
-          className="text-center pt-10 pb-2"
+          className="pt-10 pb-2"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           trasition={{ ease: 'ease', delay: 1, duration: 1 }}
@@ -218,7 +219,7 @@ function Divide2() {
           <SubTitleBlue>Front-end</SubTitleBlue>
           <SubTitle2>프론트 엔드 구축</SubTitle2>
         </motion.div>
-        <div className="text-left">
+        <div className="mr-auto">
           <Image src="/assets/image/main/workflow/right-arrow-2.svg" width="359" height="94" alt="오른쪽 화살표" />
         </div>
       </div>
@@ -230,7 +231,7 @@ function MobileDivide2() {
   return (
     <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className="grid grid-cols-2 text-center">
-        <div className="col-span-2 pl-8 pr-4">
+        <div className="col-span-2 pl-8 pr-4 pb-7">
           <Image src="/assets/image/main/workflow/mb_side-arrow-1.svg" width="274" height="125" alt="양쪽 화살표" />
         </div>
         <motion.div className="pr-4 pb-6" variants={fadeUp}>
@@ -250,17 +251,17 @@ function MobileDivide2() {
             height="330"
             alt="디자인 하는 느낌의 일러스트"
           />
-          <SubTitleBlue className="pt-4 pb-8">Design</SubTitleBlue>
+          <SubTitleBlue className="pt-3 pb-8">Design</SubTitleBlue>
           <SubTitle2 className="pb-0">디자인</SubTitle2>
         </motion.div>
-        <div className="row-span-3 relative">
+        <div className="row-span-3 relative w-screen -left-2/3 ">
           <Image src="/assets/image/main/workflow/mb_left-arrow-2.svg" layout="fill" alt="왼쪽 화살표" />
         </div>
-        <div className="">
+        <div>
           <Image src="/assets/image/main/workflow/mb_down-arrow-2.svg" width="6" height="32" alt="아래 화살표" />
         </div>
         <motion.div
-          className="w-2/3 mx-auto pt-8"
+          className="w-2/3 mx-auto pt-4"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           trasition={{ ease: 'ease', delay: 1, duration: 1 }}
@@ -275,7 +276,7 @@ function MobileDivide2() {
           <SubTitleBlue>Front-end</SubTitleBlue>
           <SubTitle2>프론트 엔드 구축</SubTitle2>
         </motion.div>
-        <div className="w-1/3 mb-1">
+        <div className="w-2/3 mb-1 pt-4">
           <Image src="/assets/image/main/workflow/mb_right-arrow-2.svg" width="94" height="122" alt="오른쪽 화살표" />
         </div>
       </div>
@@ -323,7 +324,7 @@ function Divide3() {
       </div>
       <div>
         {/* 서비스 런칭 일러스트 */}
-        <motion.div variants={fadeUp}>
+        <motion.div className="pt-10" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-7.svg"
             width="758"
