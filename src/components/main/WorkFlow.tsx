@@ -104,7 +104,7 @@ function Divide1() {
             <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
           </motion.div>
         </div>
-        <motion.div className="px-7 pt-13 sm:pt-1 flex justify-center" variants={fadeUp}>
+        <motion.div className="px-8 sm:px-7 pt-13 sm:pt-1 flex justify-center" variants={fadeUp}>
           <div>
             <Image
               src="/assets/image/main/workflow/workflow-1.svg"
@@ -118,14 +118,12 @@ function Divide1() {
               <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
             </div>
           </div>
-          <div className="hidden 2xl:inline absolute right-[6%] top-[170%]">
+          <div className="hidden 2xl:inline absolute right-20 mt-60">
             <motion.div
               className="text-left"
-              initial={{ x: 50 }}
+              initial={{ x: 150 }}
               whileInView={{ x: 0 }}
               transition={{
-                // type: 'spring',
-                ease: 'easeIn',
                 duration: 1.75,
               }}
               viewport={{ once: true }}
@@ -133,11 +131,12 @@ function Divide1() {
               <Image src="/assets/image/main/workflow/background-2.svg" width="201" height="155" />
             </motion.div>
             <motion.div
-              className="-mt-[4.7rem] ml-[7.4rem]"
-              initial={{ scale: 1.5 }}
+              className="-mt-20 ml-30"
+              initial={{ scale: 2 }}
               whileInView={{ scale: 1 }}
               transition={{
-                ease: 'easeInOut',
+                ease: 'linear',
+                duration: 0.5,
               }}
               viewport={{ once: true }}
             >
@@ -179,13 +178,13 @@ function Divide2() {
       viewport={{ once: true }}
     >
       <div className="grid grid-cols-2 w-full text-center">
-        <div className="ml-auto">
+        <div className="ml-auto pl-8">
           <Image src="/assets/image/main/workflow/left-arrow-1.svg" width="367" height="232" alt="왼쪽 화살표" />
         </div>
         <div className="mr-auto">
           <Image src="/assets/image/main/workflow/right-arrow-1.svg" width="422" height="219" alt="오른쪽 화살표" />
         </div>
-        <motion.div className="pt-8 pb-2 mx-auto xl:pl-30" variants={fadeUp}>
+        <motion.div className="pt-8 pb-2 mx-auto xl:pl-30 md:pr-20 lg:pr-0" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-3.svg"
             width="390"
@@ -195,7 +194,7 @@ function Divide2() {
           <SubTitleBlue className="pt-5">Back-end</SubTitleBlue>
           <SubTitle2>백엔드 구축</SubTitle2>
         </motion.div>
-        <motion.div className="pt-16" variants={fadeUp}>
+        <motion.div className="pt-16 md:pl-20 lg:pl-0" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-4.svg"
             width="331"
@@ -212,10 +211,9 @@ function Divide2() {
           <Image src="/assets/image/main/workflow/down-arrow-2.svg" width="17" height="88" alt="아래 화살표" />
         </div>
         <motion.div
-          className="pt-10 pb-2"
+          className="pt-10 pb-2 md:px-20 lg:pl-0"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ ease: 'ease', delay: 1, duration: 1 }}
           viewport={{ once: true }}
         >
           <Image
@@ -239,7 +237,7 @@ function MobileDivide2() {
   return (
     <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className="grid grid-cols-2 text-center">
-        <div className="col-span-2 pl-8 pr-4 pb-7">
+        <div className="col-span-2 pl-8 pr-4 pb-7 flex justify-center">
           <Image src="/assets/image/main/workflow/mb_side-arrow-1.svg" width="274" height="125" alt="양쪽 화살표" />
         </div>
         <motion.div className="pr-4 pb-6" variants={fadeUp}>
@@ -262,7 +260,7 @@ function MobileDivide2() {
           <SubTitleBlue className="pt-3 pb-8">Design</SubTitleBlue>
           <SubTitle2 className="pb-0">디자인</SubTitle2>
         </motion.div>
-        <div className="row-span-3 relative w-screen -left-2/3 ">
+        <div className="row-span-3 relative w-screen -left-24">
           <Image src="/assets/image/main/workflow/mb_left-arrow-2.svg" layout="fill" alt="왼쪽 화살표" />
         </div>
         <div>
@@ -272,7 +270,7 @@ function MobileDivide2() {
           className="w-2/3 mx-auto pt-4"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ ease: 'ease', delay: 1, duration: 1 }}
+          transition={{ ease: 'easeIn', delay: 1, duration: 1 }}
           viewport={{ once: true }}
         >
           <Image
@@ -307,15 +305,13 @@ function Divide3() {
           whileInView={{ x: ['-100%', '0%'] }}
           viewport={{ once: true }}
         >
-          <div className="absolute -left-[100%]">
+          <div className="absolute -ml-80">
             <Image src="/assets/image/main/workflow/background-5.svg" width="700" height="700" />
           </div>
-          <div className="pt-[22.188rem] -mr-[50%]">
+          <div className="pt-80 pl-40">
             <Image src="/assets/image/main/workflow/background-6.svg" width="300" height="300" />
           </div>
         </motion.div>
-
-        {/* QA진행 일러스트 */}
         <motion.div className="sm:pb-7 px-14 sm:px-0" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-6.svg"
@@ -331,7 +327,6 @@ function Divide3() {
         </div>
       </div>
       <div>
-        {/* 서비스 런칭 일러스트 */}
         <motion.div className="pt-10" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-7.svg"
@@ -361,9 +356,9 @@ export default function WorkFlow() {
   }, []);
 
   return (
-    <WorkFlowSection className=" px-[2.4rem] py-15 sm:py-30">
+    <WorkFlowSection className="px-10 py-15 sm:py-30">
       <Divide1 />
-      {windowWidth > 768 ? <Divide2 /> : <MobileDivide2 />}
+      {windowWidth > 640 ? <Divide2 /> : <MobileDivide2 />}
       <Divide3 />
     </WorkFlowSection>
   );

@@ -62,8 +62,8 @@ export default function Client() {
         </motion.div>
       </div>
       <motion.div
-        className="absolute right-80 lg:mt-[55%] xl:mt-[50%]  2xl:mt-[40%] hidden lg:inline"
-        whileInView={{ opacity: ['0%', '100%'], x: ['100%', '0%'] }}
+        className="absolute right-80 lg:right-40 lg:mt-140 xl:mt-160  2xl:mt-188 hidden lg:inline"
+        whileInView={{ opacity: ['0%', '100%'] }}
         viewport={{ once: true }}
       >
         <Image src="/assets/image/main/clients/background-1.svg" width="180" height="180" />
