@@ -2,13 +2,13 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
+import { motion } from 'framer-motion';
 
 const WorkFlowSection = styled.section`
   background-image: url('/assets/image/main/workflow/background-1.svg'),
-    url('/assets/image/main/workflow/background-6.svg'), url('/assets/image/main/workflow/background-5.svg'),
     url('/assets/image/main/workflow/background-4.svg'), url('/assets/image/main/workflow/background-7.svg');
-  background-position: 34vw -50%, 12% 78%, -25% 75%, -15% 56%, 52vw 121%;
-  background-size: 88%, 18rem, 38%, 43rem, 86%;
+  background-position: 34vw -50%, -15% 56%, 52vw 121%;
+  background-size: 88%, 43rem, 86%;
   background-repeat: no-repeat;
   background-attachment: scroll;
 
@@ -25,12 +25,14 @@ const WorkFlowSection = styled.section`
 
 const SubTitleBlue = styled.div`
   ${({ theme }) => theme.subTitleBlue};
+  line-height: 1.36;
+  padding-bottom: 0.5rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: 1rem;
   }
 `;
 
-const SubTitle1 = styled.h1`
+const SubTitle1 = styled(motion.h1)`
   ${({ theme }) => theme.subTitle1};
 `;
 
@@ -38,10 +40,10 @@ const SubTitle2 = styled.h2`
   color: ${(props) => props.theme['black']};
   font-size: 2rem;
   line-height: 0.94;
-  padding-bottom: 1.4375rem;
+  padding-bottom: 1.8rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: 1.25rem;
-    padding-top: 0.5rem;
+    padding-bottom: 0.2rem;
   }
 `;
 
@@ -54,20 +56,47 @@ const Description = styled.p`
     line-height: 1.57;
   }
 `;
+const fadeUp = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'linear',
+      when: 'beforeChildren',
+      staggerChildren: 0.25,
+      delayChildren: 0.3,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 150,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+};
 
 function Divide1() {
   return (
-    <section className="flex-row text-center">
+    <motion.section
+      className="flex-row text-center"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="flex-row">
-        <div className="pb-13 sm:pb-11">
-          <SubTitle1>WORK FLOW</SubTitle1>
-          <Description>
-            만들어져있는 솔루션이 아닌 프로젝트별 맞춤형 컨설팅을 통해 만족스러운 퀄리티의 산출물을 제공할 수 있도록
-            노력합니다.
-          </Description>
-          <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
+        <div>
+          <SubTitle1 variants={fadeUp}>WORK FLOW</SubTitle1>
+          <motion.div variants={fadeUp}>
+            <Description>
+              만들어져있는 솔루션이 아닌 프로젝트별 맞춤형 컨설팅을 통해 만족스러운 퀄리티의 산출물을 제공할 수 있도록
+              노력합니다.
+            </Description>
+            <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
+          </motion.div>
         </div>
-        <div className="px-7 flex justify-center">
+        <motion.div className="px-7 pt-1 flex justify-center" variants={fadeUp}>
           <div>
             <Image
               src="/assets/image/main/workflow/workflow-1.svg"
@@ -81,17 +110,42 @@ function Divide1() {
               <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
             </div>
           </div>
-          <div className="absolute right-0">
-            <div className="text-left">
+          <div className="hidden 2xl:inline absolute right-[6%] top-[170%]">
+            <motion.div
+              className="text-left"
+              initial={{ x: 50 }}
+              whileInView={{ x: 0 }}
+              transition={{
+                type: 'spring',
+                ease: 'easeIn',
+                duration: 1.75,
+              }}
+              viewport={{ once: true }}
+            >
               <Image src="/assets/image/main/workflow/background-2.svg" width="201" height="155" />
-            </div>
-            <div className="-mt-[4.7rem] ml-[7.4rem]">
+            </motion.div>
+            <motion.div
+              className="-mt-[4.7rem] ml-[7.4rem]"
+              initial={{ scale: 1.5 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                ease: 'easeInOut',
+              }}
+              viewport={{ once: true }}
+            >
               <Image src="/assets/image/main/workflow/background-3.svg" width="266" height="266" />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="py-5">
+      <motion.div
+        className="py-5"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        trasition={{ delay: 1.25, duration: 0.4 }}
+        viewport={{ once: true }}
+      >
         <div>
           <Image
             src="/assets/image/main/workflow/workflow-2.svg"
@@ -102,19 +156,20 @@ function Divide1() {
           <SubTitleBlue className="pt-7 sm:pt-9">Service Planning</SubTitleBlue>
           <SubTitle2>서비스 기획 (Wireframe 동시진행)</SubTitle2>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 
 function Divide2() {
   return (
-    <section className="flex">
+    <motion.section className="flex" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className="w-1/2">
         <div className="text-right">
           <Image src="/assets/image/main/workflow/left-arrow-1.svg" width="367" height="232" alt="왼쪽 화살표" />
         </div>
-        <div className="text-center">
+        {/* 백엔드 구축 일러스트 */}
+        <motion.div className="text-center pt-8 pb-2" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-3.svg"
             width="390"
@@ -123,7 +178,7 @@ function Divide2() {
           />
           <SubTitleBlue className="pt-5">Back-end</SubTitleBlue>
           <SubTitle2>백엔드 구축</SubTitle2>
-        </div>
+        </motion.div>
         <div className="text-right">
           <Image src="/assets/image/main/workflow/left-arrow-2.svg" width="500" height="648" alt="오른쪽 화살표" />
         </div>
@@ -132,7 +187,8 @@ function Divide2() {
         <div className="text-left">
           <Image src="/assets/image/main/workflow/right-arrow-1.svg" width="422" height="219" alt="오른쪽 화살표" />
         </div>
-        <div className="text-center">
+        {/* 디자인 일러스트 */}
+        <motion.div className="pt-16 text-center" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-4.svg"
             width="331"
@@ -141,11 +197,18 @@ function Divide2() {
           />
           <SubTitleBlue className="pt-8">Design</SubTitleBlue>
           <SubTitle2>디자인</SubTitle2>
-        </div>
+        </motion.div>
         <div className="text-center">
           <Image src="/assets/image/main/workflow/down-arrow-2.svg" width="17" height="88" alt="아래 화살표" />
         </div>
-        <div className="text-center">
+        {/* 프론트엔드 일러스트 */}
+        <motion.div
+          className="text-center pt-10 pb-2"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          trasition={{ ease: 'ease', delay: 1, duration: 1 }}
+          viewport={{ once: true }}
+        >
           <Image
             src="/assets/image/main/workflow/workflow-5.svg"
             alt="개발 하는 느낌의 일러스트"
@@ -154,88 +217,113 @@ function Divide2() {
           />
           <SubTitleBlue>Front-end</SubTitleBlue>
           <SubTitle2>프론트 엔드 구축</SubTitle2>
-        </div>
+        </motion.div>
         <div className="text-left">
           <Image src="/assets/image/main/workflow/right-arrow-2.svg" width="359" height="94" alt="오른쪽 화살표" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 function MobileDivide2() {
   return (
-    <section>
-      <div className="text-center w-full pl-7">
-        <Image src="/assets/image/main/workflow/mb_side-arrow-1.svg" width="274" height="125" alt="양쪽 화살표" />
-      </div>
-      <div className="flex items-end -mt-4">
-        <div className="w-2/3">
-          <div className="text-center pt-4">
-            <Image
-              src="/assets/image/main/workflow/workflow-3.svg"
-              width="367"
-              height="232"
-              alt="개발 하는 느낌의 일러스트"
-            />
-            <SubTitleBlue className="pt-5">Back-end</SubTitleBlue>
-            <SubTitle2>백엔드 구축</SubTitle2>
-          </div>
-          <div className="text-right">
-            <Image src="/assets/image/main/workflow/mb_left-arrow-2.svg" width="244" height="411" alt="왼쪽 화살표" />
-          </div>
+    <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+      <div className="grid grid-cols-2 text-center">
+        <div className="col-span-2 pl-8 pr-4">
+          <Image src="/assets/image/main/workflow/mb_side-arrow-1.svg" width="274" height="125" alt="양쪽 화살표" />
         </div>
-        <div className="w-1/3">
-          <div className="text-center mx-auto py-9">
-            <Image
-              src="/assets/image/main/workflow/workflow-4.svg"
-              width="331"
-              height="330"
-              alt="디자인 하는 느낌의 일러스트"
-            />
-            <SubTitleBlue className="pt-8">Design</SubTitleBlue>
-            <SubTitle2>디자인</SubTitle2>
-          </div>
-          <div className="text-center">
-            <Image src="/assets/image/main/workflow/mb_down-arrow-2.svg" width="8" height="42" alt="아래 화살표" />
-          </div>
-          <div className="text-center mx-auto">
-            <Image
-              src="/assets/image/main/workflow/workflow-5.svg"
-              width="331"
-              height="330"
-              alt="개발 하는 느낌의 일러스트"
-            />
-            <SubTitleBlue>Front-end</SubTitleBlue>
-            <SubTitle2>프론트 엔드 구축</SubTitle2>
-          </div>
-          <div className="text-left ml-auto">
-            <Image src="/assets/image/main/workflow/mb_right-arrow-2.svg" width="94" height="94" alt="오른쪽 화살표" />
-          </div>
+        <motion.div className="pr-4 pb-6" variants={fadeUp}>
+          <Image
+            src="/assets/image/main/workflow/workflow-3.svg"
+            width="200"
+            height="179"
+            alt="개발 하는 느낌의 일러스트"
+          />
+          <SubTitleBlue className="pt-5">Back-end</SubTitleBlue>
+          <SubTitle2>백엔드 구축</SubTitle2>
+        </motion.div>
+        <motion.div className="pt-4 px-6" variants={fadeUp}>
+          <Image
+            src="/assets/image/main/workflow/workflow-4.svg"
+            width="331"
+            height="330"
+            alt="디자인 하는 느낌의 일러스트"
+          />
+          <SubTitleBlue className="pt-4 pb-8">Design</SubTitleBlue>
+          <SubTitle2 className="pb-0">디자인</SubTitle2>
+        </motion.div>
+        <div className="row-span-3 relative">
+          <Image src="/assets/image/main/workflow/mb_left-arrow-2.svg" layout="fill" alt="왼쪽 화살표" />
+        </div>
+        <div className="">
+          <Image src="/assets/image/main/workflow/mb_down-arrow-2.svg" width="6" height="32" alt="아래 화살표" />
+        </div>
+        <motion.div
+          className="w-2/3 mx-auto pt-8"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          trasition={{ ease: 'ease', delay: 1, duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <Image
+            src="/assets/image/main/workflow/workflow-5.svg"
+            width="331"
+            height="330"
+            alt="개발 하는 느낌의 일러스트"
+          />
+          <SubTitleBlue>Front-end</SubTitleBlue>
+          <SubTitle2>프론트 엔드 구축</SubTitle2>
+        </motion.div>
+        <div className="w-1/3 mb-1">
+          <Image src="/assets/image/main/workflow/mb_right-arrow-2.svg" width="94" height="122" alt="오른쪽 화살표" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 function Divide3() {
   return (
-    <section className="flex-row text-center">
-      <div className="sm:pb-7 px-14 sm:px-0">
-        <Image
-          src="/assets/image/main/workflow/workflow-6.svg"
-          width="412"
-          height="460"
-          alt="회의 하는 느낌의 일러스트"
-        />
-        <SubTitleBlue className="pt-6">QA</SubTitleBlue>
-        <SubTitle2>QA 진행</SubTitle2>
-      </div>
-      <div>
-        <div className="pb-10 sm:pb-">
+    <motion.section
+      className="flex-row text-center"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <div className="">
+        <motion.div
+          className="hidden lg:inline absolute left-0"
+          whileInView={{ x: ['-100%', '0%'] }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute -left-[100%]">
+            <Image src="/assets/image/main/workflow/background-5.svg" width="700" height="700" />
+          </div>
+          <div className="pt-[22.188rem] -mr-[50%]">
+            <Image src="/assets/image/main/workflow/background-6.svg" width="300" height="300" />
+          </div>
+        </motion.div>
+
+        {/* QA진행 일러스트 */}
+        <motion.div className="sm:pb-7 px-14 sm:px-0" variants={fadeUp}>
+          <Image
+            src="/assets/image/main/workflow/workflow-6.svg"
+            width="412"
+            height="460"
+            alt="회의 하는 느낌의 일러스트"
+          />
+          <SubTitleBlue className="pt-6">QA</SubTitleBlue>
+          <SubTitle2>QA 진행</SubTitle2>
+        </motion.div>
+        <div className="my-8">
           <Image src="/assets/image/main/workflow/down-arrow-3.svg" width="17" height="104" alt="아래 화살표" />
         </div>
-        <div>
+      </div>
+      <div>
+        {/* 서비스 런칭 일러스트 */}
+        <motion.div variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-7.svg"
             width="758"
@@ -244,9 +332,9 @@ function Divide3() {
           />
           <SubTitleBlue>Service Launching</SubTitleBlue>
           <SubTitle2>서비스 런칭</SubTitle2>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
