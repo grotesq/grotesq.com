@@ -21,6 +21,14 @@ const WorkFlowSection = styled.section`
     background-size: contain, 20vw, 58vw, 58vw;
     background-repeat: no-repeat;
   }
+
+  @media screen and (min-width: 1920px) {
+    background-image: url('/assets/image/main/workflow/background-1.svg'),
+      url('/assets/image/main/workflow/background-4.svg'), url('/assets/image/main/workflow/background-7.svg');
+    background-position: 34vw -50%, -15% 56%, 52vw 160%;
+    background-size: 88%, 43rem, contain;
+    background-repeat: no-repeat;
+  }
 `;
 
 const SubTitleBlue = styled.div`
@@ -116,7 +124,7 @@ function Divide1() {
               initial={{ x: 50 }}
               whileInView={{ x: 0 }}
               transition={{
-                type: 'spring',
+                // type: 'spring',
                 ease: 'easeIn',
                 duration: 1.75,
               }}
@@ -143,7 +151,7 @@ function Divide1() {
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
-        trasition={{ delay: 1.25, duration: 0.4 }}
+        transition={{ delay: 1.25, duration: 0.4 }}
         viewport={{ once: true }}
       >
         <div>
@@ -207,7 +215,7 @@ function Divide2() {
           className="pt-10 pb-2"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          trasition={{ ease: 'ease', delay: 1, duration: 1 }}
+          transition={{ ease: 'ease', delay: 1, duration: 1 }}
           viewport={{ once: true }}
         >
           <Image
@@ -264,7 +272,7 @@ function MobileDivide2() {
           className="w-2/3 mx-auto pt-4"
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          trasition={{ ease: 'ease', delay: 1, duration: 1 }}
+          transition={{ ease: 'ease', delay: 1, duration: 1 }}
           viewport={{ once: true }}
         >
           <Image

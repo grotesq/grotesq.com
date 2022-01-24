@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Button from '../Button';
-import { motion, variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -14,7 +14,7 @@ const IntroduceSection = styled.section`
   color: ${(props) => props.theme.color['white']};
 `;
 
-const LogoTitle = styled.div`
+const LogoTitle = styled(motion.div)`
   ${({ theme }) => theme['logoTitle']};
   padding-bottom: 2rem;
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
@@ -59,25 +59,24 @@ const Description = styled(motion.div)`
     }
   }
 `;
-
+const fadeIn = {
+  visible: {
+    opacity: 1,
+    transition: {
+      type: 'linear',
+      when: 'beforeChildren',
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren',
+    },
+  },
+};
 export default function Introduce() {
-  const fadeIn = {
-    visible: {
-      opacity: 1,
-      transition: {
-        type: 'linear',
-        when: 'beforeChildren',
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      transition: {
-        when: 'afterChildren',
-      },
-    },
-  };
   return (
     <IntroduceSection className="pt-32 pb-28 px-12 lg:pt-62 lg:pb-52">
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
