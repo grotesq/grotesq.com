@@ -64,6 +64,17 @@ const Description = styled.p`
     line-height: 1.57;
   }
 `;
+
+const BgDecoration1 = styled.span`
+  position: absolute;
+  right: 5rem;
+  margin-top: 15rem;
+`;
+
+const BgDecoration2 = styled(motion.span)`
+  position: absolute;
+  left: 0;
+`;
 const fadeUp = {
   visible: {
     opacity: 1,
@@ -118,7 +129,7 @@ function Divide1() {
               <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
             </div>
           </div>
-          <div className="absolute hidden 2xl:inline right-20 mt-60">
+          <BgDecoration1 className="hidden 2xl:inline">
             <motion.div
               className="text-left"
               initial={{ x: 150 }}
@@ -132,17 +143,17 @@ function Divide1() {
             </motion.div>
             <motion.div
               className="-mt-20 ml-30"
-              initial={{ scale: 2 }}
+              initial={{ scale: 1.5 }}
               whileInView={{ scale: 1 }}
               transition={{
-                ease: 'linear',
-                duration: 0.5,
+                ease: 'easeOut',
+                duration: 0.4,
               }}
               viewport={{ once: true }}
             >
               <Image src="/assets/image/main/workflow/background-3.svg" width="266" height="266" />
             </motion.div>
-          </div>
+          </BgDecoration1>
         </motion.div>
       </div>
       <motion.div
@@ -290,7 +301,7 @@ function MobileDivide2() {
   );
 }
 
-function Divide3() {
+function Divide3({ windowWidth }: { windowWidth: number }) {
   return (
     <motion.section
       className="flex-row text-center"
@@ -299,19 +310,15 @@ function Divide3() {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="">
-        <motion.div
-          className="absolute left-0 hidden lg:inline"
-          whileInView={{ x: ['-100%', '0%'] }}
-          viewport={{ once: true }}
-        >
-          <div className="absolute -ml-80">
+      <div>
+        <BgDecoration2 className="hidden lg:inline" whileInView={{ x: ['-100%', '0%'] }} viewport={{ once: true }}>
+          <div className="absolute -ml-140 xl:-ml-80">
             <Image src="/assets/image/main/workflow/background-5.svg" width="700" height="700" />
           </div>
           <div className="pl-40 pt-80">
             <Image src="/assets/image/main/workflow/background-6.svg" width="300" height="300" />
           </div>
-        </motion.div>
+        </BgDecoration2>
         <motion.div className="sm:pb-7 px-14 sm:px-0" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-6.svg"
@@ -328,12 +335,14 @@ function Divide3() {
       </div>
       <div>
         <motion.div className="pt-10" variants={fadeUp}>
-          <Image
-            src="/assets/image/main/workflow/workflow-7.svg"
-            width="758"
-            height="600"
-            alt="환호 하는 느낌의 일러스트"
-          />
+          <div className="-ml-20">
+            <Image
+              src="/assets/image/main/workflow/workflow-7.svg"
+              width="758"
+              height="600"
+              alt="환호 하는 느낌의 일러스트"
+            />
+          </div>
           <SubTitleBlue>Service Launching</SubTitleBlue>
           <SubTitle2>서비스 런칭</SubTitle2>
         </motion.div>
@@ -359,7 +368,7 @@ export default function WorkFlow() {
     <WorkFlowSection className="px-10 py-15 sm:py-30">
       <Divide1 />
       {windowWidth > 640 ? <Divide2 /> : <MobileDivide2 />}
-      <Divide3 />
+      <Divide3 windowWidth={windowWidth} />
     </WorkFlowSection>
   );
 }

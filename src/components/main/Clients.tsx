@@ -51,20 +51,19 @@ export default function Client() {
     >
       <div>
         <SubTitle1 variants={fadeUp}>OUR CLIENTS</SubTitle1>
-        <motion.p className="pb-14 px-14 sm:pb-3" variants={fadeUp}>
+        <motion.p className="pb-8 px-14 sm:pb-3" variants={fadeUp}>
           그로테스큐 스튜디오와 함께한 고객사입니다.
         </motion.p>
-        <motion.div className="hidden sm:flex w-screen justify-center" variants={fadeUp}>
+        <motion.div className="justify-center hidden w-screen sm:flex" variants={fadeUp}>
           <Image src={Clients} alt="고객사 로고들" />
         </motion.div>
-        <motion.div className="flex sm:hidden w-screen justify-center" variants={fadeUp}>
+        <motion.div className="flex justify-center w-screen sm:hidden" variants={fadeUp}>
           <Image src={MobileClients} alt="고객사 로고들" />
         </motion.div>
       </div>
       <motion.div
-        className="absolute right-80 lg:right-40 lg:mt-140 xl:mt-160  2xl:mt-188 hidden lg:inline"
-        whileInView={{ opacity: ['0%', '100%'] }}
-        viewport={{ once: true }}
+        className="absolute hidden right-80 lg:right-40 lg:mt-140 xl:mt-160 2xl:mt-188 lg:inline"
+        variants={fadeUp}
       >
         <Image src="/assets/image/main/clients/background-1.svg" width="180" height="180" />
       </motion.div>

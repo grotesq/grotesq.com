@@ -111,7 +111,7 @@ function Menus({ title, path, isInternal, isSelected }: MenuProps) {
           <a className={isSelected ? 'selected' : ''}>{title}</a>
         </Link>
       ) : (
-        <a href={path} target="_blank" rel="noopener noreferrer">
+        <a href={path} target="_blank" rel="noreferrer">
           {title}
         </a>
       )}
