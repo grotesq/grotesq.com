@@ -19,10 +19,17 @@ const GalleryContainer = styled.div`
 function GalleryItem({ src, title, url }: { src: string | StaticImageData; title: string; url: string }) {
   return (
     <div>
-      <a href={url} target="_blank" title={title} rel="noreferrer">
-        <Image src={src} />
-        <p className="pt-5">{title}</p>
-      </a>
+      {url !== '' ? (
+        <a href={url} target="_blank" title={title} rel="noreferrer noopener">
+          <Image src={src} />
+          <p className="pt-5">{title}</p>
+        </a>
+      ) : (
+        <div onClick={() => alert('컨텐츠 준비중입니다 :)')}>
+          <Image src={src} />
+          <p className="pt-5">{title}</p>
+        </div>
+      )}
     </div>
   );
 }

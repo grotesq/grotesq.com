@@ -18,12 +18,12 @@ export const THUMBNAIL_INFOS: Array<{
   {
     src: Thumbnail1,
     title: '스마트 러닝 서비스 윌라 2.0 리뉴얼',
-    url: '',
+    url: 'https://grotesq.notion.site/Welaaa-9e1730db8c434008b021d8ca97cc6b8a',
   },
   {
     src: Thumbnail2,
     title: '인천공항사규 App',
-    url: '',
+    url: 'https://grotesq.notion.site/43a56e277c52459488611ede8b325b20',
   },
   {
     src: Thumbnail3,
@@ -48,7 +48,7 @@ export const THUMBNAIL_INFOS: Array<{
   {
     src: Thumbnail7,
     title: 'Series Eight 홈페이지',
-    url: '',
+    url: 'https://grotesq.notion.site/Series-8-82efe6eaab734d668fa0a3295c7f70c8',
   },
   {
     src: Thumbnail8,
@@ -68,6 +68,6 @@ export const THUMBNAIL_INFOS: Array<{
   {
     src: Thumbnail11,
     title: '이사 말고 짐카',
-    url: '',
+    url: 'https://grotesq.notion.site/3675a4c62f244e5dac84694ca348291d',
   },
 ];
