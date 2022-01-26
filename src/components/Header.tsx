@@ -7,11 +7,13 @@ import logo from '../../public/assets/image/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
 import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg';
 import { motion, AnimatePresence } from 'framer-motion';
+
 interface MenuProps {
   title: string;
   path: string;
   isInternal: boolean;
   isSelected?: boolean;
+  onClick?: () => void;
 }
 
 const HeaderContainer = styled.header`
@@ -66,6 +68,9 @@ const MobileNavContainer = styled(motion.nav)`
   }
   li {
     padding-bottom: 1.875rem;
+    .selected {
+      ${activeStyle}
+    }
   }
 `;
 const MobileNavCloseBtn = styled.button`
@@ -103,15 +108,17 @@ const menus = [
   },
 ];
 
-function Menus({ title, path, isInternal, isSelected }: MenuProps) {
+function Menus({ title, path, isInternal, isSelected, onClick }: MenuProps) {
   return (
     <motion.li>
       {isInternal ? (
         <Link href={path}>
-          <a className={isSelected ? 'selected' : ''}>{title}</a>
+          <a onClick={onClick} className={isSelected ? 'selected' : ''}>
+            {title}
+          </a>
         </Link>
       ) : (
-        <a href={path} target="_blank" rel="noreferrer noopener">
+        <a onClick={onClick} href={path} target="_blank" rel="noreferrer noopener">
           {title}
         </a>
       )}
@@ -164,8 +171,9 @@ export default function Header() {
       </div>
       <AnimatePresence>
         {isMobileNavOpened && (
-          <MobileNavBackground>
+          <MobileNavBackground onClick={toggleMobileNav}>
             <MobileNavContainer
+              onClick={(e) => e.stopPropagation()}
               className="sm:hidden"
               key="drawer"
               initial={{ x: '100%' }}
@@ -185,11 +193,12 @@ export default function Header() {
                 </li>
                 {menus.map((menu: MenuProps) => (
                   <Menus
+                    onClick={toggleMobileNav}
                     key={menu.title}
                     title={menu.title}
                     path={menu.path}
                     isInternal={menu.isInternal}
-                    isSelected={menu.isSelected}
+                    isSelected={router.pathname === menu.path}
                   />
                 ))}
               </ul>
