@@ -91,7 +91,7 @@ const menus = [
   },
   {
     title: 'Recruit',
-    path: '',
+    path: 'https://grotesq.notion.site/Recruits-GrotesQ-b9a8e7ad1a0a4c048c1c51b86f1404a3',
     isInternal: false,
     isSelected: false,
   },
@@ -111,7 +111,7 @@ function Menus({ title, path, isInternal, isSelected }: MenuProps) {
           <a className={isSelected ? 'selected' : ''}>{title}</a>
         </Link>
       ) : (
-        <a href={path} target="_blank" rel="noreferrer">
+        <a href={path} target="_blank" rel="noreferrer noopener">
           {title}
         </a>
       )}
