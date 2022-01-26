@@ -22,7 +22,7 @@ const SubTitle1 = styled(motion.h1)`
   }
 `;
 
-const Description = styled.div`
+const Description = styled(motion.div)`
   p {
     color: #${(props) => props.theme['black']};
     font-size: 1.125rem;
@@ -63,11 +63,9 @@ export default function Portfolio() {
       viewport={{ once: true }}
     >
       <SubTitle1 variants={fadeUp}>PORTFOLIOS</SubTitle1>
-      <Description>
-        <motion.p variants={fadeUp}>그로테스큐 스튜디오의 주요 프로젝트 입니다.</motion.p>
-        <motion.p variants={fadeUp}>
-          완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.
-        </motion.p>
+      <Description variants={fadeUp}>
+        <p>그로테스큐 스튜디오의 주요 프로젝트 입니다.</p>
+        <p>완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.</p>
       </Description>
       <motion.div variants={fadeUp}>
         <Gallery />
