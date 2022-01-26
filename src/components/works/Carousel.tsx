@@ -3,6 +3,60 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import Button from '../../components/Button';
 
+interface SlideProps {
+  imgSrc: string;
+  title: string;
+  description: string[];
+  url: string;
+}
+
+const slideInfos: SlideProps[] = [
+  {
+    imgSrc: '/assets/image/works/slide-1.jpg',
+    title: '스마트러닝 윌라 웹서비스 리뉴얼',
+    description: [
+      "(주)인플루엔셜의 스마트러닝 서비스인 '윌라'의 앱을 리뉴얼했습니다.",
+      '기존의 웹뷰 하이브리드 방식에서 네이티브 방식으로 전면 개편했습니다.',
+      '개편을 통해 앱 진입 속도가 초기 로딩 속도, 뷰 반응 속도 등이 크게 개선되었습니다.',
+    ],
+    url: 'https://grotesq.notion.site/Welaaa-9e1730db8c434008b021d8ca97cc6b8a',
+  },
+];
+
+const SlideBackground = styled.article<{ imgSrc: string }>`
+  ${({ theme }) => theme.flexCenter};
+  flex-direction: column;
+  background: ${(props) => `${props.theme.background['gradient80']}, url(${props.imgSrc})`};
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 17.438rem;
+  padding-bottom: 17.5rem;
+  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
+    background-position: left 2% center;
+    padding-top: 7.9rem;
+    padding-bottom: 9.3rem;
+  }
+`;
+
+export function SlideContaier({ slideinfo }: { slideinfo: SlideProps }) {
+  const { title, imgSrc, description, url } = slideinfo;
+
+  return (
+    <SlideBackground imgSrc={imgSrc}>
+      <LogoTitle>Studio GrotesQ</LogoTitle>
+      <MainTitle>{title}</MainTitle>
+      <Description className="px-6">
+        {description.map((sentence, i) => (
+          <p key={i}>{sentence}</p>
+        ))}
+      </Description>
+      <Button onClick={() => window.open(`${url}`)} round border color="white" size="md">
+        프로젝트 살펴보기
+      </Button>
+    </SlideBackground>
+  );
+}
+
 const MainTitle = styled.h1`
   @media ${({ theme }) => theme.mediaQueryMax('sm')} {
     font-size: 2rem;
@@ -85,27 +139,6 @@ const SwiperSection = styled.section`
   }
 `;
 
-const SlideContaier = styled.div`
-  ${({ theme }) => theme.flexCenter};
-  flex-direction: column;
-  background: ${(props) => props.theme.background['gradient70']}, url('/assets/image/works/slide-1.jpg');
-
-  @supports (background-image: -webkit-image-set(url('/assets/image/works/introduce/slide-1.webp') 1x)) {
-    background-image: ${(props) => props.theme.background['gradient80']},
-      -webkit-image-set(url('/assets/image/works/slide-1.webp') 1x);
-  }
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-top: 17.438rem;
-  padding-bottom: 17.5rem;
-
-  @media ${({ theme }) => theme.mediaQueryMax('sm')} {
-    background-position: left 2% center;
-    padding-top: 7.9rem;
-    padding-bottom: 9.3rem;
-  }
-`;
-
 export default function Carousel() {
   SwiperCore.use([Autoplay, Navigation]);
   return (
@@ -120,30 +153,7 @@ export default function Carousel() {
         }}
       >
         <SwiperSlide>
-          <SlideContaier className="px-10 lg:px-40">
-            <LogoTitle>Studio GrotesQ</LogoTitle>
-            <MainTitle>
-              <span>스마트 러닝</span>
-              <span className="block lg:inline">&nbsp;윌라 웹서비스 리뉴얼</span>
-            </MainTitle>
-            <Description className="px-6">
-              <p>
-                (주)인플루엔셜의 스마트러닝 서비스인
-                <span className="block md:inline">&apos;윌라&apos;의 앱을 리뉴얼했습니다.</span>
-              </p>
-              <p>
-                기존의 웹뷰 하이브리드 방식에서
-                <span className="block md:inline">네이티브 방식으로 전면 개편했습니다.</span>
-              </p>
-              <p>
-                개편을 통해 앱 진입 속도가 초기 로딩 속도,
-                <span className="block md:inline">뷰 반응 속도 등이 크게 개선되었습니다.</span>
-              </p>
-            </Description>
-            <Button round border color="white" size="md">
-              프로젝트 살펴보기
-            </Button>
-          </SlideContaier>
+          <SlideContaier slideinfo={slideInfos[0]} />
         </SwiperSlide>
       </Swiper>
     </SwiperSection>
