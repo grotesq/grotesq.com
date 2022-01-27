@@ -107,7 +107,7 @@ function Divide1() {
       <div className="flex-row">
         <div>
           <SubTitle1 variants={fadeUp}>WORK FLOW</SubTitle1>
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="px-5 sm:px-0">
             <Description>
               만들어져있는 솔루션이 아닌 프로젝트별 맞춤형 컨설팅을 통해 만족스러운 퀄리티의 산출물을 제공할 수 있도록
               노력합니다.
@@ -115,7 +115,7 @@ function Divide1() {
             <Description>12주를 기준으로 프로젝트 규모에 따라 전체작업 일정을 산정합니다.</Description>
           </motion.div>
         </div>
-        <motion.div className="flex justify-center px-8 sm:px-7 pt-13 sm:pt-12" variants={fadeUp}>
+        <motion.div className="flex justify-center px-8 sm:px-7 pt-15 sm:pt-12" variants={fadeUp}>
           <div>
             <Image
               src="/assets/image/main/workflow/workflow-1.svg"
@@ -215,18 +215,13 @@ function Divide2() {
           <SubTitleBlue className="pt-8">Design</SubTitleBlue>
           <SubTitle2>디자인</SubTitle2>
         </motion.div>
-        <div className="row-span-3 ml-auto">
+        <motion.div variants={fadeUp} className="row-span-3 ml-auto">
           <Image src="/assets/image/main/workflow/left-arrow-2.svg" width="500" height="648" alt="오른쪽 화살표" />
-        </div>
-        <div className="">
+        </motion.div>
+        <motion.div variants={fadeUp}>
           <Image src="/assets/image/main/workflow/down-arrow-2.svg" width="17" height="88" alt="아래 화살표" />
-        </div>
-        <motion.div
-          className="pt-10 pb-2 md:px-20 lg:pl-0"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-        >
+        </motion.div>
+        <motion.div variants={fadeUp} className="pt-10 pb-2 md:px-20 lg:pl-0">
           <Image
             src="/assets/image/main/workflow/workflow-5.svg"
             alt="개발 하는 느낌의 일러스트"
@@ -236,9 +231,9 @@ function Divide2() {
           <SubTitleBlue>Front-end</SubTitleBlue>
           <SubTitle2>프론트 엔드 구축</SubTitle2>
         </motion.div>
-        <div className="mr-auto">
+        <motion.div variants={fadeUp} className="mr-auto">
           <Image src="/assets/image/main/workflow/right-arrow-2.svg" width="359" height="94" alt="오른쪽 화살표" />
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
@@ -271,19 +266,13 @@ function MobileDivide2() {
           <SubTitleBlue className="pt-3 pb-8">Design</SubTitleBlue>
           <SubTitle2 className="pb-0">디자인</SubTitle2>
         </motion.div>
-        <div className="relative w-screen row-span-3 -left-24">
+        <motion.div variants={fadeUp} className="relative w-screen row-span-3 -left-24">
           <Image src="/assets/image/main/workflow/mb_left-arrow-2.svg" layout="fill" alt="왼쪽 화살표" />
-        </div>
-        <div>
+        </motion.div>
+        <motion.div variants={fadeUp}>
           <Image src="/assets/image/main/workflow/mb_down-arrow-2.svg" width="6" height="32" alt="아래 화살표" />
-        </div>
-        <motion.div
-          className="w-2/3 pt-4 mx-auto"
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5 }}
-          viewport={{ once: true }}
-        >
+        </motion.div>
+        <motion.div className="w-2/3 pt-4 mx-auto" variants={fadeUp}>
           <Image
             src="/assets/image/main/workflow/workflow-5.svg"
             width="331"
@@ -293,9 +282,9 @@ function MobileDivide2() {
           <SubTitleBlue>Front-end</SubTitleBlue>
           <SubTitle2>프론트 엔드 구축</SubTitle2>
         </motion.div>
-        <div className="w-2/3 pt-4 mb-1">
+        <motion.div variants={fadeUp} className="w-2/3 pt-4 mb-1">
           <Image src="/assets/image/main/workflow/mb_right-arrow-2.svg" width="94" height="122" alt="오른쪽 화살표" />
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
@@ -329,9 +318,9 @@ function Divide3({ windowWidth }: { windowWidth: number }) {
           <SubTitleBlue className="pt-6">QA</SubTitleBlue>
           <SubTitle2>QA 진행</SubTitle2>
         </motion.div>
-        <div className="my-8">
+        <motion.div className="my-8" variants={fadeUp}>
           <Image src="/assets/image/main/workflow/down-arrow-3.svg" width="17" height="104" alt="아래 화살표" />
-        </div>
+        </motion.div>
       </div>
       <div>
         <motion.div className="pt-10" variants={fadeUp}>

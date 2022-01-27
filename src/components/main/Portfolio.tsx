@@ -1,8 +1,8 @@
+import { motion } from 'framer-motion';
 import Button from '../../components/Button';
 import Gallery from '../../components/Gallery';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 const PortfolioSection = styled(motion.section)`
   width: 100%;

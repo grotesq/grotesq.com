@@ -42,10 +42,10 @@ export function SlideContaier({ slideinfo }: { slideinfo: SlideProps }) {
   const { title, imgSrc, description, url } = slideinfo;
 
   return (
-    <SlideBackground imgSrc={imgSrc}>
+    <SlideBackground className="px-12" imgSrc={imgSrc}>
       <LogoTitle>Studio GrotesQ</LogoTitle>
       <MainTitle>{title}</MainTitle>
-      <Description className="px-6">
+      <Description className="px-3">
         {description.map((sentence, i) => (
           <p key={i}>{sentence}</p>
         ))}
