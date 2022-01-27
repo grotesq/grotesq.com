@@ -191,6 +191,13 @@ export default function Header() {
                     <BtnMobileClose onClick={toggleMobileNav} />
                   </MobileNavCloseBtn>
                 </li>
+                <Menus
+                  onClick={toggleMobileNav}
+                  title="Home"
+                  path="/"
+                  isInternal={true}
+                  isSelected={router.pathname === '/'}
+                />
                 {menus.map((menu: MenuProps) => (
                   <Menus
                     onClick={toggleMobileNav}
