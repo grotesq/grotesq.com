@@ -24,12 +24,20 @@ const HeaderContainer = styled.header`
   height: 6.25rem;
   min-width: 23.437rem;
   font-weight: 300;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: ${(props) => props.theme.color['white']};
+  z-index: 9999;
+  box-shadow: 0 1.25rem 1.25rem 0 rgba(0, 0, 0, 0.1);
+
   @media ${(props) => props.theme.mediaQueryMax('sm')} {
     height: 3.75rem;
     position: fixed;
     z-index: 9999;
     width: 100%;
     background-color: ${(props) => props.theme.color['white']};
+    box-shadow: 0 0.625rem 0.625rem 0 rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -55,7 +63,8 @@ const NavContainer = styled.nav`
   }
 `;
 const MobileNavContainer = styled(motion.nav)`
-  background: white;
+  background-color: ${(props) => props.theme.color['white']};
+  box-shadow: 0 0.625rem 0.625rem 0 rgba(0, 0, 0, 0.1);
   height: 100%;
   padding-left: 1.875rem;
   position: absolute;
