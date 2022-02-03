@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const WorkFlowSection = styled.section`
   background-image: url('/assets/image/main/workflow/background-1.svg'),
     url('/assets/image/main/workflow/background-4.svg'), url('/assets/image/main/workflow/background-7.svg');
-  background-position: 34vw -50%, -15% 56%, 52vw 121%;
+  background-position: 34vw -35%, -15% 56%, 52vw 121%;
   background-size: 88%, 43rem, 86%;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -25,7 +25,7 @@ const WorkFlowSection = styled.section`
   @media screen and (min-width: 1920px) {
     background-image: url('/assets/image/main/workflow/background-1.svg'),
       url('/assets/image/main/workflow/background-4.svg'), url('/assets/image/main/workflow/background-7.svg');
-    background-position: 34vw -50%, -15% 56%, 52vw 160%;
+    background-position: 31vw -40%, -15% 56%, 52vw 160%;
     background-size: 88%, 43rem, contain;
     background-repeat: no-repeat;
   }
@@ -65,7 +65,7 @@ const Description = styled.p`
   }
 `;
 
-const BgDecoration1 = styled.span`
+const BgDecoration1 = styled(motion.span)`
   position: absolute;
   right: 5rem;
   margin-top: 15rem;
@@ -129,7 +129,7 @@ function Divide1() {
               <Image src="/assets/image/main/workflow/down-arrow-1.svg" width="16" height="84" alt="아래 화살표" />
             </div>
           </div>
-          <BgDecoration1 className="hidden 2xl:inline">
+          <BgDecoration1 variants={fadeUp} className="hidden 2xl:inline">
             <motion.div
               className="text-left"
               initial={{ x: 150 }}
