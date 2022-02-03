@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -7,6 +7,7 @@ import logo from '../../public/assets/image/logo/logo.png';
 import BtnMobileMenu from '../../public/assets/icon/btn_mobile-menu.svg';
 import BtnMobileClose from '../../public/assets/icon/btn_mobile-close.svg';
 import { motion, AnimatePresence } from 'framer-motion';
+import { NavContext } from '../contexts/NavContext';
 
 interface MenuProps {
   title: string;
@@ -137,23 +138,8 @@ function Menus({ title, path, isInternal, isSelected, onClick }: MenuProps) {
 
 export default function Header() {
   const router = useRouter();
-  const [isMobileNavOpened, setIsMobileNavOpened] = useState<boolean>(false);
-  const toggleMobileNav = () => {
-    setIsMobileNavOpened(!isMobileNavOpened);
-  };
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      if (isMobileNavOpened) {
-        setIsMobileNavOpened((isMobileNavOpened) => !isMobileNavOpened);
-      }
-    };
-    router.events.on('routeChangeStart', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-    };
-  }, [isMobileNavOpened, router.events]);
+  const { isNavOpened } = useContext(NavContext);
+  const { toggleNavOpened } = useContext(NavContext);
 
   return (
     <HeaderContainer className="px-5 lg:px-40">
@@ -174,15 +160,15 @@ export default function Header() {
         </Link>
       </div>
       <div>
-        <button type="button" className="flex sm:hidden" onClick={toggleMobileNav} aria-label="open menu">
+        <button type="button" className="flex sm:hidden" onClick={toggleNavOpened} aria-label="open menu">
           <BtnMobileMenu />
         </button>
       </div>
       <AnimatePresence>
-        {isMobileNavOpened && (
-          <MobileNavBackground onClick={toggleMobileNav}>
+        {isNavOpened && (
+          <MobileNavBackground onClick={toggleNavOpened}>
             <MobileNavContainer
-              onClick={(e) => e.stopPropagation()}
+              // onClick={(e) => e.stopPropagation()}
               className="sm:hidden"
               key="drawer"
               initial={{ x: '100%' }}
@@ -197,11 +183,11 @@ export default function Header() {
               <ul>
                 <li className="text-right">
                   <MobileNavCloseBtn>
-                    <BtnMobileClose onClick={toggleMobileNav} />
+                    <BtnMobileClose onClick={toggleNavOpened} />
                   </MobileNavCloseBtn>
                 </li>
                 <Menus
-                  onClick={toggleMobileNav}
+                  onClick={toggleNavOpened}
                   title="Home"
                   path="/"
                   isInternal={true}
@@ -209,7 +195,7 @@ export default function Header() {
                 />
                 {menus.map((menu: MenuProps) => (
                   <Menus
-                    onClick={toggleMobileNav}
+                    onClick={toggleNavOpened}
                     key={menu.title}
                     title={menu.title}
                     path={menu.path}
