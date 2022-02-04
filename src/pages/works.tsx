@@ -14,6 +14,9 @@ export default function Works() {
         title="포트폴리오"
         description="그로테스큐 스튜디오의 주요 프로젝트 입니다.
                   완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다."
+        openGraph={{ 
+          description: "그로테스큐 스튜디오의 주요 프로젝트 입니다. 완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다."
+        }}
       />
       <BaseLayout>
         <main>
