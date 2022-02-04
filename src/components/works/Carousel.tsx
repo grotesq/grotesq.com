@@ -212,6 +212,9 @@ const SwiperSection = styled.section`
 `;
 
 export default function Carousel() {
+  const shuffledSlide = [...slideInfos].sort(() => Math.random()-0.5);
+  const shuffledMobileSlide = [...mobileSlideInfos].sort(() => Math.random()-0.5);
+  
   SwiperCore.use([Autoplay, Navigation]);
   return (
     <SwiperSection>
@@ -227,7 +230,7 @@ export default function Carousel() {
         }}
       >
         {
-          slideInfos.map((slide) => (
+          shuffledSlide.map((slide) => (
               <SwiperSlide key={slide.title[0]}>
                 <SlideContaier slideinfo={slide} />
             </SwiperSlide>
@@ -246,7 +249,7 @@ export default function Carousel() {
         }}
       >
         {
-          mobileSlideInfos.map((slide) => (
+          shuffledMobileSlide.map((slide) => (
               <SwiperSlide key={slide.title[0]}>
                 <SlideContaier slideinfo={slide} />
             </SwiperSlide>
