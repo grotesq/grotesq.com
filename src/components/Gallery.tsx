@@ -21,12 +21,12 @@ function GalleryItem({ src, title, url }: { src: string | StaticImageData; title
     <div>
       {url !== '' ? (
         <a href={url} target="_blank" title={title} rel="noreferrer noopener">
-          <Image src={src} />
+          <Image className="transition ease-in-out hover:scale-110" src={src} />
           <p className="pt-5">{title}</p>
         </a>
       ) : (
         <div onClick={() => alert('컨텐츠 준비중입니다 :)')}>
-          <Image src={src} />
+          <Image className="transition ease-in-out hover:scale-110" src={src} />
           <p className="pt-5">{title}</p>
         </div>
       )}

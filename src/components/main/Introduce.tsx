@@ -78,6 +78,7 @@ const fadeIn = {
   },
 };
 export default function Introduce() {
+  const mailTo = () => (window.location.href = 'mailto:unknown@grotesq.com');
   return (
     <IntroduceSection className="px-12 pt-32 pb-28 lg:pt-62 lg:pb-52">
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
@@ -104,12 +105,7 @@ export default function Introduce() {
           </div>
         </Description>
         <motion.div variants={fadeIn}>
-          <Button
-            className="transition ease-in-out  hover:bg-[#4E73FF]"
-            size="md"
-            round
-            onClick={() => (window.location.href = 'mailto:unknown@grotesq.com')}
-          >
+          <Button className="transition ease-in-out hover:bg-primary-blue-light" size="md" round onClick={mailTo}>
             프로젝트 문의하기
           </Button>
         </motion.div>
