@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import debounce from 'lodash/debounce';
 import { motion } from 'framer-motion';
 
 const WorkFlowSection = styled.section`
@@ -182,7 +180,7 @@ function Divide1() {
 function Divide2() {
   return (
     <motion.section
-      className="flex justify-center"
+      className="justify-center hidden sm:flex"
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
@@ -241,7 +239,7 @@ function Divide2() {
 
 function MobileDivide2() {
   return (
-    <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <motion.section className="flex sm:hidden" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
       <div className="grid grid-cols-2 text-center">
         <div className="flex justify-center col-span-2 pl-8 pr-4 pb-7">
           <Image src="/assets/image/main/workflow/mb_side-arrow-1.svg" width="274" height="125" alt="양쪽 화살표" />
@@ -290,7 +288,7 @@ function MobileDivide2() {
   );
 }
 
-function Divide3({ windowWidth }: { windowWidth: number }) {
+function Divide3() {
   return (
     <motion.section
       className="flex-row text-center"
@@ -341,23 +339,12 @@ function Divide3({ windowWidth }: { windowWidth: number }) {
 }
 
 export default function WorkFlow() {
-  const [windowWidth, setWindowWidth] = useState(0);
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = debounce(() => {
-      setWindowWidth(window.innerWidth);
-    });
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <WorkFlowSection className="px-10 py-15 sm:py-30">
       <Divide1 />
-      {windowWidth > 640 ? <Divide2 /> : <MobileDivide2 />}
-      <Divide3 windowWidth={windowWidth} />
+      <Divide2 />
+      <MobileDivide2 />
+      <Divide3 />
     </WorkFlowSection>
   );
 }

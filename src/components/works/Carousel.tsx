@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import Button from '../../components/Button';
-import { useEffect, useState } from 'react';
-import debounce from 'lodash/debounce';
 
 interface SlideProps {
   imgSrc: string;
@@ -214,24 +212,11 @@ const SwiperSection = styled.section`
 `;
 
 export default function Carousel() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    slideInfos.sort(() => Math.random() - 0.5);
-    mobileSlideInfos.sort(() => Math.random() - 0.5);
-    setWindowWidth(window.innerWidth);
-    const handleResize = debounce(() => {
-      setWindowWidth(window.innerWidth);
-    });
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
   SwiperCore.use([Autoplay, Navigation]);
   return (
     <SwiperSection>
       <Swiper
+        className="hidden sm:flex"
         autoHeight={true}
         slidesPerView={1}
         navigation={true}
@@ -241,17 +226,32 @@ export default function Carousel() {
           disableOnInteraction: false,
         }}
       >
-        {windowWidth > 640
-          ? slideInfos.map((slide) => (
+        {
+          slideInfos.map((slide) => (
               <SwiperSlide key={slide.title[0]}>
                 <SlideContaier slideinfo={slide} />
-              </SwiperSlide>
-            ))
-          : mobileSlideInfos.map((slide) => (
+            </SwiperSlide>
+          ))
+        }
+      </Swiper>
+      <Swiper
+        className="flex sm:hidden"
+        autoHeight={true}
+        slidesPerView={1}
+        navigation={true}
+        loop={true}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
+      >
+        {
+          mobileSlideInfos.map((slide) => (
               <SwiperSlide key={slide.title[0]}>
                 <SlideContaier slideinfo={slide} />
-              </SwiperSlide>
-            ))}
+            </SwiperSlide>
+          ))
+        }
       </Swiper>
     </SwiperSection>
   );
