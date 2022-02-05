@@ -1,0 +1,16 @@
+grotesqWeb:
+  component: '@sls-next/serverless-component'
+  inputs:
+    build:
+      env:
+        APP_NAME: 'grotesq'
+    name:
+      defaultLambda: grotesq-web-default
+      apiLambda: grotesq-web-api
+      imageLambda: grotesq-web-image
+    memory: 2048
+    domain: 'grotesq.com'
+    bucketName: 'grotesq-web-s3'
+    bucketRegion: 'ap-northeast-2'
+    cloudfront:
+      distributionId: 'E1Y6LBA6QE0EEZ'

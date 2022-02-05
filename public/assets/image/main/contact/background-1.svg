@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="250" viewBox="0 0 1920 250">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        opacity: 0.57;
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: #827cff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.32" y1="-0.776" x2="0.866" y2="2.376" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5870ff"/>
+      <stop offset="1" stop-color="#6d51ff"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="사각형_467" data-name="사각형 467" class="cls-1" width="1920" height="250" transform="translate(0 7330)"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_2" data-name="마스크 그룹 2" class="cls-2" transform="translate(0 -7330)">
+    <g id="패스_2546" data-name="패스 2546" class="cls-3" transform="translate(146 7033)">
+      <path class="cls-4" d="M250,0C388.071,0,500,111.929,500,250S388.071,500,250,500,0,388.071,0,250,111.929,0,250,0Z"/>
+      <path class="cls-5" d="M 250 100 C 167.2896728515625 100 100 167.2896728515625 100 250 C 100 332.7103271484375 167.2896728515625 400 250 400 C 332.7103271484375 400 400 332.7103271484375 400 250 C 400 167.2896728515625 332.7103271484375 100 250 100 M 250 0 C 388.0711669921875 0 500 111.9288330078125 500 250 C 500 388.0711669921875 388.0711669921875 500 250 500 C 111.9288330078125 500 0 388.0711669921875 0 250 C 0 111.9288330078125 111.9288330078125 0 250 0 Z"/>
+    </g>
+  </g>
+</svg>

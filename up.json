@@ -3,8 +3,8 @@
   "profile": "default",
   "regions": ["ap-northeast-2"],
   "lambda": {
-    "memory": 512,
-    "runtime": "nodejs12.x",
+    "memory": 3072,
+    "runtime": "nodejs14.x",
     "warm": true
   },
   "proxy": {
@@ -28,6 +28,12 @@
     },
     "staging": {
       "domain": "stage.grotesq.com",
+      "lambda": {
+        "warm": true
+      }
+    },
+    "v3": {
+      "domain": "v3.grotesq.com",
       "lambda": {
         "warm": true
       }

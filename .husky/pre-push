@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+npm run build:next

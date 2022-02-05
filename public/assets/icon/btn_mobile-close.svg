@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.414" height="16.414" viewBox="0 0 16.414 16.414">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#4a63fe;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="mob_ico_close" transform="translate(.707 .707)">
+        <path id="선_180" data-name="선 180" class="cls-1" d="m0 0 15 15"/>
+        <path id="선_181" data-name="선 181" class="cls-1" d="M15 0 0 15"/>
+    </g>
+</svg>

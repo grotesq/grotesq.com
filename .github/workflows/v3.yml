@@ -2,7 +2,7 @@ name: GrotesQ Deployment
 on:
   push:
     branches:
-      - main
+      - v3
 jobs:
   build:
     name: Deploy
@@ -19,7 +19,7 @@ jobs:
       - name: Next.js Build
         run: yarn build:next
       - name: Prepare serverless deploy
-        run: cp serverless.main.yaml serverless.yaml
+        run: cp serverless.v3.yaml serverless.yaml
       - name: Deploy
         run: |
           export AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -29,7 +29,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: official-website
-          SLACK_MESSAGE: 'https://grotesq.com'
-          SLACK_TITLE: '배포 완료'
+          SLACK_MESSAGE: 'https://v3.grotesq.com'
+          SLACK_TITLE: 'v3 배포 완료'
           SLACK_USERNAME: Github Action
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
