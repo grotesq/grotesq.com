@@ -78,7 +78,7 @@ const fadeIn = {
   },
 };
 export default function Introduce() {
-  const mailTo = () => (window.location.href = 'mailto:unknown@grotesq.com');
+  const mailTo = () => (window.location.href = 'mailto:naram.kim@grotesq.com');
   return (
     <IntroduceSection className="px-12 pt-32 pb-28 lg:pt-62 lg:pb-52">
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>

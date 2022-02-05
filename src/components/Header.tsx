@@ -112,7 +112,7 @@ const menus = [
   },
   {
     title: 'Contact',
-    path: 'mailto:unknown@grotesq.com',
+    path: 'mailto:naram.kim@grotesq.com',
     isInternal: false,
     isSelected: false,
   },

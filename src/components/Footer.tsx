@@ -26,7 +26,7 @@ export default function Footer() {
     <FooterContainer>
       <div>
         <p>
-          그로테스큐 스튜디오 / 대표: 김나람 / <a href="mailto:unknown@grotesq.com">unknown@grotesq.com</a>
+          그로테스큐 스튜디오 / 대표: 김나람 / <a href="mailto:naram.kim@grotesq.com">naram.kim@grotesq.com</a>
         </p>
         <Copyright>{`Copyright © 2017-${new Date().getFullYear()} GrotesQ, All rights reserved.`}</Copyright>
       </div>

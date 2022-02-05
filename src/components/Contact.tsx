@@ -34,7 +34,7 @@ const SubTitle = styled.div`
 `;
 
 export default function Contact() {
-  const mailTo = () => (window.location.href = 'mailto:unknown@grotesq.com');
+  const mailTo = () => (window.location.href = 'mailto:naram.kim@grotesq.com');
   return (
     <ContactSection className="px-5 py-6 sm:pt-15 sm:pb-12">
       <div>
