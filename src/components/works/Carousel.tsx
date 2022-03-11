@@ -212,8 +212,7 @@ const SwiperSection = styled.section`
 `;
 
 export default function Carousel() {
-  const shuffledSlide = [...slideInfos].sort(() => Math.random()-0.5);
-  const shuffledMobileSlide = [...mobileSlideInfos].sort(() => Math.random()-0.5);
+  const randomSlideIndex = Math.floor(Math.random() * slideInfos.length);
   
   SwiperCore.use([Autoplay, Navigation]);
   return (
@@ -222,7 +221,8 @@ export default function Carousel() {
         className="hidden sm:flex"
         autoHeight={true}
         slidesPerView={1}
-        navigation={true}
+        navigation={ true }
+        initialSlide={randomSlideIndex}
         loop={true}
         autoplay={{
           delay: 3500,
@@ -230,7 +230,7 @@ export default function Carousel() {
         }}
       >
         {
-          shuffledSlide.map((slide) => (
+          slideInfos.map((slide) => (
               <SwiperSlide key={slide.title[0]}>
                 <SlideContaier slideinfo={slide} />
             </SwiperSlide>
@@ -241,7 +241,8 @@ export default function Carousel() {
         className="flex sm:hidden"
         autoHeight={true}
         slidesPerView={1}
-        navigation={true}
+        navigation={ true }
+        initialSlide={randomSlideIndex}
         loop={true}
         autoplay={{
           delay: 3500,
@@ -249,7 +250,7 @@ export default function Carousel() {
         }}
       >
         {
-          shuffledMobileSlide.map((slide) => (
+          mobileSlideInfos.map((slide) => (
               <SwiperSlide key={slide.title[0]}>
                 <SlideContaier slideinfo={slide} />
             </SwiperSlide>
