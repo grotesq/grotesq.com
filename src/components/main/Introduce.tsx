@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Button from '../Button';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -78,7 +79,6 @@ const fadeIn = {
   },
 };
 export default function Introduce() {
-  const mailTo = () => (window.location.href = 'mailto:naram.kim@grotesq.com');
   return (
     <IntroduceSection className="px-12 pt-32 pb-28 lg:pt-62 lg:pb-52">
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
@@ -105,9 +105,11 @@ export default function Introduce() {
           </div>
         </Description>
         <motion.div variants={fadeIn}>
-          <Button className="transition ease-in-out hover:bg-primary-blue-light" size="md" round onClick={mailTo}>
-            프로젝트 문의하기
-          </Button>
+          <Link href={'/contact'}>
+            <Button className="transition ease-in-out hover:bg-primary-blue-light" size="md" round>
+              프로젝트 문의하기
+            </Button>
+          </Link>
         </motion.div>
       </motion.div>
     </IntroduceSection>

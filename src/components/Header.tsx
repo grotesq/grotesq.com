@@ -111,9 +111,9 @@ const menus = [
     isSelected: false,
   },
   {
-    title: 'Contact',
-    path: 'mailto:naram.kim@grotesq.com',
-    isInternal: false,
+    title: '프로젝트 문의하기',
+    path: '/contact',
+    isInternal: true,
     isSelected: false,
   },
 ];
