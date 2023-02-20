@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import Script from "next/script";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -67,6 +68,7 @@ export default class MyDocument extends Document {
               href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap"
             />
             <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+            {/* 채널톡 */}
             <script
               dangerouslySetInnerHTML={{
                 __html: `
@@ -75,6 +77,18 @@ export default class MyDocument extends Document {
               `,
               }}
             />
+            {/* 채널톡 끝 */}
+            {/* Google tag (gtag.js) */}
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11098627078"></Script>
+            <script dangerouslySetInnerHTML={{__html:`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'AW-11098627078');
+            `}}>
+            </script>
+            {/* end of Google tag (gtag.js) */}
           </Head>
           <body>
             <Main />
