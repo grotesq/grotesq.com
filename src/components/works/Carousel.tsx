@@ -109,7 +109,7 @@ export function SlideContaier({ slideinfo }: { slideinfo: SlideProps }) {
   const { title, titleColor, imgSrc, description, url } = slideinfo;
   return (
     <SlideBackground className="px-7" imgSrc={imgSrc}>
-      <LogoTitle color={titleColor}>Studio GrotesQ</LogoTitle>
+      <LogoTitle color={titleColor}>GrotesQ</LogoTitle>
       <MainTitle>
         {title.map((content, i) => (
           <div key={i}>{content}</div>
@@ -213,7 +213,7 @@ const SwiperSection = styled.section`
 
 export default function Carousel() {
   const randomSlideIndex = Math.floor(Math.random() * slideInfos.length);
-  
+
   SwiperCore.use([Autoplay, Navigation]);
   return (
     <SwiperSection>

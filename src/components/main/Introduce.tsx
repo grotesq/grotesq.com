@@ -82,7 +82,7 @@ export default function Introduce() {
   return (
     <IntroduceSection className="px-12 pt-32 pb-28 lg:pt-62 lg:pb-52">
       <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-        <LogoTitle variants={fadeIn}>Studio GrotesQ</LogoTitle>
+        <LogoTitle variants={fadeIn}>GrotesQ</LogoTitle>
         <div>
           <MainTitle>
             <motion.span variants={fadeIn}>
@@ -95,7 +95,7 @@ export default function Introduce() {
           </MainTitle>
         </div>
         <Description variants={fadeIn}>
-          <p>그로테스큐 스튜디오는 기획, 디자인부터 앱, 플랫폼 서비스 런칭까지 도와드립니다.</p>
+          <p>그로테스큐에서는 기획, 디자인부터 앱, 플랫폼 서비스 런칭까지 도와드립니다.</p>
           <div className="hidden sm:block">
             <p>가지고 계신 아이디어를 전문적인 컨설팅을 통해 구체화시켜드립니다.</p>
             <p>

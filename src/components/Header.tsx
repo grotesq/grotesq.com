@@ -149,7 +149,7 @@ export default function Header() {
             <div className="w-32 sm:w-44">
               <Image
                 src={logo}
-                alt="grtesq studio 그로테스큐 스튜디오"
+                alt="GrotesQ 그로테스큐"
                 width={185}
                 height={30}
                 sizes="185 123"

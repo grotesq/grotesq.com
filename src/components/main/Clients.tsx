@@ -52,7 +52,7 @@ export default function Client() {
       <div>
         <SubTitle1 variants={fadeUp}>OUR CLIENTS</SubTitle1>
         <motion.p className="pb-8 px-14 sm:pb-3" variants={fadeUp}>
-          그로테스큐 스튜디오와 함께한 고객사입니다.
+          그로테스큐와 함께한 고객사입니다.
         </motion.p>
         <motion.div className="justify-center hidden w-screen sm:flex" variants={fadeUp}>
           <Image src={Clients} alt="고객사 로고들" />

@@ -34,7 +34,7 @@ export default function OurWorks() {
     <OurWorksSection className="px-5 xl:px-40">
       <SubTitle1>OUR WORKS</SubTitle1>
       <Description>
-        <p>그로테스큐 스튜디오의 주요 프로젝트 입니다.</p>
+        <p>그로테스큐의 주요 프로젝트 입니다.</p>
         <p>완벽한 서비스를 제공하기 위해서 항상 신기술을 연구하고, 견고한 내부 인프라를 구축해왔습니다.</p>
       </Description>
       <Gallery />
