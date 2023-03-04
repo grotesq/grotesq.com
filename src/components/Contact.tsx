@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from './Button';
+import Link from 'next/link';
 
 const ContactSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -34,15 +35,16 @@ const SubTitle = styled.div`
 `;
 
 export default function Contact() {
-  const mailTo = () => (window.location.href = 'mailto:naram.kim@grotesq.com');
   return (
     <ContactSection className="px-5 py-6 sm:pt-15 sm:pb-12">
       <div>
         <SubTitle>Ready to get started?</SubTitle>
         <Title>프로젝트를 문의하세요.</Title>
-        <Button color="white" size="sm" round fill="true" onClick={mailTo}>
-          문의하기
-        </Button>
+        <Link href={'/contact'}>
+          <Button color="white" size="sm" round fill="true">
+            문의하기
+          </Button>
+        </Link>
       </div>
     </ContactSection>
   );
