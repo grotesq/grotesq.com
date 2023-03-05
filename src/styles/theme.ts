@@ -59,6 +59,18 @@ const subTitle1 = css`
   }
 `;
 
+const subTitle1Light = css`
+  color: ${color['white']};
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.125rem;
+  font-weight: 600;
+  line-height: 1.52;
+  padding-bottom: 1.125rem;
+  @media ${(props) => props.theme.mediaQueryMax('sm')} {
+    font-size: 1.875rem;
+  }
+`;
+
 const background = {
   gradient70: 'linear-gradient(rgb(26, 28, 35, 0.7), rgb(26, 28, 35, 0.7))',
   gradient80: 'linear-gradient(rgb(26, 28, 35, 0.8), rgb(26, 28, 35, 0.8))',
@@ -72,4 +84,5 @@ export const theme: DefaultTheme = {
   subTitleBlue,
   subTitle1,
   logoTitle,
+  subTitle1Light,
 };
