@@ -14,4 +14,4 @@ grotesqWeb:
     bucketName: 'grotesq-web-s3'
     bucketRegion: 'ap-northeast-2'
     cloudfront:
-      distributionId: 'E1Y6LBA6QE0EEZ'
+      distributionId: 'E7BQG3DRQNIZT'
