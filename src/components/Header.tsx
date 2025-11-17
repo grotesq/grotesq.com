@@ -110,12 +110,6 @@ const menus = [
     isInternal: false,
     isSelected: false,
   },
-  {
-    title: '프로젝트 문의하기',
-    path: '/contact',
-    isInternal: true,
-    isSelected: false,
-  },
 ];
 
 function Menus({ title, path, isInternal, isSelected, onClick }: MenuProps) {

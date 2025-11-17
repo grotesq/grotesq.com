@@ -1,8 +1,4 @@
-import styled, { css } from 'styled-components';
-import Image from 'next/image';
-import Head from 'next/head';
 import BaseLayout from '../components/layouts/BaseLayout';
-import Contact from '../components/Contact';
 import OurWorks from '../components/works/OurWorks';
 import Carousel from '../components/works/Carousel';
 import { NextSeo } from 'next-seo';
@@ -22,7 +18,6 @@ export default function Works() {
         <main>
           <Carousel />
           <OurWorks />
-          <Contact />
         </main>
       </BaseLayout>
     </>

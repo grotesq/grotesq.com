@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import Button from '../Button';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 const IntroduceSection = styled.section`
   ${({ theme }) => theme.flexCenter};
@@ -104,13 +102,6 @@ export default function Introduce() {
             <p>효과적인 제작 과정을 통하여 안정성&접근성 높은 결과물을 제작합니다.</p>
           </div>
         </Description>
-        <motion.div variants={fadeIn}>
-          <Link href={'/contact'}>
-            <Button className="transition ease-in-out hover:bg-primary-blue-light" size="md" round>
-              프로젝트 문의하기
-            </Button>
-          </Link>
-        </motion.div>
       </motion.div>
     </IntroduceSection>
   );
