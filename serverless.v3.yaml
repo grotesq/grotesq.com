@@ -9,6 +9,7 @@ grotesqWebV3:
       apiLambda: grotesq-web-v3-api
       imageLambda: grotesq-web-v3-image
     memory: 2048
+    runtime: nodejs18.x
     domain: ['v3','grotesq.com']
     bucketName: 'grotesq-web-v3-s3'
     bucketRegion: 'ap-northeast-2'
